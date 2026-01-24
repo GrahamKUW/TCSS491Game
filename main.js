@@ -8,8 +8,6 @@ ASSET_MANAGER.downloadAll(() => {
   const canvas = document.getElementById("gameWorld");
   const ctx = canvas.getContext("2d");
 
-  ctx.imageSmoothingEnabled = false; // removes smoothing filter on sprites
-
   gameEngine.init(ctx);
 
   // TEST CODE - REMOVE WHEN DONE
