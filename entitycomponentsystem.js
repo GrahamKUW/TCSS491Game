@@ -64,14 +64,14 @@ class ECSManager {
 
   /**
    * Sets a component in the heirarchy table to a different component
-   * @param {Entity} entity Entity to get the component for.
+   * @param {Integer} entityID Entity reference to get the component for.
    * @param {Integer} componentType Type of component to get.
    */
-  getComponent(entity, componentType) {
-    const result = this.table[componentType][entity.identifier];
+  getComponent(entityID, componentType) {
+    const result = this.table[componentType][entityID];
 
-    if (entity.identifier >= this.table[0].length || entity < 0) {
-      console.error("No such entity: " + entity);
+    if (entityID.identifier >= this.table[0].length || entityID < 0) {
+      console.error("No such entity: " + entityID);
     }
 
     if (componentType >= this.table.length || componentType < 0) {
@@ -79,7 +79,7 @@ class ECSManager {
     }
 
     if (result === null || result === undefined) {
-      console.error("Could not find component on entity: " + entity);
+      console.error("Could not find component on entity: " + entityID);
     }
 
     return result;
@@ -190,7 +190,7 @@ class ECSObject {
    * @returns New component of the same type
    */
   getComponent(componentType) {
-    return this.ecsManager.getComponent(this.entity, componentType);
+    return this.ecsManager.getComponent(this.entity.identifier, componentType);
   }
 
   /**
@@ -203,35 +203,23 @@ class ECSObject {
 }
 
 class GameObject extends ECSObject {
-  constructor(ecsManager) {
+  constructor(
+    ecsManager,
+    name = "Unnamed GameObject",
+    uniqueIdentifier = "Undefined ID",
+  ) {
     super(ecsManager);
-    super.setComponent(new TransformComponent()); // all game objects will have a transform
-    this.transform = super.getComponent(TRANSFORM_COMPONENT_INDEX);
+    this.uniqueIdentifier = uniqueIdentifier;
+    this.setComponent(new TransformComponent()); // all game objects will have a transform
+    this.transform = this.getComponent(TRANSFORM_COMPONENT_INDEX);
   }
 
   draw(ctx) {
-    // do something
+    // do something, no longer needed, but we'll keep it temporarily
   }
 
   update() {
-    // do something
-  }
-}
-
-class TestObject extends GameObject {
-  constructor(ecsManager) {
-    super(ecsManager);
-  }
-
-  draw(ctx) {
-    super.draw(ctx);
-    const sprite = super.getComponent(SPRITE_COMPONENT_INDEX);
-
-    SpriteSystem.draw(ctx, sprite, this.transform);
-  }
-
-  update() {
-    super.update();
+    // do something, not tied to the game engine anymore
   }
 }
 
