@@ -14,10 +14,11 @@
     Remove entity function to be created as needed.
 */
 
-const COMPONENT_AMOUNT = 3; // 3 for now add more when coming up with new components
+const COMPONENT_AMOUNT = 4; // 4 for now add more when coming up with new components
 const TRANSFORM_COMPONENT_INDEX = 0; // Transform Component
 const SPRITE_COMPONENT_INDEX = 1; // Renderable Component
 const ANIMATOR_COMPONENT_INDEX = 2; // Animator Component
+const PHYSICS_COMPONENT_INDEX = 3; // Physics Component
 
 /**
  * A base class for an ECS Entity
@@ -223,6 +224,23 @@ class GameObject extends ECSObject {
   }
 }
 
+class TestObject extends GameObject {
+  constructor(ecsManager) {
+    super(ecsManager);
+  }
+
+  draw(ctx) {
+    super.draw(ctx);
+    const sprite = super.getComponent(SPRITE_COMPONENT_INDEX);
+
+    SpriteSystem.draw(ctx, sprite, this.transform);
+  }
+
+  update() {
+    super.update();
+  }
+}
+
 // ------------------------------------------------------------------------------------------------------------------------
 // GAME ECS COMPONENTS
 // ------------------------------------------------------------------------------------------------------------------------
@@ -266,6 +284,17 @@ class SpriteComponent extends Component {
         this.cellAmountY +
         " )",
     );
+  }
+}
+
+class PhysicsComponent extends Component {
+  constructor(velX = 0, velY = 0, accX = 0, accY = 0) {
+    super(PHYSICS_COMPONENT_INDEX);
+    this.velocity = { x: velX, y: velY };
+    this.acceleration = { x: accX, y: accY };
+
+    this.hasGravity = true; // Don't know if we will use
+    this.IsStatic = false;
   }
 }
 
@@ -357,5 +386,38 @@ class TransformSystem {
   ) {
     this.translate(transformComponent, x, y);
     this.center(transformComponent, width, height, isFlipped);
+  }
+}
+
+class PhysicsSystem {
+  static setVelocity(physicsComponent, velX, velY) {
+    physicsComponent.velocity = { x: velX, y: velY };
+  }
+
+  static setAcceleration(physicsComponent, accX, accY) {
+    physicsComponent.acceleration = { x: accX, y: accY };
+  }
+
+  //dont know if implemented correctly
+  static updateVelocity(physicsComponent, deltaTime) {
+    let finalVel = { x: 0, y: 0 };
+    finalVel.x =
+      physicsComponent.velocity.x + physicsComponent.acceleration.x * deltaTime;
+    finalVel.y =
+      physicsComponent.velocity.y + physicsComponent.acceleration.y * deltaTime;
+
+    physicsComponent.velocity.x = finalVel.x;
+    physicsComponent.velocity.y = finalVel.y;
+  }
+
+  static updatePosition(transformComponent) {
+    if (physicsComponent.IsStatic) return;
+
+    transformComponent.position.x =
+      physicsComponent.velocity.x * deltaTime +
+      (1 / 2) * physicsComponent.acceleration.x;
+    transformComponent.position.y =
+      physicsComponent.velocity.y * deltaTime +
+      (1 / 2) * physicsComponent.acceleration.y;
   }
 }
