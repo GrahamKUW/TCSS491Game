@@ -17,7 +17,7 @@ function createRat(x, y, speed) {
         position: new Position(x, y),
         velocity: new Velocity(0, 0),
         sprite: new Sprite(ASSET_MANAGER.getAsset("./sprites/rat.png"), 0, 0, 42, 16),
-        collider: new Collider(126, 48),
+        collider: new Collider(126, 48), //x3 from sprite since renderer is currently drawing x3
         animator: new Animator(ratAnimations, 'idle-right'),
         facing: new Facing('right')
     }
