@@ -12,7 +12,6 @@ class GravitySystem {
                     
                 
 
-                console.log("velocity:" + entity.velocity.dy);
             }
         }
     }

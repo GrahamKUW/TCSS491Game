@@ -2,6 +2,10 @@ const gameEngine = new GameEngine();
 
 const ASSET_MANAGER = new AssetManager();
 
+ASSET_MANAGER.queueDownload("./sprites/rat.png");
+ASSET_MANAGER.queueDownload("./sprites/spikes.png");
+
+
 
 ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");
@@ -19,6 +23,8 @@ ASSET_MANAGER.downloadAll(() => {
 
 
 	gameEngine.addEntity(createPlayer(this, 200, 200));
+  gameEngine.addEntity(createRat(this, 400, 400));
+  gameEngine.addEntity(createSpike(this, 200, 400));
 
 	gameEngine.start();
 });

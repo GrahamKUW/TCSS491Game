@@ -37,13 +37,6 @@ class PlayerInputSystem {
 
 
 
-
-
-
-
-                console.log(game.keys);
-                console.log(entity.position.y);
-
             }
         }
 
