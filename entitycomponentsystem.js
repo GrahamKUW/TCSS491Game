@@ -224,23 +224,6 @@ class GameObject extends ECSObject {
   }
 }
 
-class TestObject extends GameObject {
-  constructor(ecsManager) {
-    super(ecsManager);
-  }
-
-  draw(ctx) {
-    super.draw(ctx);
-    const sprite = super.getComponent(SPRITE_COMPONENT_INDEX);
-
-    SpriteSystem.draw(ctx, sprite, this.transform);
-  }
-
-  update() {
-    super.update();
-  }
-}
-
 // ------------------------------------------------------------------------------------------------------------------------
 // GAME ECS COMPONENTS
 // ------------------------------------------------------------------------------------------------------------------------
