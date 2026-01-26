@@ -14,9 +14,8 @@ function createPlayer(x, y, color, speed) {
     const entity = {
         removeFromWorld: false,
         position: new Position(x, y),
-        sprite: new Sprite(ASSET_MANAGER.getAsset("./sprites/temporary sprites/player.png"), 0, 0, 32, 32),
         playercontrolled: new PlayerControlled(350, 100, 100),
-        collider: new Collider(96, 96), //3x as big as sprite since the renderer triples sprite size right now
+        collider: new Collider(64, 64),
         velocity: new Velocity(0, 0),
         animator: new Animator(playerAnimations, 'idle'),
         gravity: new Gravity(800),

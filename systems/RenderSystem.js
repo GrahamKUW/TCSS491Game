@@ -17,7 +17,7 @@ class RenderSystem {
                     entity.sprite.frameHeight,
                     entity.position.x,
                     entity.position.y,
-                    entity.sprite.frameWidth * 3, //doubling size for visiblity
+                    entity.sprite.frameWidth * 3, //tripling size for visiblity
                     entity.sprite.frameHeight * 3
                 )
 
@@ -28,7 +28,7 @@ class RenderSystem {
                     game.ctx.fillStyle = 'purple'
                     game.ctx.fillRect(entity.position.x, entity.position.y, 64, 64);
                 } else {
-                    //falback, square
+                    //fallback for everything else, grey square
                     game.ctx.fillStyle = 'grey';
                     game.ctx.fillRect(entity.position.x, entity.position.y, 64, 64);
                 }
