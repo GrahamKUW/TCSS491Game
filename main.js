@@ -10,7 +10,7 @@ ASSET_MANAGER.queueDownload("./sprites/spikes.png");
 ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");
 	const ctx = canvas.getContext("2d");
-
+  ctx.imageSmoothingEnabled = false;
 	gameEngine.init(ctx);
 
 	// Add systems (order matters!)

@@ -17,8 +17,8 @@ class RenderSystem {
                     entity.sprite.frameHeight,
                     entity.position.x,
                     entity.position.y,
-                    entity.sprite.frameWidth * 2, //doubling size for visiblity
-                    entity.sprite.frameHeight * 2
+                    entity.sprite.frameWidth * 3, //doubling size for visiblity
+                    entity.sprite.frameHeight * 3
                 )
 
             } else {
