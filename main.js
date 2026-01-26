@@ -4,6 +4,7 @@ const ASSET_MANAGER = new AssetManager();
 
 ASSET_MANAGER.queueDownload("./sprites/rat.png");
 ASSET_MANAGER.queueDownload("./sprites/spikes.png");
+ASSET_MANAGER.queueDownload("./sprites/temporary sprites/player.png");
 
 
 
@@ -19,12 +20,14 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addSystem(new StatueSystem());
 	//collision likely goes in between player Input and movement once added
 	gameEngine.addSystem(new MovementSystem());
+  gameEngine.addSystem(new CollisionSystem());
 	gameEngine.addSystem(new RenderSystem()); 
 
 
-	gameEngine.addEntity(createPlayer(this, 200, 200));
-  gameEngine.addEntity(createRat(this, 400, 400));
-  gameEngine.addEntity(createSpike(this, 200, 400));
+	gameEngine.addEntity(createPlayer(200, 200));
+  gameEngine.addEntity(createRat(500, 400));
+  gameEngine.addEntity(createSpike(200, 400));
+  gameEngine.addEntity(createBox(300, 400));
 
 	gameEngine.start();
 });

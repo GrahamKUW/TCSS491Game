@@ -20,7 +20,7 @@ class PlayerInputSystem {
 
                 //check which direction the player is moving
                 if (game.keys['ArrowUp'] || game.keys['w']) {
-                    entity.velocity.dy = -speed;
+                    entity.velocity.dy = -speed * 1.5;
                 }
 
                 if (game.keys['ArrowDown'] || game.keys["s"]) {

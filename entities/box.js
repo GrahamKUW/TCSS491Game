@@ -1,6 +1,6 @@
 //Test Box to make sure components and systems are working properly.
 
-function createBox(game, x, y, color, speed) {
+function createBox(x, y, color, speed) {
 
 
     const pilotAnimations = { // maybe change this to pilot
@@ -13,8 +13,9 @@ function createBox(game, x, y, color, speed) {
     const entity = {
         removeFromWorld: false,
         position: new Position(x, y),
-        velocity: new Velocity(100, 100),
+        velocity: new Velocity(0, 0),
         animator: new Animator(pilotAnimations, 'idle'),
+        collider: new Collider(64, 64)
     }
     return entity;
 }

@@ -10,8 +10,6 @@ class GravitySystem {
                  if (entity.position.y > 400)  //TODO to make sure they dont fall off screen remove when collision system added.
                      entity.velocity.dy -= entity.gravity.value * deltaTime;
                     
-                
-
             }
         }
     }

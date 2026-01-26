@@ -1,4 +1,4 @@
-function createSpike(game, x, y) {
+function createSpike(x, y) {
 
     const entity = {
         removeFromWorld: false,
