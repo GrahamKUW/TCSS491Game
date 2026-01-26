@@ -4,11 +4,33 @@
     <meta charset="utf-8" />
     <title>Statue Cats</title>
 
+    <!-- Utilities -->
     <script type="text/javascript" src="./assetmanager.js"></script>
     <script type="text/javascript" src="./timer.js"></script>
-    <script type="text/javascript" src="./gameengine.js"></script>
     <script type="text/javascript" src="./util.js"></script>
-    <script type="text/javascript" src="./entitycomponentsystem.js"></script>
+
+    <!--Components-->
+    <script type="text/javascript" src="./components/animator.js"></script>
+    <script type="text/javascript" src="./components/playercontrolled.js"></script>
+    <script type="text/javascript" src="./components/position.js"></script>
+    <script type="text/javascript" src="./components/velocity.js"></script>
+    <script type="text/javascript" src="./components/gravity.js"></script>
+    <script type="text/javascript" src="./components/statueable.js"></script>
+
+    <!--Systems-->
+    <script type="text/javascript" src="./systems/PlayerInputSystem.js"></script>
+    <script type="text/javascript" src="./systems/MovementSystem.js"></script>
+    <script type="text/javascript" src="./systems/GravitySystem.js"></script>
+    <script type="text/javascript" src="./systems/RenderSystem.js"></script>
+    <script type="text/javascript" src="./systems/StatueSystem.js"></script>
+
+    <!-- Entity Factories -->
+    <script type="text/javascript" src="./entities/box.js"></script>
+    <script type="text/javascript" src="./entities/player.js"></script>
+    <script type="text/javascript" src="./entities/statue.js"></script>
+
+    <!-- Core Engine -->
+    <script type="text/javascript" src="./gameengine.js"></script>
     <script type="text/javascript" src="./main.js"></script>
   </head>
   <body>
@@ -20,5 +42,9 @@
       tabindex="0"
       autofocus
     ></canvas>
+
+    <div>
+      WASD/ARROW Keys to Move, E to spawn statue
+    </div>
   </body>
 </html>
