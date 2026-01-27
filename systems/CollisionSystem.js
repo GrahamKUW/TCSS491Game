@@ -1,10 +1,7 @@
 class CollisionSystem {
     update(deltaTime, game) {
         const collidable = game.entities.filter(e => e.position && e.collider);
-        // console.log("Collidable entities:", collidable.map(e => e.position));
-
-        
-
+         //console.log("Collidable entities:", collidable.map(e => e.position));
 
         for (let i = 0; i < collidable.length; i++) {
             for (let j = i + 1; j < collidable.length; j++) {
@@ -31,16 +28,30 @@ class CollisionSystem {
         const overlapY = Math.min(b1.bottom - b2.top, b2.bottom - b1.top);
 
 
+        // Check if entities can even move in the first place, 
+        const e1Dynamic = Boolean(e1.velocity);
+        const e2Dynamic = Boolean(e2.velocity);
+
+        if (!e1Dynamic && !e2Dynamic) return;
+
+        const mover = e1Dynamic ? e1 : e2;
+        const other = mover === e1 ? e2 : e1;
+
+        const bm = mover.collider.getBounds(mover.position);
+        const bo = other.collider.getBounds(other.position);
+
         if (overlapX < overlapY) {
-            // move on X axis
-            if (b1.left < b2.left) e1.position.x -= overlapX;
-            else e1.position.x += overlapX;
-            e1.velocity.dx = 0;
+            if (bm.left < bo.left) mover.position.x -= overlapX;
+            else mover.position.x += overlapX;
+            mover.velocity.dx = 0;
         } else {
-            // move on Y axis
-            if (b1.top < b2.top) e1.position.y -= overlapY;
-            else e1.position.y += overlapY;
-            e1.velocity.dy = 0;
+            if (bm.top < bo.top) {
+                mover.position.y -= overlapY;
+                mover.isGrounded = true;
+            } else {
+                mover.position.y += overlapY;
+            }
+            mover.velocity.dy = 0;
         }
     }
 

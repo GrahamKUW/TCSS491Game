@@ -12,7 +12,7 @@ class StatueSystem {
             }
 
             if (game.keys['e'] && entity.statueable.timer <= 0) {
-                game.addEntity(createStatue(game, entity.position.x, entity.position.y));
+                game.addEntity(createStatue(entity.position.x, entity.position.y));
 
 
                 entity.statueable.timer = entity.statueable.cooldown;

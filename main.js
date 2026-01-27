@@ -4,6 +4,8 @@ const ASSET_MANAGER = new AssetManager();
 
 ASSET_MANAGER.queueDownload("./sprites/rat.png");
 ASSET_MANAGER.queueDownload("./sprites/spikes.png");
+ASSET_MANAGER.queueDownload("./sprites/prototype_background.png");
+
 
 
 ASSET_MANAGER.downloadAll(() => {
@@ -22,10 +24,14 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addSystem(new RenderSystem());
 
 
-	gameEngine.addEntity(createPlayer(200, 200));
-	gameEngine.addEntity(createRat(500, 400));
-	gameEngine.addEntity(createSpike(200, 400));
-	gameEngine.addEntity(createBox(300, 400));
+	gameEngine.addEntity(createBackground("./sprites/prototype_background.png"));
+	gameEngine.addEntity(createPlayer(30, 656, 30, 600));
+	gameEngine.addEntity(createRat(600, 656));
+	gameEngine.addEntity(createSpike(256, 656));
+	gameEngine.addEntity(createWall(0,704,1024,64));
+	gameEngine.addEntity(createWall(190,640,64,64));
+	gameEngine.addEntity(createWall(470,550,64, 154));
+	gameEngine.addEntity(createWall(780,640,64, 64));
 
 	gameEngine.start();
 });
