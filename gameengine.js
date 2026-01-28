@@ -1,3 +1,4 @@
+// gameengine.js
 // This game shell was happily modified from Googler Seth Ladd's "Bad Aliens" game and his Google IO talk in 2011
 
 class GameEngine {
@@ -8,6 +9,9 @@ class GameEngine {
 
         // Everything that will be updated and drawn each frame
         this.entities = [];
+
+        // ECS Systems
+        this.systems = [];
 
         // Information on the input
         this.click = null;
@@ -80,40 +84,19 @@ class GameEngine {
         this.entities.push(entity);
     };
 
-    draw() {
-        // Clear the whole canvas with transparent color (rgba(0, 0, 0, 0))
-        this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-
-        // Draw latest things first
-        for (let i = this.entities.length - 1; i >= 0; i--) {
-            this.entities[i].draw(this.ctx, this);
-        }
-    };
-
-    update() {
-        let entitiesCount = this.entities.length;
-
-        for (let i = 0; i < entitiesCount; i++) {
-            let entity = this.entities[i];
-
-            if (!entity.removeFromWorld) {
-                entity.update();
-            }
-        }
-
-        for (let i = this.entities.length - 1; i >= 0; --i) {
-            if (this.entities[i].removeFromWorld) {
-                this.entities.splice(i, 1);
-            }
-        }
+    addSystem(system) {
+        this.systems.push(system);
     };
 
     loop() {
         this.clockTick = this.timer.tick();
-        this.update();
-        this.draw();
+        
+        // Run all systems
+        for (let system of this.systems) {
+            system.update(this.clockTick, this);
+        }
+        
+        // Remove entities marked for removal
+        this.entities = this.entities.filter(e => !e.removeFromWorld);
     };
-
 };
-
-// KV Le was here :)

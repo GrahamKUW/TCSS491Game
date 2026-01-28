@@ -4,18 +4,45 @@
     <meta charset="utf-8" />
     <title>Statue Cats</title>
 
+    <!-- Utilities -->
     <script type="text/javascript" src="./assetmanager.js"></script>
     <script type="text/javascript" src="./timer.js"></script>
-    <script type="text/javascript" src="./gameengine.js"></script>
     <script type="text/javascript" src="./util.js"></script>
-    <script type="text/javascript" src="./entitycomponentsystem.js"></script>
-    <script type="text/javascript" src="./scenesystem.js"></script>
     <script type="text/javascript" src="./gamemanifest.js"></script>
 
-    <script
-      type="text/javascript"
-      src="./assets/scenes/scenedata/scene1data.js"
-    ></script>
+    <!--Components-->
+    <script type="text/javascript" src="./components/animator.js"></script>
+    <script type="text/javascript" src="./components/playercontrolled.js"></script>
+    <script type="text/javascript" src="./components/position.js"></script>
+    <script type="text/javascript" src="./components/velocity.js"></script>
+    <script type="text/javascript" src="./components/gravity.js"></script>
+    <script type="text/javascript" src="./components/statueable.js"></script>
+    <script type="text/javascript" src="./components/sprite.js"></script>
+    <script type="text/javascript" src="./components/collider.js"></script>
+    <script type="text/javascript" src="./components/facing.js"></script>
+
+
+    <!--Systems-->
+    <script type="text/javascript" src="./systems/PlayerInputSystem.js"></script>
+    <script type="text/javascript" src="./systems/MovementSystem.js"></script>
+    <script type="text/javascript" src="./systems/GravitySystem.js"></script>
+    <script type="text/javascript" src="./systems/RenderSystem.js"></script>
+    <script type="text/javascript" src="./systems/StatueSystem.js"></script>
+    <script type="text/javascript" src="./systems/CollisionSystem.js"></script>
+    <script type="text/javascript" src="./systems/AnimationSystem.js"></script>
+
+    <!-- Entity Factories -->
+    <script type="text/javascript" src="./entities/box.js"></script>
+    <script type="text/javascript" src="./entities/player.js"></script>
+    <script type="text/javascript" src="./entities/statue.js"></script>
+    <script type="text/javascript" src="./entities/rat.js"></script>
+    <script type="text/javascript" src="./entities/spikes.js"></script>
+    <script type="text/javascript" src="./entities/wall.js"></script>
+    <script type="text/javascript" src="./entities/background.js"></script>
+
+
+    <!-- Core Engine -->
+    <script type="text/javascript" src="./gameengine.js"></script>
     <script type="text/javascript" src="./main.js"></script>
   </head>
   <body>
@@ -27,5 +54,12 @@
       tabindex="0"
       autofocus
     ></canvas>
+
+    <div>
+      <label>
+        <input type="checkbox" id="debugToggle"> Debug
+      </label>
+    </div>
+
   </body>
 </html>
