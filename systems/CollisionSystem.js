@@ -23,18 +23,19 @@ class CollisionSystem {
 
         // console.log("collision!" + e1  + e2);
 
-
         const overlapX = Math.min(b1.right - b2.left, b2.right - b1.left);
         const overlapY = Math.min(b1.bottom - b2.top, b2.bottom - b1.top);
 
-
+        let e1Dynamic = false;
+        let e2Dynamic = false;
         // Check if entities can even move in the first place, 
-        const e1Dynamic = Boolean(e1.velocity);
-        const e2Dynamic = Boolean(e2.velocity);
+        e1Dynamic = Boolean(e1.velocity);
+        e2Dynamic = Boolean(e2.velocity);
+
 
         if (!e1Dynamic && !e2Dynamic) return;
 
-        const mover = e1Dynamic ? e1 : e2;
+        const mover = e1Dynamic ? e1 : e2; //add check for zero velocity as well and split into vertical and horizontal
         const other = mover === e1 ? e2 : e1;
 
         const bm = mover.collider.getBounds(mover.position);

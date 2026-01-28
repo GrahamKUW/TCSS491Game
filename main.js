@@ -2,9 +2,9 @@ const gameEngine = new GameEngine();
 
 const ASSET_MANAGER = new AssetManager();
 
-ASSET_MANAGER.queueDownload("./sprites/rat.png");
-ASSET_MANAGER.queueDownload("./sprites/spikes.png");
-ASSET_MANAGER.queueDownload("./sprites/prototype_background.png");
+// QUEUE THE GAME MANIFEST
+ASSET_MANAGER.queueManifest(GameManifest.data);
+
 
 
 
