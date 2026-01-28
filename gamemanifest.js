@@ -6,5 +6,7 @@ const GameManifest = {
     "./sprites/rat.png",
     "./sprites/spikes.png",
     "./sprites/prototype_background.png",
+    "./sprites/StatueCatsMainCharacter-Sheet.png",
+    "./sprites/StatueCatsTileset.png",
   ],
 };
