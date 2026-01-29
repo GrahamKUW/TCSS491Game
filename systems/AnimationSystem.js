@@ -5,7 +5,6 @@ class AnimationSystem {
             if (entity.animator && entity.sprite) {
 
                 this.updateAnimation(entity);
-
                 this.updateFrames(entity, deltaTime);
 
             }
