@@ -9,7 +9,7 @@ function createPlayer(x, y, respawnX = 300, respawnY = 300) {
     const entity = {
         removeFromWorld: false,
         position: new Position(x, y),
-        playercontrolled: new PlayerControlled(350, respawnX, respawnY),
+        playercontrolled: new PlayerControlled(370, respawnX, respawnY),
         collider: new Collider(63, 82, 13, 14),
         velocity: new Velocity(0, 0),
         sprite: new Sprite(ASSET_MANAGER.getAsset("./sprites/StatueCatsMainCharacter-Sheet.png"), 0, 0, 32, 32, 3, 3),
