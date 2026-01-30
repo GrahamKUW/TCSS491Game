@@ -25,7 +25,7 @@ ASSET_MANAGER.downloadAll(() => {
 
 
 	//these calls set up the prototype level, should be refactored so we can load different levels
-	gameEngine.addEntity(createBackground("./sprites/prototype_background.png"));
+	gameEngine.addEntity(createBackground("./assets/sprites/prototype_background.png"));
 	gameEngine.addEntity(createPlayer(30, 656, 30, 600));
 	gameEngine.addEntity(createRat(600, 656));
 	gameEngine.addEntity(createSpike(256, 656));

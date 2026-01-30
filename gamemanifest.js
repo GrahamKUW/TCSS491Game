@@ -3,10 +3,10 @@
  */
 const GameManifest = {
   data: [
-    "./sprites/rat.png",
-    "./sprites/spikes.png",
-    "./sprites/prototype_background.png",
-    "./sprites/StatueCatsMainCharacter-Sheet.png",
-    "./sprites/StatueCatsTileset.png",
+    "./assets/sprites/rat.png",
+    "./assets/sprites/spikes.png",
+    "./assets/sprites/prototype_background.png",
+    "./assets/sprites/StatueCatsMainCharacter-Sheet.png",
+    "./assets/sprites/StatueCatsTileset.png",
   ],
 };
