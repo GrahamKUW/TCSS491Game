@@ -42,10 +42,14 @@ ASSET_MANAGER.downloadAll(() => {
 	background.sprite.tilemapData = {tilemap: tilemap, palette: palette};
 	gameEngine.addEntity(background);
 
-	gameEngine.addEntity(createPlayer(300, 425, 300, 425));
+	gameEngine.addEntity(createPlayer(275, 425, 275, 425));
 	gameEngine.addEntity(createRat(720, 556, 50));
-	gameEngine.addEntity(createSpike(560, 504));
-	gameEngine.addEntity(createPlatform(656, 376))
+	gameEngine.addEntity(createSpike(560, 510));
+	gameEngine.addEntity(createSpike(560-64, 510));
+	gameEngine.addEntity(createSpike(560-64*2, 510));
+
+
+	gameEngine.addEntity(createPlatform(675, 375))
 
 	// Create level collider
 	const colliderData = getTileMapColliders(LEVEL_REFERENCE);
