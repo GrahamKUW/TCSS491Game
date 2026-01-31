@@ -1,0 +1,57 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "prototype_level.js",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "StatueCatsTileset.tsx": {
+            "scaleInDock": 4,
+            "scaleInEditor": 1
+        },
+        "prototype_level.js": {
+            "scale": 2,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 535,
+                "y": 207.5
+            }
+        },
+        "prototype_level.tmx": {
+            "expandedObjectLayers": [
+                2
+            ],
+            "scale": 2,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 512,
+                "y": 256
+            }
+        }
+    },
+    "last.imagePath": "C:/Users/kavon/Desktop/Schule/TCSS 491/Minigame/assets/sprites",
+    "map.height": 18,
+    "map.lastUsedFormat": "js",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 39,
+    "openFiles": [
+        "StatueCatsTileset.tsx",
+        "prototype_level.tmx",
+        "prototype_level.js"
+    ],
+    "project": "Minigame.tiled-project",
+    "recentFiles": [
+        "StatueCatsTileset.tsx",
+        "prototype_level.tmx",
+        "prototype_level.js"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
