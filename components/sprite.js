@@ -8,5 +8,10 @@ class Sprite {
         this.frameHeight = frameHeight; // Height of one frame (pixels)
         this.scaleHeight = scaleHeight;
         this.scaleWidth = scaleWidth;
+<<<<<<< Updated upstream
+=======
+        // temporary until we have a better way of storing scene information
+        this.tilemapData = null;
+>>>>>>> Stashed changes
     }
 }

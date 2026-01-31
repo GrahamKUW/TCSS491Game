@@ -19,6 +19,9 @@ class GameEngine {
         this.wheel = null;
         this.keys = {};
 
+        
+
+
         // Options and the Details
         this.options = options || {
             debugging: false,

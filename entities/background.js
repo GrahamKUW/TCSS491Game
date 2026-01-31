@@ -7,3 +7,14 @@ function createBackground(spritePath) {
     }
     return entity;
 }
+<<<<<<< Updated upstream
+=======
+
+function createTilemapBackground(spritePath, posX, posY, scaleX, scaleY){
+    const entity =  {
+        position: new Position(posX, posY),
+        sprite: new Sprite(ASSET_MANAGER.getAsset(spritePath), 0, 0, 16, 16, scaleX, scaleY),
+    }
+    return entity;
+}
+>>>>>>> Stashed changes
