@@ -7,8 +7,6 @@ function createBackground(spritePath) {
     }
     return entity;
 }
-<<<<<<< Updated upstream
-=======
 
 function createTilemapBackground(spritePath, posX, posY, scaleX, scaleY){
     const entity =  {
@@ -17,4 +15,3 @@ function createTilemapBackground(spritePath, posX, posY, scaleX, scaleY){
     }
     return entity;
 }
->>>>>>> Stashed changes

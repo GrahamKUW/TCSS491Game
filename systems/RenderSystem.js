@@ -8,9 +8,6 @@ class RenderSystem {
             if (entity.position) {
 
                 if (entity.sprite) {
-<<<<<<< Updated upstream
-                    game.ctx.drawImage(
-=======
                     
                     // draw as tilemap?
                     if(entity.sprite.tilemapData !== null){
@@ -51,7 +48,6 @@ class RenderSystem {
                     }
                     else{
                         game.ctx.drawImage(
->>>>>>> Stashed changes
                         entity.sprite.image,
                         entity.sprite.frameX,
                         entity.sprite.frameY,
@@ -61,11 +57,6 @@ class RenderSystem {
                         entity.position.y,
                         entity.sprite.frameWidth * entity.sprite.scaleWidth, 
                         entity.sprite.frameHeight * entity.sprite.scaleHeight
-<<<<<<< Updated upstream
-                    )
-
-                } else {
-=======
                         )
                     }
                     
@@ -73,7 +64,6 @@ class RenderSystem {
                 } 
                 
                 /* else {
->>>>>>> Stashed changes
 
                     if (entity.playercontrolled) {
                         //fallback for player
@@ -81,19 +71,10 @@ class RenderSystem {
                         game.ctx.fillRect(entity.position.x, entity.position.y, 64, 64);
                     } else {
                         game.ctx.fillStyle = 'grey';
-<<<<<<< Updated upstream
-                        game.ctx.fillRect(entity.position.x, entity.position.y, entity.collider.width, entity.collider.height);
-                    }
-
-                }
-
-
-=======
                         game.ctx.fillRect(entity.position.x, entity.position.y, 64, 64);
                     }
 
                 } */
->>>>>>> Stashed changes
 
                 //draw collider hitbox if the debug checkbox is enabled
                 const debugEnabled = document.getElementById('debugToggle').checked;
@@ -101,11 +82,7 @@ class RenderSystem {
                     const bounds = entity.collider.getBounds(entity.position);
 
                     game.ctx.save();
-<<<<<<< Updated upstream
-                    game.ctx.strokeStyle = 'red';
-=======
                     game.ctx.strokeStyle = '#00bf00';
->>>>>>> Stashed changes
                     game.ctx.lineWidth = 2;
                     
                     game.ctx.beginPath();
