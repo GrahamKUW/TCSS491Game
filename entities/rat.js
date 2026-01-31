@@ -2,7 +2,7 @@ function createRat(x, y, speed) {
 
 
     const ratAnimations = {
-        'idle-right': { //there is not truly an idle animation for the rat, this is just proof of concept for the animator
+        'walk-right': { 
             frames: [
                 { x: 0, y: 0, width: 42, height: 16 },
                 { x: 42, y: 0, width: 42, height: 16 },
@@ -11,7 +11,7 @@ function createRat(x, y, speed) {
             ],
             duration: 0.15
         },
-        'idle-left': { //there is not truly an idle animation for the rat, this is just proof of concept for the animator
+        'walk-left': {
             frames: [
                 { x: 0, y: 16, width: 42, height: 16 },
                 { x: 42, y: 16, width: 42, height: 16 },
@@ -26,11 +26,14 @@ function createRat(x, y, speed) {
     const entity = {
         removeFromWorld: false,
         position: new Position(x, y),
-        velocity: new Velocity(0, 0),
+        speed: speed,
+        velocity: new Velocity(speed, 0),
         sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/rat.png"), 0, 0, 42, 16, 3, 3),
-        collider: new Collider(126, 48), //x3 from sprite since renderer is currently drawing x3
-        animator: new Animator(ratAnimations, 'idle-right'),
-        facing: new Facing('right')
+        collider: new Collider(120, 36, 3, 12), //(updated to fit sprite dimensions) x3 from sprite since renderer is currently drawing x3
+        animator: new Animator(ratAnimations, 'walk-right'),
+        facing: new Facing('right'),
+        enemy: new Enemy(),
+        hazard: new Hazard()
     }
 
     return entity;

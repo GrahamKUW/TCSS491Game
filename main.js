@@ -22,12 +22,15 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addSystem(new CollisionSystem());
 	gameEngine.addSystem(new AnimationSystem());
 	gameEngine.addSystem(new RenderSystem());
+	gameEngine.addSystem(new EnemySystem());
+	gameEngine.addSystem(new DeathSystem());
+
 
 
 	//these calls set up the prototype level, should be refactored so we can load different levels
 	gameEngine.addEntity(createBackground("./assets/sprites/prototype_background.png"));
 	gameEngine.addEntity(createPlayer(30, 656, 30, 600));
-	gameEngine.addEntity(createRat(600, 656));
+	gameEngine.addEntity(createRat(600, 656, 50));
 	gameEngine.addEntity(createSpike(256, 656));
 	gameEngine.addEntity(createWall(0,704,1024,64));
 	gameEngine.addEntity(createWall(190,640,64,64));

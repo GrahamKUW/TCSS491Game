@@ -22,6 +22,12 @@ class CollisionSystem {
                 e.playercontrolled.isGrounded = false;
             }
         }
+        
+        //list of entity collisions
+        for (const e of collidable) {
+            e.collisions = [];
+        }
+
 
         for (let k = 0; k < COLLISION_ITERATIONS; k++) {
             for (let i = 0; i < collidable.length; i++) {
@@ -34,6 +40,10 @@ class CollisionSystem {
                     }
                     if (this.aabbCollision(e1, e2)) {
                         console.log("collision: " + e1.position.x + " e2: " + e2.position.x);
+
+                        // record collision
+                        e1.collisions.push(e2);
+                        e2.collisions.push(e1);
                         this.resolveCollision(e1, e2);
                     }
                 }

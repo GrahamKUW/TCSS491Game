@@ -28,7 +28,7 @@ class RenderSystem {
                         game.ctx.fillRect(entity.position.x, entity.position.y, 64, 64);
                     } else {
                         game.ctx.fillStyle = 'grey';
-                        game.ctx.fillRect(entity.position.x, entity.position.y, 64, 64);
+                        game.ctx.fillRect(entity.position.x, entity.position.y, entity.collider.width, entity.collider.height);
                     }
 
                 }
