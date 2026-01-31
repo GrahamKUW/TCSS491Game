@@ -32,6 +32,7 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addEntity(createPlayer(30, 656, 30, 600));
 	gameEngine.addEntity(createRat(600, 656, 50));
 	gameEngine.addEntity(createSpike(256, 656));
+	gameEngine.addEntity(createPlatform(770, 490));
 	gameEngine.addEntity(createWall(0,704,1024,64));
 	gameEngine.addEntity(createWall(190,640,64,64));
 	gameEngine.addEntity(createWall(470,550,64, 154));
