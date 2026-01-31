@@ -28,8 +28,8 @@ function createRat(x, y, speed) {
         position: new Position(x, y),
         speed: speed,
         velocity: new Velocity(speed, 0),
-        sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/rat.png"), 0, 0, 42, 16, 3, 3),
-        collider: new Collider(120, 36, 3, 12), //(updated to fit sprite dimensions) x3 from sprite since renderer is currently drawing x3
+        sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/rat.png"), 0, 0, 42, 16, 2, 2),
+        collider: new Collider(80, 24, 2, 8), //(updated to fit sprite dimensions) x2 from sprite since renderer is currently drawing x2
         animator: new Animator(ratAnimations, 'walk-right'),
         facing: new Facing('right'),
         enemy: new Enemy(),

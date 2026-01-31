@@ -16,6 +16,11 @@ class CollisionSystem {
         const collidable = game.entities.filter(e => e.position && e.collider);
         const COLLISION_ITERATIONS = 5; //running multiple times helps stutter
 
+        // list of entities collided with
+        for (const e of collidable) {
+            e.collisions = [];
+        }
+
         // set the players grounded state to false
         for (const e of collidable) {
             if (e.playercontrolled) {
@@ -34,6 +39,9 @@ class CollisionSystem {
                     }
                     if (this.aabbCollision(e1, e2)) {
                         //console.log("collision: " + e1.position.x + " e2: " + e2.position.x);
+                        //record collision
+                        e1.collisions.push(e2);
+                        e2.collisions.push(e1);
                         this.resolveCollision(e1, e2);
                     }
                 }

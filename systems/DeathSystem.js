@@ -8,9 +8,7 @@ class DeathSystem {
                         entity.removeFromWorld = true;
                         break;
                     }
-                }
-                
-                
+                } 
             }
             
             if(entity.playercontrolled) {

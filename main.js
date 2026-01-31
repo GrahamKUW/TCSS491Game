@@ -30,7 +30,7 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addSystem(new AnimationSystem());
 	gameEngine.addSystem(new RenderSystem());
 	gameEngine.addSystem(new EnemySystem());
-	//gameEngine.addSystem(new DeathSystem());
+	gameEngine.addSystem(new DeathSystem());
 
 	//these calls set up the prototype level, should be refactored so we can load different levels
 	
@@ -43,8 +43,9 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addEntity(background);
 
 	gameEngine.addEntity(createPlayer(300, 425, 300, 425));
-	//gameEngine.addEntity(createRat(600, 656));
-	//gameEngine.addEntity(createSpike(256, 656));
+	gameEngine.addEntity(createRat(720, 556, 50));
+	gameEngine.addEntity(createSpike(560, 504));
+	gameEngine.addEntity(createPlatform(656, 376))
 
 	// Create level collider
 	const colliderData = getTileMapColliders(LEVEL_REFERENCE);
