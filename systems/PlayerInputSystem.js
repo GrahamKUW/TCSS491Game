@@ -11,19 +11,21 @@ class PlayerInputSystem {
                 const speed = entity.playercontrolled.speed;
 
                 //check which direction the player is moving
-                if (game.keys['ArrowUp'] || game.keys['w']) {
-                    entity.velocity.dy = -speed;
+                if (game.keys['ArrowUp'] || game.keys['w'] || game.keys[' ']) {
+                    // can only jump while grounded
+                    if (entity.playercontrolled.isGrounded) {
+                        entity.velocity.dy = -speed;
+                    }
                 }
-
                 if (game.keys['ArrowLeft'] || game.keys['a']) {
                     entity.velocity.dx = -speed;
+                    entity.facing.direction = "left";
                 }
 
                 if (game.keys['ArrowRight'] || game.keys['d']) {
                     entity.velocity.dx = speed;
+                    entity.facing.direction = "right";
                 }
-
-
 
             }
         }

@@ -8,7 +8,46 @@ class RenderSystem {
             if (entity.position) {
 
                 if (entity.sprite) {
-                    game.ctx.drawImage(
+                    
+                    // draw as tilemap?
+                    if(entity.sprite.tilemapData !== null){
+                        const tilemap = entity.sprite.tilemapData.tilemap;
+                        const palette = entity.sprite.tilemapData.palette;
+
+                        for (let i = 0; i < tilemap.data.length; i++) {
+                            const tileIdx = tilemap.data[i];
+
+                            const tileX = i % tilemap.width;
+                            const tileY = Math.floor(i / tilemap.width);
+                            
+                            if (tileIdx <= 0) {
+                                continue;
+                            }
+
+                            let posX = entity.position.x + tileX * entity.sprite.frameWidth * entity.sprite.scaleWidth;
+                            let posY = entity.position.y + tileY * entity.sprite.frameWidth * entity.sprite.scaleHeight;
+                            
+                            let pal = palette[tileIdx - 1];
+ 
+                            game.ctx.drawImage(
+                                entity.sprite.image,
+                                pal.col * entity.sprite.frameWidth,
+                                pal.row * entity.sprite.frameHeight,
+                                entity.sprite.frameWidth,
+                                entity.sprite.frameHeight,
+                                posX,
+                                posY,
+                                entity.sprite.frameWidth * entity.sprite.scaleWidth, 
+                                entity.sprite.frameHeight * entity.sprite.scaleHeight
+                            )
+
+                        }
+
+                        
+
+                    }
+                    else{
+                        game.ctx.drawImage(
                         entity.sprite.image,
                         entity.sprite.frameX,
                         entity.sprite.frameY,
@@ -18,9 +57,13 @@ class RenderSystem {
                         entity.position.y,
                         entity.sprite.frameWidth * entity.sprite.scaleWidth, 
                         entity.sprite.frameHeight * entity.sprite.scaleHeight
-                    )
+                        )
+                    }
+                    
 
-                } else {
+                } 
+                
+                /* else {
 
                     if (entity.playercontrolled) {
                         //fallback for player
@@ -31,9 +74,7 @@ class RenderSystem {
                         game.ctx.fillRect(entity.position.x, entity.position.y, 64, 64);
                     }
 
-                }
-
-
+                } */
 
                 //draw collider hitbox if the debug checkbox is enabled
                 const debugEnabled = document.getElementById('debugToggle').checked;
@@ -41,7 +82,7 @@ class RenderSystem {
                     const bounds = entity.collider.getBounds(entity.position);
 
                     game.ctx.save();
-                    game.ctx.strokeStyle = 'red';
+                    game.ctx.strokeStyle = '#00bf00';
                     game.ctx.lineWidth = 2;
                     
                     game.ctx.beginPath();
