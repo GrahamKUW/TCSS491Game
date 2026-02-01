@@ -19,13 +19,13 @@ class PlayerInputSystem {
                 }
                 if (game.keys['ArrowLeft'] || game.keys['a']) {
                     entity.velocity.dx = -speed;
+                    entity.facing.direction = "left";
                 }
 
                 if (game.keys['ArrowRight'] || game.keys['d']) {
                     entity.velocity.dx = speed;
+                    entity.facing.direction = "right";
                 }
-
-
 
             }
         }

@@ -30,7 +30,13 @@ class AnimationSystem {
 
 
             //choose between idle and walking animation 
-            const newAnim = isMoving ? `walk-${direction}` : `idle-${direction}`;
+            let newAnim = isMoving ? `walk-${direction}` : `idle-${direction}`;
+
+            if (entity.playercontrolled) {
+                if (!entity.playercontrolled.isGrounded) {
+                    newAnim = `jump-${direction}`;
+                }
+            }
 
             //only change to a new animation if this is not the current one.
 
