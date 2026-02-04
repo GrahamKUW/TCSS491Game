@@ -32,7 +32,7 @@ function createRat(x, y, speed) {
         collider: new Collider(80, 24, 2, 8), //(updated to fit sprite dimensions) x2 from sprite since renderer is currently drawing x2
         animator: new Animator(ratAnimations, 'walk-right'),
         facing: new Facing('right'),
-        enemy: new Enemy(),
+        destructible: new Destructible(),
         hazard: new Hazard()
     }
 

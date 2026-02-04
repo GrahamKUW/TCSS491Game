@@ -49,7 +49,10 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addEntity(createSpike(560-64*2, 510));
 
 
-	gameEngine.addEntity(createPlatform(675, 375))
+	gameEngine.addEntity(createPlatform(688, 375));
+	gameEngine.addEntity(createCrate(976-32, 375));
+	gameEngine.addEntity(createCrate(976, 375));
+	gameEngine.addEntity(createCrate(976, 375-32));
 
 	// Create level collider
 	const colliderData = getTileMapColliders(LEVEL_REFERENCE);

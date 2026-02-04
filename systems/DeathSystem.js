@@ -1,7 +1,7 @@
 class DeathSystem {
     update(deltaTime, game) {
         for (let entity of game.entities) {
-            if (entity.enemy) {
+            if (entity.destructible) {
                 for (const other of entity.collisions) {
                     //kill when crushed by statue
                     if (!other.playercontrolled && other.position.y + other.collider.height <= entity.position.y + 1) {
