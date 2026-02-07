@@ -14,18 +14,11 @@ class DeathSystem {
             if(entity.playercontrolled) {
                 for (const other of entity.collisions) {
                     if (other.hazard) { //kills player
-                        this.respawnPlayer(entity, game);
+                        respawnPlayer(entity);
                         break;
                     }
                 }
             }           
         }
-    }
-
-    respawnPlayer(entity) {
-        entity.position.x = entity.playercontrolled.respawnX;
-        entity.position.y = entity.playercontrolled.respawnY;
-        entity.velocity.dx = 0;
-        entity.velocity.dy = 0;
     }
 }
