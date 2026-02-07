@@ -7,5 +7,6 @@ class PlayerControlled {
         this.respawnY = respawnY;
 
         this.isGrounded = isGrounded;
+        this.lives = 9;
     }
 }
