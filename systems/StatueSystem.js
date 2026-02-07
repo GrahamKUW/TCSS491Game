@@ -11,7 +11,7 @@ class StatueSystem {
                 entity.statueable.timer -= deltaTime;
             }
 
-            if (game.keys['e'] && entity.statueable.timer <= 0) {
+            if ((game.keys['e'] || game.keys['p']) && entity.statueable.timer <= 0) {
                 game.addEntity(createStatue(entity.position.x, entity.position.y));
 
 

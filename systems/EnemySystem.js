@@ -1,7 +1,7 @@
 class EnemySystem {
     update(deltaTime, game) {
         for (let entity of game.entities) {
-            if (entity.enemy && entity.hazard) {
+            if (entity.destructible && entity.hazard) {
                 //turn when hitting wall
                 if(entity.velocity.dx == 0) {
                     if (entity.facing.direction == "left") {

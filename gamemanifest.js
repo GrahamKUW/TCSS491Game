@@ -9,5 +9,8 @@ const GameManifest = {
     "./assets/sprites/StatueCatsMainCharacterWReversed.png",
     "./assets/sprites/StatueCatsTileset.png",
     "./assets/sprites/platform.png",
+    "./assets/sprites/button.png",
+    "./assets/sprites/gate.png",
+    "./assets/sprites/crate.png",
   ],
 };
