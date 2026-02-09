@@ -89,6 +89,17 @@ class RenderSystem {
                     game.ctx.rect(bounds.left, bounds.top, bounds.right - bounds.left, bounds.bottom - bounds.top);
                     game.ctx.stroke();
                     game.ctx.restore();
+                } else if (debugEnabled && entity.trigger) { /**draw trigger hitbox if debug checkbox is enabled */
+                    const bounds = entity.trigger.getBounds(entity.position);
+
+                    game.ctx.save();
+                    game.ctx.strokeStyle = '#bf1d00';
+                    game.ctx.lineWidth = 2;
+                    
+                    game.ctx.beginPath();
+                    game.ctx.rect(bounds.left, bounds.top, bounds.right - bounds.left, bounds.bottom - bounds.top);
+                    game.ctx.stroke();
+                    game.ctx.restore();
                 }
             }
         }

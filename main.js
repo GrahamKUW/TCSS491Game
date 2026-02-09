@@ -27,6 +27,8 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addSystem(new StatueSystem());
 	gameEngine.addSystem(new MovementSystem());
 	gameEngine.addSystem(new CollisionSystem());
+	gameEngine.addSystem(new TriggerDetectionSystem()); 
+	gameEngine.addSystem(new GhostBlockSystem());
 	gameEngine.addSystem(new AnimationSystem());
 	gameEngine.addSystem(new RenderSystem());
 	gameEngine.addSystem(new EnemySystem());
@@ -52,6 +54,12 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addEntity(createCrate(976-32, 375));
 	gameEngine.addEntity(createCrate(976, 375));
 	gameEngine.addEntity(createCrate(976, 375-32));
+
+
+	//Example trigger 
+	gameEngine.addEntity(createGhostTrigger(300, 400, 16, 16, 0, 0, "ghostblock1"));
+	gameEngine.addEntity(createGhostBlock(500, 400, 64, 64, 0, 0, "ghostblock1"));	
+	gameEngine.addEntity(createGhostBlock(400, 400, 64, 64, 0, 0, "ghostblock1"));	
 
 	gameEngine.addEntity(createPlayer(275, 425, 275, 425));
 
