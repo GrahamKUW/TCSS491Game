@@ -20,13 +20,13 @@ class GhostBlockSystem {
                     g.collider = new Collider(
                         g.toggleCollider.colliderWidth,
                         g.toggleCollider.colliderHeight,
-                        g.toggleCollider.offsetX,
-                        g.toggleCollider.offsetY); 
+                        g.toggleCollider.colliderOffsetX,
+                        g.toggleCollider.colliderOffsetY); 
 
-                    //could refactor the component to have active and deactive sprites. or add ghostblock component
-                    // also this sprite is reusing 1 of the tiles since IDK if we will even have these ghost blocks
-                    // and I did not want to add a new sprite
-                    g.sprite = new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsTileset.png"), 0, 0, 16, 16, 4, 4);
+                    //specific to gates (have to change if we add more triggers)!
+                    console.log(g.toggleCollider.offsetX);
+                    g.sprite = new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/gate.png"), 0, 0, 16, 32, 2, 2);
+
                     //mark it is a solid now since it has a collider
                     g.toggleCollider.isSolid = true;
                 }
@@ -36,7 +36,8 @@ class GhostBlockSystem {
                 if (g.collider) {
                     g.collider = null;
                     g.toggleCollider.isSolid = false;
-                    g.sprite = null;
+                    //specific to gates (have to change if we add more triggers)!
+                    g.sprite = new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/gate.png"), 48, 0, 16, 32, 2, 2);
                 }
 
             }

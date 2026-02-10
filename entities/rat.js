@@ -1,6 +1,4 @@
 function createRat(x, y, speed) {
-
-
     const ratAnimations = {
         'walk-right': { 
             frames: [
@@ -32,6 +30,7 @@ function createRat(x, y, speed) {
         collider: new Collider(80, 24, 2, 8), //(updated to fit sprite dimensions) x2 from sprite since renderer is currently drawing x2
         animator: new Animator(ratAnimations, 'walk-right'),
         facing: new Facing('right'),
+        effect: new Effect('poof', 0.5),   //might change if we get more effects
         destructible: new Destructible(),
         hazard: new Hazard()
     }
