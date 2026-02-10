@@ -9,7 +9,6 @@
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:8080",
-            //ignore: "url": "file:///C:/Users/robod/OneDrive/Documents/GitHub/TCSS491Game/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]

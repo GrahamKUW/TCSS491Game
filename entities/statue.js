@@ -9,6 +9,7 @@ function createStatue(x, y,) {
         gravity: new Gravity(800),
         collider: new Collider(32, 48, 14, 18),
         sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png"), 0, 128, 32, 32, 2, 2),
+        effect: new Effect('dust', 0.2),   //might change if we get more effects
         cantrigger: new CanTrigger(),
     }
     return entity;

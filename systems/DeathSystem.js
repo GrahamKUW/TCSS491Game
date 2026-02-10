@@ -10,13 +10,21 @@ class DeathSystem {
                     }
                 } 
             }
-            
-            if(entity.playercontrolled) {
+            else if (entity.playercontrolled) {
                 for (const other of entity.collisions) {
                     if (other.hazard) { //kills player
+                        EFFECT_FACTORY.create(game, entity); // make death effect (is not good ECS! should change)
                         respawnPlayer(entity);
                         break;
                     }
+                }
+            }
+            else if (entity.lifetime) {
+                entity.lifetime.elapsed += deltaTime;
+                
+                // Remove entity if lifetime expired
+                if (entity.lifetime.elapsed >= entity.lifetime.duration) {
+                    entity.removeFromWorld = true;
                 }
             }           
         }

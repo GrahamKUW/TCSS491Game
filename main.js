@@ -33,11 +33,11 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addSystem(new RenderSystem());
 	gameEngine.addSystem(new EnemySystem());
 	gameEngine.addSystem(new DeathSystem());
+	gameEngine.addSystem(new EffectSystem());
 
 	//these calls set up the prototype level, should be refactored so we can load different levels
 	
 	// Set up the tilemap background
-	
 	const background = createTilemapBackground("./assets/sprites/StatueCatsTileset.png",TILEMAP_POSITION_X,TILEMAP_POSITION_Y,  TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
 	const palette = mapSpriteToTilePalette(background.sprite);
 	const tilemap = getTileMap(LEVEL_REFERENCE); 
@@ -49,17 +49,19 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addEntity(createSpike(560-64, 510));
 	gameEngine.addEntity(createSpike(560-64*2, 510));
 
-
 	gameEngine.addEntity(createPlatform(688, 375));
 	gameEngine.addEntity(createCrate(976-32, 375));
 	gameEngine.addEntity(createCrate(976, 375));
 	gameEngine.addEntity(createCrate(976, 375-32));
 
+	gameEngine.addEntity(createButton(655.5, 440, 1));
+	gameEngine.addEntity(createGate(880, 343, 1))
+
 
 	//Example trigger 
-	gameEngine.addEntity(createGhostTrigger(300, 400, 16, 16, 0, 0, "ghostblock1"));
-	gameEngine.addEntity(createGhostBlock(500, 400, 64, 64, 0, 0, "ghostblock1"));	
-	gameEngine.addEntity(createGhostBlock(400, 400, 64, 64, 0, 0, "ghostblock1"));	
+	//gameEngine.addEntity(createGhostTrigger(300, 400, 16, 16, 0, 0, "ghostblock1"));
+	//gameEngine.addEntity(createGhostBlock(500, 400, 64, 64, 0, 0, "ghostblock1"));	
+	//gameEngine.addEntity(createGhostBlock(400, 400, 64, 64, 0, 0, "ghostblock1"));	
 
 	gameEngine.addEntity(createPlayer(275, 425, 275, 425));
 

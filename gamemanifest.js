@@ -12,5 +12,6 @@ const GameManifest = {
     "./assets/sprites/button.png",
     "./assets/sprites/gate.png",
     "./assets/sprites/crate.png",
+    "./assets/sprites/effect.png",
   ],
 };
