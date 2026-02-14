@@ -82,7 +82,14 @@ class RenderSystem {
                     const bounds = entity.collider.getBounds(entity.position);
 
                     game.ctx.save();
-                    game.ctx.strokeStyle = '#00bf00';
+                    
+                    if(entity.hazard){
+                        game.ctx.strokeStyle = '#bf1d00'
+                    }
+                    else{
+                        game.ctx.strokeStyle = '#00bf00';
+                    }
+
                     game.ctx.lineWidth = 2;
                     
                     game.ctx.beginPath();
@@ -93,7 +100,7 @@ class RenderSystem {
                     const bounds = entity.trigger.getBounds(entity.position);
 
                     game.ctx.save();
-                    game.ctx.strokeStyle = '#bf1d00';
+                    game.ctx.strokeStyle = '#fff200';
                     game.ctx.lineWidth = 2;
                     
                     game.ctx.beginPath();

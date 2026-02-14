@@ -1,5 +1,9 @@
 const TILE_LAYER = 0;
 const COLLISION_LAYER = 1;
+const TRIGGER_LAYER = 2;
+const GAMEOBJECT_LAYER = 3;
+
+
 
 function mapSpriteToTilePalette(spriteComponent){
     
@@ -43,7 +47,7 @@ function getTileMap(mapString = "prototype_level") {
 }
 
 /**gets the colliders from the global TileMaps object and returns easy to use data*/
-function getTileMapColliders(mapString = "prototype_level") {
+function getTileMapObjects(mapString = "prototype_level", index = 0) {
   const map = TileMaps[mapString];
 
   if (map === null || map === undefined) {
@@ -52,5 +56,83 @@ function getTileMapColliders(mapString = "prototype_level") {
     );
   }
 
-  return map.layers[COLLISION_LAYER].objects;
+  return map.layers[index].objects;
+}
+
+function constructColliders(gameEngine, levelReference,tilemapX, tilemapY, tilemapScaleX, tilemapScaleY){
+  const colliderData = getTileMapObjects(levelReference, COLLISION_LAYER);
+
+	for (let i = 0; i < colliderData.length; i++) {
+		const collider = colliderData[i]
+
+		const wallX = tilemapX + collider.x * tilemapScaleX;
+		const wallY = tilemapY + collider.y * tilemapScaleY;
+		const wallWidth = collider.width * tilemapScaleX;
+		const wallHeight = collider.height * tilemapScaleY;
+
+		gameEngine.addEntity(createWall(wallX,wallY,wallWidth, wallHeight ));
+    
+  	}
+}
+
+function constructTilemap(gameEngine, levelReference, paletteImage, tilemapX, tilemapY, tilemapScaleX, tilemapScaleY){
+  const background = createTilemapBackground(paletteImage,tilemapX,tilemapY,  tilemapScaleX, tilemapScaleY);
+	const palette = mapSpriteToTilePalette(background.sprite);
+	const tilemap = getTileMap(levelReference); 
+	background.sprite.tilemapData = {tilemap: tilemap, palette: palette};
+	gameEngine.addEntity(background);
+}
+
+function constructTriggers(){
+
+}
+
+function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, tilemapScaleX, tilemapScaleY){
+  const gameObjectData = getTileMapObjects(levelReference, GAMEOBJECT_LAYER);
+
+	for (let i = gameObjectData.length - 1; i > -1; i--) {
+		    const gameObject = gameObjectData[i];
+        const gameObjectName = gameObject.name.toLowerCase();
+        const gameObjectProperties = gameObject.properties;
+
+        // real dimensions according to tilemap scaling
+        const posX = tilemapX + gameObject.x * tilemapScaleX; 
+		    const posY = tilemapY + gameObject.y * tilemapScaleY;
+        const width = gameObject.width * tilemapScaleX;
+		    const height = gameObject.height * tilemapScaleY;
+        
+        console.log("Creating object with type: " + gameObjectName);
+        console.log(gameObject);
+        switch(gameObjectName){
+            case "player":
+                  gameEngine.addEntity(createPlayer(posX, posY, posX, posY));
+                  break;
+            case "button":
+                  gameEngine.addEntity(createButton(posX, posY, gameObjectProperties[0].value));
+                  break;
+            case "gate":
+                  gameEngine.addEntity(createGate(posX, posY, gameObjectProperties[0].value));
+                  break;
+            case "rat":
+                  gameEngine.addEntity(createRat(posX, posY, gameObjectProperties[0].value));
+                  break;
+            case "crate":
+                  gameEngine.addEntity(createCrate(posX, posY));
+                  break;
+            case "platform":
+                  gameEngine.addEntity(createPlatform(posX, posY));
+                  break;
+            case "spike":
+                  gameEngine.addEntity(createSpike(posX, posY));
+                  break;
+            case "hazard":
+                  gameEngine.addEntity(createHazard(posX, posY, width, height));
+                  break;
+            default:
+                  console.warn("Unknown object type: " + gameObjectName);
+                  break;
+        } 
+          
+    
+  	}
 }

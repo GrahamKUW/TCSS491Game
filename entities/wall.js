@@ -10,3 +10,4 @@ function createWall(x, y, colliderWidth, colliderHeight) {
     }
     return entity;
 }
+

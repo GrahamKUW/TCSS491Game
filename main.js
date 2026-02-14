@@ -37,55 +37,12 @@ ASSET_MANAGER.downloadAll(() => {
 
 	//these calls set up the prototype level, should be refactored so we can load different levels
 	
-	// Set up the tilemap background
-	const background = createTilemapBackground("./assets/sprites/StatueCatsTileset.png",TILEMAP_POSITION_X,TILEMAP_POSITION_Y,  TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
-	const palette = mapSpriteToTilePalette(background.sprite);
-	const tilemap = getTileMap(LEVEL_REFERENCE); 
-	background.sprite.tilemapData = {tilemap: tilemap, palette: palette};
-	gameEngine.addEntity(background);
-
-	gameEngine.addEntity(createRat(720, 556, 50));
-	gameEngine.addEntity(createSpike(560, 510));
-	gameEngine.addEntity(createSpike(560-64, 510));
-	gameEngine.addEntity(createSpike(560-64*2, 510));
-
-	gameEngine.addEntity(createPlatform(688, 375));
-	gameEngine.addEntity(createCrate(976-32, 375));
-	gameEngine.addEntity(createCrate(976, 375));
-	gameEngine.addEntity(createCrate(976, 375-32));
-
-	gameEngine.addEntity(createButton(655.5, 440, 1));
-	gameEngine.addEntity(createGate(880, 343, 1))
-
-
-	//Example trigger 
-	//gameEngine.addEntity(createGhostTrigger(300, 400, 16, 16, 0, 0, "ghostblock1"));
-	//gameEngine.addEntity(createGhostBlock(500, 400, 64, 64, 0, 0, "ghostblock1"));	
-	//gameEngine.addEntity(createGhostBlock(400, 400, 64, 64, 0, 0, "ghostblock1"));	
-
-	gameEngine.addEntity(createPlayer(275, 425, 275, 425));
-
+	// Create level elements	
+	constructTilemap(gameEngine, LEVEL_REFERENCE,"./assets/sprites/StatueCatsTileset.png" , TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y)
 	// Create level collider
-	const colliderData = getTileMapColliders(LEVEL_REFERENCE);
-
-	for (let i = 0; i < colliderData.length; i++) {
-		const collider = colliderData[i]
-
-		const wallX = TILEMAP_POSITION_X + collider.x * TILEMAP_SCALE_X;
-		const wallY = TILEMAP_POSITION_Y + collider.y * TILEMAP_SCALE_Y;
-		const wallWidth = collider.width * TILEMAP_SCALE_X;
-		const wallHeight = collider.height * TILEMAP_SCALE_Y;
-
-		gameEngine.addEntity(createWall(wallX,wallY,wallWidth, wallHeight ));
-    
-  	}
-	/*
-	gameEngine.addEntity(createWall(0,704,1024,64));
-	gameEngine.addEntity(createWall(190,640,64,64));
-	gameEngine.addEntity(createWall(470,550,64, 154));
-	gameEngine.addEntity(createWall(780,640,64, 64));
-	*/
+	constructColliders(gameEngine, LEVEL_REFERENCE, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
+	//console.log(getTileMapObjects(LEVEL_REFERENCE, GAMEOBJECT_LAYER));
+	constructGameObjects(gameEngine, LEVEL_REFERENCE, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
 	
-
 	gameEngine.start();
 });
