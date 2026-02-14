@@ -178,6 +178,30 @@
          "y":0
         }, 
         {
+         "color":"#ff0000",
+         "draworder":"topdown",
+         "id":5,
+         "name":"Hazards",
+         "objects":[
+                {
+                 "height":12,
+                 "id":34,
+                 "name":"hazard",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":96,
+                 "x":416,
+                 "y":340
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "color":"#800080",
          "draworder":"topdown",
          "id":3,
          "name":"GameObjects",
@@ -297,17 +321,6 @@
                  "y":256
                 }, 
                 {
-                 "height":12.6666666666667,
-                 "id":29,
-                 "name":"Hazard",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":96,
-                 "x":416,
-                 "y":339.333333333333
-                }, 
-                {
                  "height":0,
                  "id":30,
                  "name":"Spike",
@@ -349,8 +362,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":5,
- "nextobjectid":34,
+ "nextlayerid":6,
+ "nextobjectid":35,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

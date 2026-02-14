@@ -12,9 +12,6 @@ const LEVEL_REFERENCE = "prototype_level";
 // QUEUE THE GAME MANIFEST
 ASSET_MANAGER.queueManifest(GameManifest.data);
 
-
-
-
 ASSET_MANAGER.downloadAll(() => {
 	const canvas = document.getElementById("gameWorld");
 	const ctx = canvas.getContext("2d");
@@ -41,6 +38,8 @@ ASSET_MANAGER.downloadAll(() => {
 	constructTilemap(gameEngine, LEVEL_REFERENCE,"./assets/sprites/StatueCatsTileset.png" , TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y)
 	// Create level collider
 	constructColliders(gameEngine, LEVEL_REFERENCE, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
+
+	constructHazards(gameEngine, LEVEL_REFERENCE, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
 	//console.log(getTileMapObjects(LEVEL_REFERENCE, GAMEOBJECT_LAYER));
 	constructGameObjects(gameEngine, LEVEL_REFERENCE, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
 	

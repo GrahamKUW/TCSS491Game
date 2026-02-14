@@ -1,7 +1,9 @@
 const TILE_LAYER = 0;
 const COLLISION_LAYER = 1;
 const TRIGGER_LAYER = 2;
-const GAMEOBJECT_LAYER = 3;
+const HAZARD_LAYER = 3;
+const GAME_OBJECT_LAYER = 4;
+
 
 
 
@@ -64,7 +66,7 @@ function constructColliders(gameEngine, levelReference,tilemapX, tilemapY, tilem
 
 	for (let i = 0; i < colliderData.length; i++) {
 		const collider = colliderData[i]
-
+    // real dimensions according to tilemap scaling
 		const wallX = tilemapX + collider.x * tilemapScaleX;
 		const wallY = tilemapY + collider.y * tilemapScaleY;
 		const wallWidth = collider.width * tilemapScaleX;
@@ -83,12 +85,28 @@ function constructTilemap(gameEngine, levelReference, paletteImage, tilemapX, ti
 	gameEngine.addEntity(background);
 }
 
-function constructTriggers(){
+function constructTriggers(gameEngine, levelReference, tilemapX, tilemapY, tilemapScaleX, tilemapScaleY){
 
 }
 
+function constructHazards(gameEngine, levelReference, tilemapX, tilemapY, tilemapScaleX, tilemapScaleY){
+  const gameObjectData = getTileMapObjects(levelReference, HAZARD_LAYER);
+
+  for (let i = gameObjectData.length - 1; i > -1; i--) {
+            const gameObject = gameObjectData[i];
+            
+            // real dimensions according to tilemap scaling
+            const posX = tilemapX + gameObject.x * tilemapScaleX; 
+            const posY = tilemapY + gameObject.y * tilemapScaleY;
+            const width = gameObject.width * tilemapScaleX;
+            const height = gameObject.height * tilemapScaleY;
+        
+            gameEngine.addEntity(createHazard(posX,posY,width, height ));
+        } 
+}
+
 function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, tilemapScaleX, tilemapScaleY){
-  const gameObjectData = getTileMapObjects(levelReference, GAMEOBJECT_LAYER);
+  const gameObjectData = getTileMapObjects(levelReference, GAME_OBJECT_LAYER);
 
 	for (let i = gameObjectData.length - 1; i > -1; i--) {
 		    const gameObject = gameObjectData[i];
@@ -101,8 +119,6 @@ function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, ti
         const width = gameObject.width * tilemapScaleX;
 		    const height = gameObject.height * tilemapScaleY;
         
-        console.log("Creating object with type: " + gameObjectName);
-        console.log(gameObject);
         switch(gameObjectName){
             case "player":
                   gameEngine.addEntity(createPlayer(posX, posY, posX, posY));
