@@ -14,13 +14,13 @@
         },
         "prototype_level.js": {
             "expandedObjectLayers": [
-                2
+                3
             ],
-            "scale": 3,
-            "selectedLayer": 2,
+            "scale": 1.5,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 451.66666666666663,
-                "y": 322
+                "x": 486.66666666666663,
+                "y": 214.66666666666669
             }
         },
         "prototype_level.tmx": {
@@ -30,8 +30,8 @@
             "scale": 4,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 461,
-                "y": 332.75
+                "x": 520.75,
+                "y": 256.125
             }
         }
     },
