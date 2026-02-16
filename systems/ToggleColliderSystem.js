@@ -21,10 +21,10 @@ class ToggleColliderSystem {
                         g.togglecollider.colliderWidth,
                         g.togglecollider.colliderHeight,
                         g.togglecollider.colliderOffsetX,
-                        g.togglecollider.colliderOffsetY); 
+                        g.togglecollider.colliderOffsetY);
 
                     console.log(g.togglecollider.offsetX);
-                 
+
                     //mark it is a solid now since it has a collider
                     g.togglecollider.isSolid = true;
                 }
