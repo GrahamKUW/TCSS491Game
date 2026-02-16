@@ -1,12 +1,16 @@
 function createGate(x, y, triggerID, colliderWidth = 16, colliderHeight = 64, colliderOffsetX = 8, colliderOffsetY) {
 
-    //This will have a collider added to it in ghostblock system.
+    const inactiveSprite = new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/gate.png"), 48, 0, 16, 32, 2, 2);
+    const activeSprite = new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/gate.png"), 0, 0, 16, 32, 2, 2);
+
+    //This will have a collider added to it in ToggleCollider system.
     const entity = { 
         removeFromWorld: false,
         position: new Position(x, y),
-        sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/gate.png"), 48, 0, 16, 32, 2, 2),
+        sprite: inactiveSprite,
         static: new Static(),
-        toggleCollider: new ToggleCollider(triggerID, colliderWidth, colliderHeight, colliderOffsetX, colliderOffsetY),
+        togglecollider: new ToggleCollider(triggerID, colliderWidth, colliderHeight, colliderOffsetX, colliderOffsetY),
+        togglesprite: new ToggleSprite(activeSprite, inactiveSprite, triggerID),
     }
 
     return entity;

@@ -18,9 +18,6 @@ class TriggerDetectionSystem {
             //reset all triggers
             t.trigger.active = false;
 
-            //specific to buttons (have to change if we add more triggers)!
-            t.sprite = new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/button.png"), 0, 0, 16, 16, 2, 2);
-
             const triggerBounds = t.trigger.getBounds(t.position);
             
             //check if any activator hits this trigger
@@ -29,8 +26,6 @@ class TriggerDetectionSystem {
 
                 if (this.aabbCollision(triggerBounds, activatorBounds)) {
                     t.trigger.active = true;
-                    //specific to buttons (have to change if we add more triggers)!
-                    t.sprite = new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/button.png"), 16, 0, 16, 16, 2, 2); 
                     //  exit early since something activated this trigger,
                     //  no need to check for multiple
                     break;
