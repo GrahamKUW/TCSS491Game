@@ -25,7 +25,8 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addSystem(new MovementSystem());
 	gameEngine.addSystem(new CollisionSystem());
 	gameEngine.addSystem(new TriggerDetectionSystem()); 
-	gameEngine.addSystem(new GhostBlockSystem());
+	gameEngine.addSystem(new ToggleColliderSystem());
+	gameEngine.addSystem(new ToggleSpriteSystem());
 	gameEngine.addSystem(new AnimationSystem());
 	gameEngine.addSystem(new RenderSystem());
 	gameEngine.addSystem(new EnemySystem());

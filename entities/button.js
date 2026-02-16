@@ -12,10 +12,14 @@
  */
 function createButton(x, y, id, width = 32, height = 20, offsetX = 0, offsetY = 12) {
 
+    const inactiveSprite = new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/button.png"), 0, 0, 16, 16, 2, 2);
+    const activeSprite = new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/button.png"), 16, 0, 16, 16, 2, 2);
+
     const entity = {
         position: new Position(x,y),
-        sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/button.png"), 0, 0, 16, 16, 2, 2),
+        sprite: inactiveSprite,
         trigger: new Trigger(width, height, offsetX, offsetY, id),
+        togglesprite: new ToggleSprite(activeSprite, inactiveSprite, id),
     }
 
     return entity;
