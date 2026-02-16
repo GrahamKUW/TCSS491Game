@@ -9,7 +9,7 @@ class LevelChangeSystem {
 
         const levelExits = game.entities.filter(e => e.levelchange);
 
-        console.log(levelExits);
+        //console.log(levelExits);
 
         for (const l of levelExits) {
             if (activeTriggerIDs.includes(l.levelchange.triggerID)) {

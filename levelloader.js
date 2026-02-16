@@ -41,5 +41,5 @@ function loadPrototypeLevel() {
     constructGameObjects(gameEngine, "prototype_level", TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
 
     //extra entities that arent in the tiled data currently
-    gameEngine.addEntity(createExitDoor(950, 250, "PrototypeExit"));
+    //gameEngine.addEntity(createExitDoor(950, 250, "PrototypeExit"));
 }

@@ -47,7 +47,7 @@
         "prototype_level.js"
     ],
     "project": "Minigame.tiled-project",
-    "property.type": "int",
+    "property.type": "string",
     "recentFiles": [
         "StatueCatsTileset.tsx",
         "prototype_level.tmx",

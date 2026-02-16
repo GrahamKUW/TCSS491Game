@@ -355,6 +355,38 @@
                  "width":0,
                  "x":480,
                  "y":336
+                }, 
+                {
+                 "height":32,
+                 "id":35,
+                 "name":"Exit",
+                 "properties":[
+                        {
+                         "name":"Level Link",
+                         "type":"string",
+                         "value":"PrototypeExit"
+                        }, 
+                        {
+                         "name":"OffsetX",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"OffsetY",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"Target Level",
+                         "type":"string",
+                         "value":"prototype_level"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":656,
+                 "y":256
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -363,7 +395,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":35,
+ "nextobjectid":36,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
