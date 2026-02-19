@@ -33,7 +33,7 @@ function createPlayer(x, y, respawnX = 300, respawnY = 300) {
                 { x: 192, y: 64, width: 32, height: 32},
                 { x: 224, y: 64, width: 32, height: 32},
             ],
-            duration: 0.15
+            duration: 0.1
         },
         'walk-left': {
             frames: [
@@ -46,7 +46,7 @@ function createPlayer(x, y, respawnX = 300, respawnY = 300) {
                 { x: 192, y: 192, width: 32, height: 32},
                 { x: 224, y: 192, width: 32, height: 32},
             ],
-            duration: 0.15
+            duration: 0.1
         },
         'jump-right': {
             frames: [
@@ -67,7 +67,7 @@ function createPlayer(x, y, respawnX = 300, respawnY = 300) {
     const entity = {
         removeFromWorld: false,
         position: new Position(x, y),
-        playercontrolled: new PlayerControlled(370, respawnX, respawnY),
+        playercontrolled: new PlayerControlled(250, respawnX, respawnY),
         collider: new Collider(32, 48, 14, 16),
         velocity: new Velocity(0, 0),
         sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png"), 0, 0, 32, 32, 2, 2),

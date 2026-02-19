@@ -21,8 +21,8 @@
             "scale": 4,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 436.5,
-                "y": 318.375
+                "x": 336,
+                "y": 320.125
             }
         },
         "level_2.js": {
@@ -34,7 +34,7 @@
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 480,
+                "x": 660,
                 "y": 208.25
             }
         },

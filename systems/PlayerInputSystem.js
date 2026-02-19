@@ -14,7 +14,7 @@ class PlayerInputSystem {
                 if (game.keys['ArrowUp'] || game.keys['w'] || game.keys[' ']) {
                     // can only jump while grounded
                     if (entity.playercontrolled.isGrounded) {
-                        entity.velocity.dy = -speed;
+                        entity.velocity.dy = -(speed*1.7);
                     }
                 }
                 if (game.keys['ArrowLeft'] || game.keys['a']) {
