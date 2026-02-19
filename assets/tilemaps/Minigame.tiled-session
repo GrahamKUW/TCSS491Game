@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "prototype_level.js",
+    "activeFile": "level_2.js",
     "expandedProjectPaths": [
         "."
     ],
@@ -14,50 +14,50 @@
         },
         "level_1.js": {
             "expandedObjectLayers": [
-                5,
                 2,
-                3
+                3,
+                5
             ],
             "scale": 4,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 673,
-                "y": 318.25
+                "x": 436.5,
+                "y": 318.375
             }
         },
         "level_2.js": {
             "expandedObjectLayers": [
-                5,
                 2,
-                3
+                3,
+                5
             ],
-            "scale": 3,
+            "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 651.6666666666666,
-                "y": 261.66666666666663
+                "x": 480,
+                "y": 208.25
             }
         },
         "prototype_level.js": {
             "expandedObjectLayers": [
                 3
             ],
-            "scale": 3,
+            "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 467.66666666666663,
-                "y": 280.66666666666663
+                "x": 512.3333333333333,
+                "y": 256.3333333333333
             }
         },
         "prototype_level.tmx": {
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 4,
+            "scale": 1.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 520.75,
-                "y": 256.125
+                "x": 512.3333333333333,
+                "y": 256.3333333333333
             }
         }
     },
@@ -70,14 +70,16 @@
     "openFiles": [
         "StatueCatsTileset.tsx",
         "prototype_level.tmx",
-        "prototype_level.js"
+        "prototype_level.js",
+        "level_2.js"
     ],
     "project": "Minigame.tiled-project",
-    "property.type": "string",
+    "property.type": "bool",
     "recentFiles": [
-        "prototype_level.tmx",
         "StatueCatsTileset.tsx",
-        "prototype_level.js"
+        "prototype_level.tmx",
+        "prototype_level.js",
+        "level_2.js"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

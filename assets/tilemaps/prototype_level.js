@@ -276,6 +276,11 @@
                          "name":"Link",
                          "type":"int",
                          "value":1
+                        }, 
+                        {
+                         "name":"isOpen",
+                         "type":"bool",
+                         "value":true
                         }],
                  "rotation":0,
                  "type":"",
