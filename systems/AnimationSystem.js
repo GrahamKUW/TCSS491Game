@@ -25,7 +25,7 @@ class AnimationSystem {
     updateAnimation(entity) {
         if (entity.facing && entity.velocity) {
 
-            const isMoving = entity.velocity.dx !== 0 || entity.velocity.dy !== 0;
+            const isMoving =  entity.position.oldX != entity.position.x || entity.position.oldY != entity.position.y
             const direction = entity.facing.direction;
 
 

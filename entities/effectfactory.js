@@ -1,7 +1,6 @@
-// EffectFactory - creates visual effect entities (from zelda demo)
+// EffectFactory - creates visual effect entities
 const EFFECT_FACTORY = {
     create(game, sourceEntity) {
-        //const { x, y } = sourceEntity.position;
         const type = sourceEntity.effect.type;
         const duration = sourceEntity.effect.duration;
         
@@ -51,9 +50,10 @@ const EFFECT_FACTORY = {
                 duration: duration / 4  // Divide total duration by frame count
             }
         };
-        
+
+        let dustOffset = entity.position.x > entity.position.oldX ? entity.collider.width * 1.5 : entity.collider.width * 0.5;
         const dust = {
-            position: new Position(entity.position.x + entity.collider.width, entity.position.y + entity.collider.height+10),
+            position: new Position(entity.position.x + dustOffset, entity.position.y + entity.collider.height+10),
             sprite: new Sprite(
                 ASSET_MANAGER.getAsset("./assets/sprites/effect.png"),
                 0, 0, 16, 16, 0.5, 0.5 

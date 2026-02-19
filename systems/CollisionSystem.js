@@ -253,7 +253,7 @@ class CollisionSystem {
                 }
             }
 
-            if (!e2.static && bothDynamic) {
+            if (!e2.static) { // && bothDynamic) {
                 e2.position.y += yPush;
                 if (e2.velocity.dy < 0) {
                     e2.velocity.dy = 0;
@@ -276,7 +276,7 @@ class CollisionSystem {
                 }
             }
             
-            if (!e1.static && bothDynamic) {
+            if (!e1.static) {
                 e1.position.y += yPush;
 
                 if (e1.velocity.dy < 0) {
