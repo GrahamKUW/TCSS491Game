@@ -12,15 +12,41 @@
             "scaleInDock": 4,
             "scaleInEditor": 1
         },
+        "level_1.js": {
+            "expandedObjectLayers": [
+                5,
+                2,
+                3
+            ],
+            "scale": 4,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 673,
+                "y": 318.25
+            }
+        },
+        "level_2.js": {
+            "expandedObjectLayers": [
+                5,
+                2,
+                3
+            ],
+            "scale": 3,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 651.6666666666666,
+                "y": 261.66666666666663
+            }
+        },
         "prototype_level.js": {
             "expandedObjectLayers": [
                 3
             ],
-            "scale": 1.5,
-            "selectedLayer": 1,
+            "scale": 3,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 486.66666666666663,
-                "y": 214.66666666666669
+                "x": 467.66666666666663,
+                "y": 280.66666666666663
             }
         },
         "prototype_level.tmx": {
@@ -49,8 +75,8 @@
     "project": "Minigame.tiled-project",
     "property.type": "string",
     "recentFiles": [
-        "StatueCatsTileset.tsx",
         "prototype_level.tmx",
+        "StatueCatsTileset.tsx",
         "prototype_level.js"
     ],
     "tileset.lastUsedFormat": "tsx",
