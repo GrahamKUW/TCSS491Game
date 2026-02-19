@@ -10,7 +10,6 @@ class EnemySystem {
                     } 
                     else {
                         entity.facing.direction = "left";
-                        console.log(entity.speed);
                         entity.velocity.dx = -entity.speed;
                     }
                 }
