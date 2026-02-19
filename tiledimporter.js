@@ -145,7 +145,8 @@ function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, ti
                   gameEngine.addEntity(createHazard(posX, posY, width, height));
                   break;
             case "exit":
-                  gameEngine.addEntity(createExitDoor(posX, posY,gameObjectProperties[0].value, width, height,gameObjectProperties[1].value, gameObjectProperties[2].value,gameObjectProperties[3].value ));
+                  
+                  gameEngine.addEntity(createExitDoor(posX, posY,gameObjectProperties[0].value, width, height,gameObjectProperties[1].value, gameObjectProperties[2].value, tilemapScaleX, tilemapScaleY,gameObjectProperties[3].value ));
                   break;
             default:
                   console.warn("Unknown object type: " + gameObjectName);
