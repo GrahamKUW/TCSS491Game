@@ -14,9 +14,9 @@ class ToggleColliderSystem {
          * Loop over everything triggerable, if its triggerID matches an active Trigger ID, update the entitiy.
          */
         for (const g of toggleables) {
-            if (activeTriggerIDS.includes(g.togglecollider.triggerID)) {
+            if (!activeTriggerIDS.includes(g.togglecollider.triggerID)) { // not active
                 //Give it a collider and sprite component
-                if (!g.togglecollider.isSolid) {
+                if (!g.togglecollider.isSolid) { 
                     g.collider = new Collider(
                         g.togglecollider.colliderWidth,
                         g.togglecollider.colliderHeight,
@@ -29,8 +29,8 @@ class ToggleColliderSystem {
                     g.togglecollider.isSolid = true;
                 }
 
-            } else {
-                /** TriggerID is not active, deactivate the ghost block */
+            } else {   //for gates: OPEN gate if active (button is pressed)
+                /** TriggerID is active, deactivate the collider */
                 if (g.collider) {
                     g.collider = null;
                     g.togglecollider.isSolid = false;

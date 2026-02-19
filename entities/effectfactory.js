@@ -1,7 +1,6 @@
-// EffectFactory - creates visual effect entities (from zelda demo)
+// EffectFactory - creates visual effect entities
 const EFFECT_FACTORY = {
     create(game, sourceEntity) {
-        //const { x, y } = sourceEntity.position;
         const type = sourceEntity.effect.type;
         const duration = sourceEntity.effect.duration;
         
