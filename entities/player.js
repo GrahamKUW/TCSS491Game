@@ -73,7 +73,7 @@ function createPlayer(x, y, respawnX = 336, respawnY = 304) {
         sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png"), 0, 0, 32, 32, 2, 2),
         gravity: new Gravity(1200),
         statueable: new Statueable(true),
-        effect: new Effect('poof', 0.5),
+        effect: new Effect('poof', 0.45),
         animator: new Animator(playerAnimations, 'idle-right'),
         facing: new Facing('right'),
         cantrigger: new CanTrigger(),
