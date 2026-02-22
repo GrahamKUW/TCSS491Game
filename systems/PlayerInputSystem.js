@@ -15,6 +15,7 @@ class PlayerInputSystem {
                     // can only jump while grounded
                     if (entity.playercontrolled.isGrounded) {
                         entity.velocity.dy = -(speed*1.7);
+                        EFFECT_FACTORY.create(game, entity, 'jumpDust');
                     }
                 }
                 if (game.keys['ArrowLeft'] || game.keys['a']) {

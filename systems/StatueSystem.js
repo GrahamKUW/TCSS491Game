@@ -16,7 +16,7 @@ class StatueSystem {
                     game.addEntity(createStatue(entity.position.x, entity.position.y));
                     entity.statueable.timer = entity.statueable.cooldown;
                     
-                    EFFECT_FACTORY.create(game, entity); // make death effect (is not good ECS should change!)
+                    EFFECT_FACTORY.create(game, entity, 'poof'); 
                     respawnPlayer(entity);
                 }
             }

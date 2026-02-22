@@ -13,7 +13,7 @@ class DeathSystem {
             else if (entity.playercontrolled) {
                 for (const other of entity.collisions) {
                     if (other.hazard) { //kills player
-                        EFFECT_FACTORY.create(game, entity); // make death effect (is not good ECS! should change)
+                        EFFECT_FACTORY.create(game, entity, 'poof');
                         respawnPlayer(entity);
                         break;
                     }

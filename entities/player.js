@@ -1,5 +1,5 @@
 //Factory for a player
-function createPlayer(x, y, respawnX = 300, respawnY = 300) {
+function createPlayer(x, y, respawnX = 336, respawnY = 304) {
 
     const playerAnimations = {
         'idle-right': {
@@ -73,7 +73,7 @@ function createPlayer(x, y, respawnX = 300, respawnY = 300) {
         sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png"), 0, 0, 32, 32, 2, 2),
         gravity: new Gravity(1200),
         statueable: new Statueable(true),
-        effect: new Effect('poof', 0.5),   //might change if we get more effects
+        effect: new Effect('poof', 0.45),
         animator: new Animator(playerAnimations, 'idle-right'),
         facing: new Facing('right'),
         cantrigger: new CanTrigger(),

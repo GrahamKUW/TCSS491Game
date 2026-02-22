@@ -1,7 +1,7 @@
 // EffectFactory - creates visual effect entities
 const EFFECT_FACTORY = {
-    create(game, sourceEntity) {
-        const type = sourceEntity.effect.type;
+    create(game, sourceEntity, effect) {
+        const type = effect;
         const duration = sourceEntity.effect.duration;
         
         if (type == 'poof') {
@@ -10,25 +10,33 @@ const EFFECT_FACTORY = {
         else if (type == 'dust') {
             return this.createDust(game, sourceEntity, duration);
         }
+        else if (type == 'jumpDust') {
+            return this.createJumpDust(game, sourceEntity, duration);
+        }
     },
     
     createPoof(game, entity, duration) {
         const poofAnimations = {
             'poof': {
                 frames: [
-                    { x: 0, y: 0, width: 16, height: 16 },
-                    { x: 16, y: 0, width: 16, height: 16 },
-                    { x: 32, y: 0, width: 16, height: 16 },
-                    { x: 48, y: 0, width: 16, height: 16 }
+                    { x: 0, y: 0, width: 32, height: 32 },
+                    { x: 32, y: 0, width: 32, height: 32 },
+                    { x: 64, y: 0, width: 32, height: 32 },
+                    { x: 96, y: 0, width: 32, height: 32 },
+                    { x: 128, y: 0, width: 32, height: 32 },
+                    { x: 160, y: 0, width: 32, height: 32 },
+                    { x: 192, y: 0, width: 32, height: 32 },
+                    { x: 224, y: 0, width: 32, height: 32 },
+                    { x: 256, y: 0, width: 32, height: 32 }
                 ],
-                duration: duration / 4  // Divide total duration by frame count
+                duration: duration / 9  // Divide total duration by frame count
             }
         };
         
         const poof = {
             sprite: new Sprite(
-                ASSET_MANAGER.getAsset("./assets/sprites/effect.png"),
-                0, 0, 16, 16, 2, 2
+                ASSET_MANAGER.getAsset("./assets/sprites/SmokeExplosion.png"),
+                0, 0, 32, 32, 1, 1
             ),
             position: new Position(entity.position.x + entity.collider.offsetX, entity.position.y+ entity.collider.offsetY),
             animator: new Animator(poofAnimations, 'poof'),
@@ -42,12 +50,17 @@ const EFFECT_FACTORY = {
         const dustAnimations = {
             'dust': {
                 frames: [
-                    { x: 0, y: 0, width: 16, height: 16 },
-                    { x: 16, y: 0, width: 16, height: 16 },
-                    { x: 32, y: 0, width: 16, height: 16 },
-                    { x: 48, y: 0, width: 16, height: 16 }
+                    { x: 0, y: 0, width: 32, height: 32 },
+                    { x: 32, y: 0, width: 32, height: 32 },
+                    { x: 64, y: 0, width: 32, height: 32 },
+                    { x: 96, y: 0, width: 32, height: 32 },
+                    { x: 128, y: 0, width: 32, height: 32 },
+                    { x: 160, y: 0, width: 32, height: 32 },
+                    { x: 192, y: 0, width: 32, height: 32 },
+                    { x: 224, y: 0, width: 32, height: 32 },
+                    { x: 256, y: 0, width: 32, height: 32 }
                 ],
-                duration: duration / 4  // Divide total duration by frame count
+                duration: duration / 9  // Divide total duration by frame count
             }
         };
 
@@ -55,8 +68,8 @@ const EFFECT_FACTORY = {
         const dust = {
             position: new Position(entity.position.x + dustOffset, entity.position.y + entity.collider.height+10),
             sprite: new Sprite(
-                ASSET_MANAGER.getAsset("./assets/sprites/effect.png"),
-                0, 0, 16, 16, 0.5, 0.5 
+                ASSET_MANAGER.getAsset("./assets/sprites/SmokeExplosion.png"),
+                0, 0, 32, 32, 0.25, 0.25 
             ),
             animator: new Animator(dustAnimations, 'dust'),
             lifetime: new Lifetime(duration)
@@ -64,5 +77,34 @@ const EFFECT_FACTORY = {
         
         game.addEntity(dust);
         return dust;
+    },
+
+    createJumpDust(game, entity, duration) {
+        const jumpDustAnimations = {
+            'jumpDust': {
+                frames: [
+                    { x: 0, y: 0, width: 32, height: 32 },
+                    { x: 32, y: 0, width: 32, height: 32 },
+                    { x: 64, y: 0, width: 32, height: 32 },
+                    { x: 96, y: 0, width: 32, height: 32 },
+                    { x: 128, y: 0, width: 32, height: 32 },
+                ],
+                duration: duration / 5  // Divide total duration by frame count
+            }
+        };
+
+        //let dustOffset = entity.position.x > entity.position.oldX ? entity.collider.width * 1.5 - 8 : entity.collider.width * 0.5 + 8;
+        const jumpDust = {
+            position: new Position(entity.position.x, entity.position.y),
+            sprite: new Sprite(
+                ASSET_MANAGER.getAsset("./assets/sprites/JumpDust.png"),
+                0, 0, 32, 32, 2, 2 
+            ),
+            animator: new Animator(jumpDustAnimations, 'jumpDust'),
+            lifetime: new Lifetime(duration)
+        };
+        
+        game.addEntity(jumpDust);
+        return jumpDust;
     },
 };
