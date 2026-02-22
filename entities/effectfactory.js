@@ -11,7 +11,7 @@ const EFFECT_FACTORY = {
             return this.createDust(game, sourceEntity, duration);
         }
         else if (type == 'jumpDust') {
-            return this.createJumpDust(game, sourceEntity, duration);
+            return this.createJumpDust(game, sourceEntity, 0.35); // <- by getting from source entity we cant change the individual timings. This is a temporary fix.
         }
     },
     
@@ -36,9 +36,9 @@ const EFFECT_FACTORY = {
         const poof = {
             sprite: new Sprite(
                 ASSET_MANAGER.getAsset("./assets/sprites/SmokeExplosion.png"),
-                0, 0, 32, 32, 1, 1
+                0, 0, 32, 32, 2, 2 // <- does not scale respective to tilemap size for autoscaling
             ),
-            position: new Position(entity.position.x + entity.collider.offsetX, entity.position.y+ entity.collider.offsetY),
+            position: new Position(entity.position.x + entity.collider.offsetX - 16, entity.position.y+ entity.collider.offsetY - 8), // <- Not automatically positioning with respect to scale this is a temp fix
             animator: new Animator(poofAnimations, 'poof'),
             lifetime: new Lifetime(duration)
         };
@@ -95,10 +95,10 @@ const EFFECT_FACTORY = {
 
         //let dustOffset = entity.position.x > entity.position.oldX ? entity.collider.width * 1.5 - 8 : entity.collider.width * 0.5 + 8;
         const jumpDust = {
-            position: new Position(entity.position.x, entity.position.y),
+            position: new Position(entity.position.x + 8, entity.position.y + 16), // <- Not automatically positioning with respect to scale this is a temp fix
             sprite: new Sprite(
                 ASSET_MANAGER.getAsset("./assets/sprites/JumpDust.png"),
-                0, 0, 32, 32, 2, 2 
+                0, 0, 32, 32, 1.5, 1.5 // < - Changed to be smaller, still should be function of tilemap size for autoscaling
             ),
             animator: new Animator(jumpDustAnimations, 'jumpDust'),
             lifetime: new Lifetime(duration)
