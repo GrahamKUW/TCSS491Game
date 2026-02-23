@@ -25,6 +25,9 @@ class DeathSystem {
                 // Remove entity if lifetime expired
                 if (entity.lifetime.elapsed >= entity.lifetime.duration) {
                     entity.removeFromWorld = true;
+                    if (entity.onRemove) {
+                        entity.onRemove();
+                    }
                 }
             }           
         }

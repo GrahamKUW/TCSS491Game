@@ -10,7 +10,8 @@ function createPlayer(x, y, respawnX = 336, respawnY = 304) {
                 { x: 96, y: 32, width: 32, height: 32},
                 { x: 128, y: 32, width: 32, height: 32},
             ],
-            duration: 0.15
+            duration: 0.15,
+            loops: true
         },
         'idle-left': {
             frames: [
@@ -20,7 +21,8 @@ function createPlayer(x, y, respawnX = 336, respawnY = 304) {
                 { x: 96, y: 160, width: 32, height: 32},
                 { x: 128, y: 160, width: 32, height: 32},
             ],
-            duration: 0.15
+            duration: 0.15,
+            loops: true
         },
          'walk-right': {
             frames: [
@@ -33,7 +35,8 @@ function createPlayer(x, y, respawnX = 336, respawnY = 304) {
                 { x: 192, y: 64, width: 32, height: 32},
                 { x: 224, y: 64, width: 32, height: 32},
             ],
-            duration: 0.1
+            duration: 0.1,
+            loops: true
         },
         'walk-left': {
             frames: [
@@ -46,21 +49,24 @@ function createPlayer(x, y, respawnX = 336, respawnY = 304) {
                 { x: 192, y: 192, width: 32, height: 32},
                 { x: 224, y: 192, width: 32, height: 32},
             ],
-            duration: 0.1
+            duration: 0.1,
+            loops: true
         },
         'jump-right': {
             frames: [
                 { x: 0, y: 96, width: 32, height: 32},
                 { x: 32, y: 96, width: 32, height: 32},
             ],
-            duration: 0.15
+            duration: 0.15,
+            loops: true
         },
         'jump-left': {
             frames: [
                 { x: 0, y: 224, width: 32, height: 32},
                 { x: 32, y: 224, width: 32, height: 32},
             ],
-            duration: 0.15
+            duration: 0.15,
+            loops: true
         }
     }
 
@@ -80,6 +86,6 @@ function createPlayer(x, y, respawnX = 336, respawnY = 304) {
     }
 
     const img = ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png");
-    console.log(img.width, img.height);
+    //console.log(img.width, img.height);
     return entity;
 }

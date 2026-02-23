@@ -7,7 +7,8 @@ function createRat(x, y, speed) {
                 { x: 84, y: 0, width: 42, height: 16 },
                 { x: 126, y: 0, width: 42, height: 16 }
             ],
-            duration: 0.15
+            duration: 0.15,
+            loops: true
         },
         'walk-left': {
             frames: [
@@ -16,7 +17,8 @@ function createRat(x, y, speed) {
                 { x: 84, y: 16, width: 42, height: 16 },
                 { x: 126, y: 16, width: 42, height: 16 }
             ],
-            duration: 0.15
+            duration: 0.15,
+            loops: true
         }
     }
 
