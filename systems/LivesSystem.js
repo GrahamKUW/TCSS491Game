@@ -14,7 +14,7 @@ class LivesSystem{
                 ASSET_MANAGER.getAsset("./assets/sprites/Lives.png"), 0, entity.playercontrolled.lives * 32, 114, 32,
                 524, 24, 228, 64
             );
-            ctx.fillText("This is a test", 30, 300);
+            //ctx.fillText("This is a test", 30, 300);
         }
         if (!isAlive) {
             const ctx = game.ctx;
