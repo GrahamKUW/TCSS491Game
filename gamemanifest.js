@@ -15,6 +15,7 @@ const GameManifest = {
     "./assets/sprites/effect.png",
     "./assets/sprites/SmokeExplosion.png",
     "./assets/sprites/JumpDust.png",
-    "./assets/sprites/ExitEntrance.png"
+    "./assets/sprites/ExitEntrance.png",
+    "./assets/sprites/Lives.png",
   ],
 };
