@@ -33,7 +33,7 @@ function loadLevel(levelReference = "prototype_level") {
 
     startingYarn = gameEngine.yarnCollected;
     //extra entities that arent in the tiled data currently
-    //gameEngine.addEntity(createExitDoor(950, 250, "PrototypeExit"));
+    
 }
 
 function reloadCurrentLevel(){
