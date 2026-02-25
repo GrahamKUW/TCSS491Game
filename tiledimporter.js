@@ -82,6 +82,14 @@ function constructTilemap(gameEngine, levelReference, paletteImage, tilemapX, ti
 	const palette = mapSpriteToTilePalette(background.sprite);
 	const tilemap = getTileMap(levelReference); 
 	background.sprite.tilemapData = {tilemap: tilemap, palette: palette};
+
+  // store current tilemap in gameEngine.
+  gameEngine.currentTilemap = tilemap;
+  gameEngine.tilemapOffsetX = tilemapX;
+  gameEngine.tilemapOffsetY = tilemapY;
+  gameEngine.tilemapScaleX = tilemapScaleX;
+  gameEngine.tilemapScaleY = tilemapScaleY;
+
 	gameEngine.addEntity(background);
 }
 
