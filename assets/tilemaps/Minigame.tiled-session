@@ -15,27 +15,27 @@
         "level_1.js": {
             "expandedObjectLayers": [
                 3,
-                5,
-                2
+                2,
+                5
             ],
-            "scale": 4,
+            "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 404.5,
-                "y": 300.125
+                "x": 530.6666666666666,
+                "y": 324.3333333333333
             }
         },
         "level_2.js": {
             "expandedObjectLayers": [
                 3,
-                5,
-                2
+                2,
+                5
             ],
             "scale": 2,
-            "selectedLayer": 1,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 749,
-                "y": 208.25
+                "x": 640,
+                "y": 320.25
             }
         },
         "prototype_level.js": {

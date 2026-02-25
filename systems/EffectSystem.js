@@ -9,7 +9,7 @@ class EffectSystem {
 
             //spawn dust if statue
             const deltaX = entity.position.x - entity.position.oldX;
-            if ((!entity.playercontrolled && entity.gravity) && Math.abs(deltaX) > 0.1) {
+            if ((!entity.playercontrolled && entity.gravity && !entity.hazard) && Math.abs(deltaX) > 0.1) {
                 EFFECT_FACTORY.create(game, entity, 'dust');
             }
 

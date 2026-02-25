@@ -19,7 +19,6 @@ const EFFECT_FACTORY = {
     },
     
     createPoof(game, entity, duration) {
-        console.log(duration);
         const poofAnimations = {
             'poof': {
                 frames: [
@@ -124,7 +123,6 @@ const EFFECT_FACTORY = {
     },
 
     createCollect(game, entity, duration) {
-        console.log(duration);
         const collectAnimations = {
             'collect': {
                 frames: [
