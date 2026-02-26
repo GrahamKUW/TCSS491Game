@@ -3,11 +3,9 @@ let pressedAnotherButton = false;
 class PlayerInputSystem {
     update(deltaTime, game) {
 
-        const COYOTE_TIME = 0.15;
-                    
         for (let entity of game.entities) {
             if (entity.position && entity.velocity && entity.playercontrolled) {
-                
+
                 //entity.velocity.dy = 0; unremoved since gravity alters it.
                 entity.velocity.dx = 0;
 
@@ -15,10 +13,11 @@ class PlayerInputSystem {
 
                 //check which direction the player is moving
                 if (game.keys['ArrowUp'] || game.keys['w'] || game.keys[' ']) {
-                    // can only jump while grounded
-                    if (entity.playercontrolled.timeSinceGrounded < COYOTE_TIME && entity.velocity.dy >= 0) {
-                        console.log("Time since grounded: " + entity.playercontrolled.timeSinceGrounded);
-                        entity.velocity.dy = -(speed*1.7);
+                    // can only jump while grounded or havent fallen for longer than coyote time
+                    if (entity.velocity.dy >= 0 && (entity.playercontrolled.isGrounded ||
+                        entity.playercontrolled.timeSinceGrounded <= entity.playercontrolled.coyoteTime)) {
+
+                        entity.velocity.dy = -(speed * 1.7);
                         EFFECT_FACTORY.create(game, entity, 'jumpDust');
                         pressedAnotherButton = true;
                     }
@@ -38,13 +37,13 @@ class PlayerInputSystem {
 
                 // jank and doesn't really follow ecs but its a quick add.
                 if (game.keys['r']) {
-                    
-                   if(pressedAnotherButton){
+
+                    if (pressedAnotherButton) {
                         //console.log("RESET");
-                        reloadCurrentLevel(); 
+                        reloadCurrentLevel();
                         pressedAnotherButton = false;
-                    } 
-                    
+                    }
+
                 }
 
             }

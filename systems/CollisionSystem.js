@@ -46,16 +46,19 @@ class CollisionSystem {
                 }
             }
         }
+
+        //Handling coyote time
         const players = game.entities.filter(e => e.playercontrolled);
 
-        for (const player of players) {
-            if (!player.playercontrolled.isGrounded) {
-                player.playercontrolled.timeSinceGrounded += deltaTime;
-            } else {
-                player.playercontrolled.timeSinceGrounded = 0;
+        for (const entity of players) {
+            if (entity.playercontrolled) {
+                if (!entity.playercontrolled.isGrounded) {
+                    entity.playercontrolled.timeSinceGrounded += deltaTime;
+                } else {
+                    entity.playercontrolled.timeSinceGrounded = 0;
+                }
             }
         }
-
     }
 
     /** 
@@ -161,7 +164,7 @@ class CollisionSystem {
      */
     wasAbove(entity, platform) {
         //find how low the bottom of the entity was last movement system run
-        const entityBottom = entity.position.oldY + entity.collider.height; 
+        const entityBottom = entity.position.oldY + entity.collider.height;
         //find the top of the platform
         const platformTop = platform.collider.getBounds(platform.position).top;
 
@@ -178,7 +181,7 @@ class CollisionSystem {
      * this is used for oneway platform collisions because they should never be resolve horizontally.
      * @returns 
      */
-    getResolutionAxis(e1Bounds, e2Bounds, onewayPlatformCollision){
+    getResolutionAxis(e1Bounds, e2Bounds, onewayPlatformCollision) {
         const overlapX = Math.min(e1Bounds.right - e2Bounds.left, e2Bounds.right - e1Bounds.left);
         const overlapY = Math.min(e1Bounds.bottom - e2Bounds.top, e2Bounds.bottom - e1Bounds.top);
 
@@ -208,7 +211,7 @@ class CollisionSystem {
             xPush = xPush / 2;
         }
 
-         //e1 is left of e2
+        //e1 is left of e2
         if (b1.left < b2.left) {
             if (!e1.static) {
                 e1.position.x -= xPush;
@@ -285,7 +288,7 @@ class CollisionSystem {
                     e2.playercontrolled.isGrounded = true;
                 }
             }
-            
+
             if (!e1.static) {
                 e1.position.y += yPush;
 

@@ -10,5 +10,6 @@ class PlayerControlled {
         this.lives = 9;
 
         this.timeSinceGrounded = 0;
+        this.coyoteTime = 0.15;
     }
 }

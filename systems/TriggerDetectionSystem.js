@@ -25,29 +25,21 @@ class TriggerDetectionSystem {
                 const activatorBounds = a.collider.getBounds(a.position);
 
                 if (this.aabbCollision(triggerBounds, activatorBounds)) {
-
                     //  If the trigger has a whitelist,
                     //  check if any components of the activator a are in it. 
                     if (t.trigger.whitelist) {
-
                         for (let i = 0; i < t.trigger.whitelist.length; i++) {
                             if (Object.hasOwn(a, t.trigger.whitelist[i])) {
-                                console.log(`whitelisted entity has entered a trigger!: ${t.trigger.whitelist[i]} is an allowed component!`);
                                 t.trigger.active = true;
                                 break;
                             }
                         }
                     } else {
-
-                        console.log("Trigger without white list is active!");
                         //  exit early since something activated this trigger,
                         //  no need to check for multiple
                         t.trigger.active = true;
                         break;
                     }
-
-
-
                 }
             }
         }
