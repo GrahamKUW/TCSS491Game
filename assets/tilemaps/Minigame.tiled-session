@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "prototype_level.js",
+    "activeFile": "level_1.js",
     "expandedProjectPaths": [
         "."
     ],
@@ -77,9 +77,9 @@
     "property.type": "int",
     "recentFiles": [
         "StatueCatsTileset.tsx",
-        "level_1.js",
-        "level_2.js",
         "prototype_level.js",
+        "level_2.js",
+        "level_1.js",
         "prototype_level.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",

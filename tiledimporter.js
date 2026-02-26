@@ -148,6 +148,7 @@ function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, ti
                   break;
             case "spike":
                   gameEngine.addEntity(createSpike(posX, posY));
+                  gameEngine.addEntity(createSpikeTrap(posX, posY - 200, 'down')); // FOR TESTING: should be seperate gameObject case
                   break;
             case "hazard":
                   gameEngine.addEntity(createHazard(posX, posY, width, height));
