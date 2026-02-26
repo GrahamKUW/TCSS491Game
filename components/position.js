@@ -5,5 +5,8 @@ class Position {
         this.y = y;
         this.oldX = x;
         this.oldY = y;
+
+        this.startX = x;
+        this.startY = y;
     }
 }

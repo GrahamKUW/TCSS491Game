@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "prototype_level.js",
+    "activeFile": "level_1.js",
     "expandedProjectPaths": [
         "."
     ],
@@ -14,27 +14,27 @@
         },
         "level_1.js": {
             "expandedObjectLayers": [
+                5,
                 3,
-                2,
-                5
+                2
             ],
             "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 530.6666666666666,
-                "y": 324.3333333333333
+                "x": 530,
+                "y": 336.3333333333333
             }
         },
         "level_2.js": {
             "expandedObjectLayers": [
+                5,
                 3,
-                2,
-                5
+                2
             ],
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 640,
+                "x": 359,
                 "y": 320.25
             }
         },
@@ -45,8 +45,8 @@
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 529,
-                "y": 335.75
+                "x": 512,
+                "y": 256.25
             }
         },
         "prototype_level.tmx": {
@@ -77,9 +77,9 @@
     "property.type": "bool",
     "recentFiles": [
         "StatueCatsTileset.tsx",
-        "level_1.js",
-        "level_2.js",
         "prototype_level.js",
+        "level_2.js",
+        "level_1.js",
         "prototype_level.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",

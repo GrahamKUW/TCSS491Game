@@ -29,6 +29,7 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addSystem(new LevelChangeSystem());
 	gameEngine.addSystem(new LivesSystem());
 	gameEngine.addSystem(new YarnSystem());
+	gameEngine.addSystem(new TrapSystem());
 
 	//these calls set up the prototype level, should be refactored so we can load different levels
 	//loadPrototypeLevel();
