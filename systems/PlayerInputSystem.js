@@ -3,6 +3,7 @@ let pressedAnotherButton = false;
 class PlayerInputSystem {
     update(deltaTime, game) {
 
+        const COYOTE_TIME = 0.15;
                     
         for (let entity of game.entities) {
             if (entity.position && entity.velocity && entity.playercontrolled) {
@@ -15,7 +16,8 @@ class PlayerInputSystem {
                 //check which direction the player is moving
                 if (game.keys['ArrowUp'] || game.keys['w'] || game.keys[' ']) {
                     // can only jump while grounded
-                    if (entity.playercontrolled.isGrounded) {
+                    if (entity.playercontrolled.timeSinceGrounded < COYOTE_TIME && entity.velocity.dy >= 0) {
+                        console.log("Time since grounded: " + entity.playercontrolled.timeSinceGrounded);
                         entity.velocity.dy = -(speed*1.7);
                         EFFECT_FACTORY.create(game, entity, 'jumpDust');
                         pressedAnotherButton = true;

@@ -46,6 +46,16 @@ class CollisionSystem {
                 }
             }
         }
+        const players = game.entities.filter(e => e.playercontrolled);
+
+        for (const player of players) {
+            if (!player.playercontrolled.isGrounded) {
+                player.playercontrolled.timeSinceGrounded += deltaTime;
+            } else {
+                player.playercontrolled.timeSinceGrounded = 0;
+            }
+        }
+
     }
 
     /** 

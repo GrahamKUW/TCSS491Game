@@ -8,5 +8,7 @@ class PlayerControlled {
 
         this.isGrounded = isGrounded;
         this.lives = 9;
+
+        this.timeSinceGrounded = 0;
     }
 }
