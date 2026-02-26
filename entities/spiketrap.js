@@ -67,6 +67,8 @@ function createSpikeTrap(x, y, direction) {
             break;
     }
 
+    const triggerWhiteList =  ["playercontrolled"];
+
     const entity = {
         removeFromWorld: false,
         position: new Position(x, y),
@@ -74,7 +76,7 @@ function createSpikeTrap(x, y, direction) {
         sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/spikes.png"), spriteX, 0, 16, 16, 2 , 2),
         collider: new Collider(cWidth, cHeight, cOffsetX, cOffsetY), //x2 from sprite since scale is x2
         velocity: new Velocity(0, 0),
-        trigger: new Trigger(tWidth, tHeight, tOffsetX, tOffsetY, 11), // arbitrary id for spike traps
+        trigger: new Trigger(tWidth, tHeight, tOffsetX, tOffsetY, 11, triggerWhiteList), // arbitrary id for spike traps
         static: new Static(),
         returnDelayTimer: 0,
         waitingToReturn: false

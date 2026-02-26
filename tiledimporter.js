@@ -148,7 +148,7 @@ function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, ti
                   break;
             case "spike":
                   gameEngine.addEntity(createSpike(posX, posY));
-                  gameEngine.addEntity(createSpikeTrap(posX, posY - 200, 'down')); // FOR TESTING: should be seperate gameObject case
+                  //gameEngine.addEntity(createSpikeTrap(posX, posY - 200, 'down')); // FOR TESTING: should be seperate gameObject case
                   break;
             case "hazard":
                   gameEngine.addEntity(createHazard(posX, posY, width, height));
@@ -161,7 +161,8 @@ function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, ti
                   break;
             case "exit":  
                   gameEngine.addEntity(createExitDoor(posX, posY,gameObjectProperties[0].value, width, height,gameObjectProperties[1].value, gameObjectProperties[2].value, tilemapScaleX, tilemapScaleY,gameObjectProperties[3].value ));
-                  
+            //TODO: add spike trap case
+            //TODO: add chalice case
                   break;
             default:
                   console.warn("Unknown object type: " + gameObjectName);

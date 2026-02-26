@@ -41,7 +41,6 @@ function createSpike(x, y, direction) {
         position: new Position(x, y),
         facing: new Facing(direction), // indicates the direction the spikes will be facing
         sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/spikes.png"), spriteX, 0, 16, 16, 2 , 2),
-        collider: new Collider(cWidth, cHeight, cOffsetX, cOffsetY), //x2 from sprite since scale is x2
         static: new Static(),
     }
 
