@@ -1,4 +1,5 @@
-function createYarn(x, y, id, width = 32, height = 38, offsetX = 16, offsetY = 16) {
+function createYarn(x, y, id, tilemapScaleX, tilemapScaleY) {
+
 
     const yarnAnimation = {
         'float': { 
@@ -16,10 +17,10 @@ function createYarn(x, y, id, width = 32, height = 38, offsetX = 16, offsetY = 1
     const entity = {
         removeFromWorld: false,
         position: new Position(x,y),
-        sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/YarnBall.png"), 0, 0, 32, 32, 2, 2),
+        sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/YarnBall.png"), 0, 0, 32, 32, tilemapScaleX, tilemapScaleY),
         animator: new Animator(yarnAnimation, 'float'),
         effect: new Effect('collect', 0.35),
-        trigger: new Trigger(width, height, offsetX, offsetY, 9) // 9 = id for yarn so it wont affect gates, etc.
+        trigger: new Trigger(32, 32, 16, 16, id) // 9 = id for yarn so it wont affect gates, etc.
     }
 
     return entity;

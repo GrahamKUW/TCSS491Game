@@ -458,6 +458,36 @@
                  "width":0,
                  "x":528,
                  "y":336
+                }, 
+                {
+                 "height":0,
+                 "id":67,
+                 "name":"Yarn",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Link",
+                         "type":"int",
+                         "value":9
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":528,
+                 "y":248
+                }, 
+                {
+                 "height":0,
+                 "id":68,
+                 "name":"Torch",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":712,
+                 "y":264
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -466,7 +496,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":67,
+ "nextobjectid":69,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
