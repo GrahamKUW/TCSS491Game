@@ -13,6 +13,8 @@ const LEVEL_REFERENCE = "level_2";
 
 let CURRENT_LEVEL = "prototype_level";
 
+let startingYarn = 0;
+
 /**
  * Attempts to load the level with the passed reference name.
  * @param {*} levelReference the name of the level to load
@@ -28,11 +30,16 @@ function loadLevel(levelReference = "prototype_level") {
     constructGameObjects(gameEngine, levelReference, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
 
     CURRENT_LEVEL = levelReference;
+
+    startingYarn = gameEngine.yarnCollected;
     //extra entities that arent in the tiled data currently
-    //gameEngine.addEntity(createExitDoor(950, 250, "PrototypeExit"));
+    
 }
 
 function reloadCurrentLevel(){
+    //revert yarnCollected if collected before reloading
+    if (startingYarn < gameEngine.yarnCollected) gameEngine.yarnCollected = startingYarn;
+
     console.log("Reloading: " + CURRENT_LEVEL);
     loadLevel(CURRENT_LEVEL);
 }

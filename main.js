@@ -28,13 +28,14 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addSystem(new EffectSystem());
 	gameEngine.addSystem(new LevelChangeSystem());
 	gameEngine.addSystem(new LivesSystem());
+	gameEngine.addSystem(new YarnSystem());
 
 	//these calls set up the prototype level, should be refactored so we can load different levels
 	//loadPrototypeLevel();
 
 	// NOTE: In the final game this should only ever start on the main menu.
 
-	loadLevel1();
+	loadLevel2();
 	
 	gameEngine.start();
 });

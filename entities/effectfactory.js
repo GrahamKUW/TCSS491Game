@@ -13,6 +13,9 @@ const EFFECT_FACTORY = {
         else if (type == 'jumpDust') {
             return this.createJumpDust(game, sourceEntity, 0.35); // <- by getting from source entity we cant change the individual timings. This is a temporary fix.
         }
+        else if (type == 'collect') {
+            return this.createCollect(game, sourceEntity, duration);
+        }
     },
     
     createPoof(game, entity, duration) {
@@ -29,7 +32,8 @@ const EFFECT_FACTORY = {
                     { x: 224, y: 0, width: 32, height: 32 },
                     { x: 256, y: 0, width: 32, height: 32 }
                 ],
-                duration: duration / 9  // Divide total duration by frame count
+                duration: duration / 9,  // Divide total duration by frame count
+                loops: false
             }
         };
         
@@ -60,7 +64,8 @@ const EFFECT_FACTORY = {
                     { x: 224, y: 0, width: 32, height: 32 },
                     { x: 256, y: 0, width: 32, height: 32 }
                 ],
-                duration: duration / 9  // Divide total duration by frame count
+                duration: duration / 9,  // Divide total duration by frame count
+                loops: false
             }
         };
 
@@ -80,6 +85,10 @@ const EFFECT_FACTORY = {
     },
 
     createJumpDust(game, entity, duration) {
+
+        if (entity.jumpDustActive) return;
+        entity.jumpDustActive = true;
+
         const jumpDustAnimations = {
             'jumpDust': {
                 frames: [
@@ -89,7 +98,8 @@ const EFFECT_FACTORY = {
                     { x: 96, y: 0, width: 32, height: 32 },
                     { x: 128, y: 0, width: 32, height: 32 },
                 ],
-                duration: duration / 5  // Divide total duration by frame count
+                duration: duration / 5,  // Divide total duration by frame count
+                loops: false
             }
         };
 
@@ -101,10 +111,44 @@ const EFFECT_FACTORY = {
                 0, 0, 32, 32, 1.5, 1.5 // < - Changed to be smaller, still should be function of tilemap size for autoscaling
             ),
             animator: new Animator(jumpDustAnimations, 'jumpDust'),
-            lifetime: new Lifetime(duration)
+            lifetime: new Lifetime(duration),
+
+            onRemove: () => {
+                entity.jumpDustActive = false;
+            }   
         };
         
         game.addEntity(jumpDust);
         return jumpDust;
+    },
+
+    createCollect(game, entity, duration) {
+        const collectAnimations = {
+            'collect': {
+                frames: [
+                    { x: 0, y: 0, width: 32, height: 32 },
+                    { x: 32, y: 0, width: 32, height: 32 },
+                    { x: 64, y: 0, width: 32, height: 32 },
+                    { x: 96, y: 0, width: 32, height: 32 },
+                    { x: 128, y: 0, width: 32, height: 32 },
+                    { x: 160, y: 0, width: 32, height: 32 },
+                    { x: 192, y: 0, width: 32, height: 32 }
+                ],
+                duration: duration / 7,  // Divide total duration by frame count
+                loops: false
+            }
+        };
+        
+        const collect = {
+            sprite: new Sprite(
+                ASSET_MANAGER.getAsset("./assets/sprites/CircleExpand.png"),
+                0, 0, 32, 32, 2, 2 
+            ),
+            position: new Position(entity.position.x, entity.position.y),
+            animator: new Animator(collectAnimations, 'collect'),
+            lifetime: new Lifetime(duration)
+        };
+        game.addEntity(collect);
+        return collect;
     },
 };

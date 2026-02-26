@@ -64,9 +64,14 @@ class AnimationSystem {
         entity.animator.frameTimer += deltaTime;
 
         //update frame if timer passed duration
-        if (entity.animator.frameTimer >= anim.duration) {
+        if (entity.animator.frameTimer >= anim.duration && anim.loops) { //if animation loops
             entity.animator.frameTimer = 0;
             entity.animator.currentFrame = (entity.animator.currentFrame + 1) % anim.frames.length;
+        }
+        //if animation does not loop
+        else if (entity.animator.frameTimer >= anim.duration && !anim.loops && entity.animator.currentFrame < anim.frames.length-1) {
+            entity.animator.frameTimer = 0;
+            entity.animator.currentFrame = (entity.animator.currentFrame + 1);
         }
 
         //update sprite to show current frame (sprite will be drawn by RenderSystem)

@@ -82,6 +82,14 @@ function constructTilemap(gameEngine, levelReference, paletteImage, tilemapX, ti
 	const palette = mapSpriteToTilePalette(background.sprite);
 	const tilemap = getTileMap(levelReference); 
 	background.sprite.tilemapData = {tilemap: tilemap, palette: palette};
+
+  // store current tilemap in gameEngine.
+  gameEngine.currentTilemap = tilemap;
+  gameEngine.tilemapOffsetX = tilemapX;
+  gameEngine.tilemapOffsetY = tilemapY;
+  gameEngine.tilemapScaleX = tilemapScaleX;
+  gameEngine.tilemapScaleY = tilemapScaleY;
+
 	gameEngine.addEntity(background);
 }
 
@@ -144,9 +152,15 @@ function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, ti
             case "hazard":
                   gameEngine.addEntity(createHazard(posX, posY, width, height));
                   break;
-            case "exit":
-                  
+            case "torch":
+                  gameEngine.addEntity(createTorch(posX, posY));
+                  break;
+            case "yarn":
+                  gameEngine.addEntity(createYarn(posX, posY, gameObjectProperties[0].value,tilemapScaleX, tilemapScaleY));
+                  break;
+            case "exit":  
                   gameEngine.addEntity(createExitDoor(posX, posY,gameObjectProperties[0].value, width, height,gameObjectProperties[1].value, gameObjectProperties[2].value, tilemapScaleX, tilemapScaleY,gameObjectProperties[3].value ));
+                  
                   break;
             default:
                   console.warn("Unknown object type: " + gameObjectName);

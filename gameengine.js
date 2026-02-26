@@ -19,6 +19,16 @@ class GameEngine {
         this.wheel = null;
         this.keys = {};
 
+        // Information on tilemap
+        this.currentTilemap = null;
+        this.tilemapOffsetX = 0;
+        this.tilemapOffsetY = 0;
+        this.tilemapScaleX = 1;
+        this.tilemapScaleY = 1;
+
+        //how many yarn balls have been obtained
+        this.yarnCollected = 0;
+
         
 
 
@@ -95,6 +105,14 @@ class GameEngine {
 
     addSystem(system) {
         this.systems.push(system);
+    };
+
+    getSystem(systemClass) {
+    return this.systems.find(system => system instanceof systemClass);
+    };
+
+    getCurrentTilemap() {
+    return this.currentTilemap;
     };
 
     loop() {
