@@ -14,13 +14,15 @@ function createYarn(x, y, id, tilemapScaleX, tilemapScaleY) {
         }
     }
 
+    const triggerWhiteList =  ["playercontrolled"];
+
     const entity = {
         removeFromWorld: false,
         position: new Position(x,y),
         sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/YarnBall.png"), 0, 0, 32, 32, tilemapScaleX, tilemapScaleY),
         animator: new Animator(yarnAnimation, 'float'),
         effect: new Effect('collect', 0.35),
-        trigger: new Trigger(32, 32, 16, 16, id) // 9 = id for yarn so it wont affect gates, etc.
+        trigger: new Trigger(32, 32, 16, 16, id, triggerWhiteList), // 9 = id for yarn so it wont affect gates, etc.
     }
 
     return entity;
