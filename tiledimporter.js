@@ -147,16 +147,21 @@ function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, ti
                   gameEngine.addEntity(createPlatform(posX, posY));
                   break;
             case "spike":
-                  gameEngine.addEntity(createSpike(posX, posY, 'up')); //TODO: add direction property to tiled and replace 'up' with gameObjectProperties[0].value
+                  gameEngine.addEntity(createSpike(posX, posY));
                   gameEngine.addEntity(createSpikeTrap(posX, posY - 200, 'down')); // FOR TESTING: should be seperate gameObject case
                   break;
             case "hazard":
                   gameEngine.addEntity(createHazard(posX, posY, width, height));
                   break;
+            case "torch":
+                  gameEngine.addEntity(createTorch(posX, posY));
+                  break;
+            case "yarn":
+                  gameEngine.addEntity(createYarn(posX, posY, gameObjectProperties[0].value,tilemapScaleX, tilemapScaleY));
+                  break;
             case "exit":  
                   gameEngine.addEntity(createExitDoor(posX, posY,gameObjectProperties[0].value, width, height,gameObjectProperties[1].value, gameObjectProperties[2].value, tilemapScaleX, tilemapScaleY,gameObjectProperties[3].value ));
-                  gameEngine.addEntity(createTorch(posX + 16, posY - 48));
-                  gameEngine.addEntity(createYarn(posX-64, posY - 32));
+                  
                   break;
             default:
                   console.warn("Unknown object type: " + gameObjectName);
