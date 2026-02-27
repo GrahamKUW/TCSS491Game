@@ -42,9 +42,6 @@ class RenderSystem {
                             )
 
                         }
-
-                        
-
                     }
                     else{
                         game.ctx.drawImage(
@@ -59,8 +56,6 @@ class RenderSystem {
                         entity.sprite.frameHeight * entity.sprite.scaleHeight
                         )
                     }
-                    
-
                 } 
                 
                 /* else {
@@ -96,7 +91,8 @@ class RenderSystem {
                     game.ctx.rect(bounds.left, bounds.top, bounds.right - bounds.left, bounds.bottom - bounds.top);
                     game.ctx.stroke();
                     game.ctx.restore();
-                } else if (debugEnabled && entity.trigger) { /**draw trigger hitbox if debug checkbox is enabled */
+                } 
+                if (debugEnabled && entity.trigger) { /**draw trigger hitbox if debug checkbox is enabled */
                     const bounds = entity.trigger.getBounds(entity.position);
 
                     game.ctx.save();

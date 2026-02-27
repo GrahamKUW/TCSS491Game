@@ -20,6 +20,7 @@ const GameManifest = {
     "./assets/sprites/torch.png",
     "./assets/sprites/YarnBall.png",
     "./assets/sprites/CircleExpand.png",
-    "./assets/audio/Victory.wav"
+    "./assets/audio/Victory.wav",
+    "./assets/sprites/chalice.png",
   ],
 };

@@ -19,16 +19,27 @@ class TriggerDetectionSystem {
             t.trigger.active = false;
 
             const triggerBounds = t.trigger.getBounds(t.position);
-            
+
             //check if any activator hits this trigger
             for (const a of activators) {
                 const activatorBounds = a.collider.getBounds(a.position);
 
                 if (this.aabbCollision(triggerBounds, activatorBounds)) {
-                    t.trigger.active = true;
-                    //  exit early since something activated this trigger,
-                    //  no need to check for multiple
-                    break;
+                    //  If the trigger has a whitelist,
+                    //  check if any components of the activator a are in it. 
+                    if (t.trigger.whitelist) {
+                        for (let i = 0; i < t.trigger.whitelist.length; i++) {
+                            if (Object.hasOwn(a, t.trigger.whitelist[i])) {
+                                t.trigger.active = true;
+                                break;
+                            }
+                        }
+                    } else {
+                        //  exit early since something activated this trigger,
+                        //  no need to check for multiple
+                        t.trigger.active = true;
+                        break;
+                    }
                 }
             }
         }
