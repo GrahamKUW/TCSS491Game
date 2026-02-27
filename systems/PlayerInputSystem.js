@@ -20,7 +20,7 @@ class PlayerInputSystem {
                         entity.velocity.dy = -(speed * 1.7);
                         EFFECT_FACTORY.create(game, entity, 'jumpDust');
                         pressedAnotherButton = true;
-                        console.log("Player Jumped!");
+                        console.log("Player jumped!");
                     }
                 }
                 if (game.keys['ArrowLeft'] || game.keys['a']) {

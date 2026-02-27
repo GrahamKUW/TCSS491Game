@@ -17,7 +17,7 @@ class StatueSystem {
                     entity.statueable.timer = entity.statueable.cooldown;
                     
                     EFFECT_FACTORY.create(game, entity, 'poof'); 
-                    console.log("Player Turned into a statue!");
+                    console.log("Player turned into a statue!");
                     respawnPlayer(entity);
                 }
             }
