@@ -69,9 +69,9 @@ const EFFECT_FACTORY = {
             }
         };
 
-        let dustOffset = entity.position.x > entity.position.oldX ? entity.collider.width * 1.5 : entity.collider.width * 0.5;
+        let dustOffset = entity.position.x > entity.position.oldX ? entity.collider.width * 1.3 : entity.collider.width * 0.5;
         const dust = {
-            position: new Position(entity.position.x + dustOffset, entity.position.y + entity.collider.height+10),
+            position: new Position(entity.position.x + dustOffset, entity.position.y + entity.collider.height + entity.collider.offsetY - 5),
             sprite: new Sprite(
                 ASSET_MANAGER.getAsset("./assets/sprites/SmokeExplosion.png"),
                 0, 0, 32, 32, 0.25, 0.25 

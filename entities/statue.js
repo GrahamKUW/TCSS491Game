@@ -1,5 +1,3 @@
-//TODO: add sprite for this once render system is added.
-
 function createStatue(x, y,) {
 
     const entity = {
