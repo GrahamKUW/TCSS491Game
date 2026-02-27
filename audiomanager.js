@@ -1,4 +1,7 @@
-
+// tag : filepath
+const GAME_AUDIO = [
+    {tag: "Test", filePath: "./assets/audio/Victory.wav"}, 
+];
 
 /**
  * A facade for easier use of the audio system, not a game entity, must persist between levels
@@ -99,8 +102,14 @@ class AudioManager{
     }
 }
 
-
-
-function addAllMusic(){
+function addAllMusic(audioManager){
     
+    if(GAME_AUDIO ===null || GAME_AUDIO === undefined || GAME_AUDIO.length < 1){ return;}
+
+    for (let i = 0; i < GAME_AUDIO.length; i++) {
+        const audio = GAME_AUDIO[i];
+
+        audioManager.addAudio(audio.tag, audio.filePath);
+        
+    }
 }
