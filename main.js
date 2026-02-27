@@ -15,8 +15,8 @@ ASSET_MANAGER.downloadAll(() => {
 
 	AUDIO_MANAGER.awaitInitialize(canvas, () => {
 
-		AUDIO_MANAGER.addAudio("Test", "./assets/audio/Victory.wav");
-		AUDIO_MANAGER.playOnce("Test");
+		//AUDIO_MANAGER.addAudio("Test", "./assets/audio/Victory.wav");
+		//AUDIO_MANAGER.playOnce("Test");
 		console.log("Initialized!");
 	}); // test
 	

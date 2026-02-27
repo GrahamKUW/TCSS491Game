@@ -87,6 +87,16 @@ class AudioManager{
 
         this.assetManager.muteAudio(isMuted); 
     }
+
+    adjustVolume(volume){
+        if(volume < 0 || volume > 1){
+            console.warn("Volume must be betwee 0 and 1! It was: " + volume);
+            return;
+        }
+
+        this.globalVolume = volume;
+        this.assetManager.adjustVolume(this.globalVolume);
+    }
 }
 
 
