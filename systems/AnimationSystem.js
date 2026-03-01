@@ -15,9 +15,9 @@ class AnimationSystem {
     //checks to see if the new anim is the same as the current
     resetIfNew(entity, newAnim) {
         if (entity.animator.currentAnimation !== newAnim) {
-           entity.animator.currentAnimation = newAnim;
-           entity.animator.currentFrame = 0;
-           entity.animator.frameTimer = 0; 
+            entity.animator.currentAnimation = newAnim;
+            entity.animator.currentFrame = 0;
+            entity.animator.frameTimer = 0;
         }
     }
 
@@ -25,7 +25,7 @@ class AnimationSystem {
     updateAnimation(entity) {
         if (entity.facing && entity.velocity) {
 
-            const isMoving =  entity.position.oldX != entity.position.x;
+            const isMoving = entity.position.oldX != entity.position.x;
             const direction = entity.facing.direction;
 
 
@@ -42,6 +42,22 @@ class AnimationSystem {
 
             this.resetIfNew(entity, newAnim);
         }
+
+        if (entity.toggleanimator) {
+
+            let newAnim;
+            console.log("entity has toggle animator");
+
+            if (entity.toggleanimator.active) {
+                console.log("active");
+                newAnim = 'active';
+            } else {
+                console.log("inactive");
+                newAnim = 'inactive';
+            }
+            this.resetIfNew(entity, newAnim);
+        }
+
     }
 
 
@@ -69,12 +85,12 @@ class AnimationSystem {
             entity.animator.currentFrame = (entity.animator.currentFrame + 1) % anim.frames.length;
         }
         //if animation does not loop
-        else if (entity.animator.frameTimer >= anim.duration && !anim.loops && entity.animator.currentFrame < anim.frames.length-1) {
+        else if (entity.animator.frameTimer >= anim.duration && !anim.loops && entity.animator.currentFrame < anim.frames.length - 1) {
             entity.animator.frameTimer = 0;
             entity.animator.currentFrame = (entity.animator.currentFrame + 1);
         }
 
-        
+
 
         //update sprite to show current frame (sprite will be drawn by RenderSystem)
         const frame = anim.frames[entity.animator.currentFrame];
