@@ -59,3 +59,33 @@ function loadLevel2() {
     loadLevel("level_2");
     
 }
+
+function loadLevel9() {
+    console.log("Loading level 9!");
+    loadLevel("level_9");
+    
+}
+
+function loadLevel10() {
+    console.log("Loading level 10!");
+    loadLevel("level_10");
+    
+}
+
+function loadLevel11() {
+    console.log("Loading level 11!");
+    loadLevel("level_11");
+    
+}
+
+function loadLevel12() {
+    console.log("Loading level 12!");
+    loadLevel("level_12");
+    
+}
+
+function loadLevel13() {
+    console.log("Loading level 13!");
+    loadLevel("level_13");
+    
+}

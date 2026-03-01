@@ -147,7 +147,13 @@ function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, ti
                   gameEngine.addEntity(createPlatform(posX, posY));
                   break;
             case "spike":
-                  gameEngine.addEntity(createSpike(posX, posY));
+
+                  if(gameObjectProperties == undefined || gameObjectProperties == null || gameObjectProperties.length < 1){
+                    gameEngine.addEntity(createSpike(posX, posY));
+                  }
+                  else{
+                    gameEngine.addEntity(createSpike(posX, posY, gameObjectProperties[0].value));
+                  }
                   //gameEngine.addEntity(createSpikeTrap(posX, posY - 200, 'down')); // FOR TESTING: should be seperate gameObject case
                   break;
             case "hazard":
