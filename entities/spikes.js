@@ -8,32 +8,22 @@ function createSpike(x, y, direction) {
     switch(direction) {
         case 'up' :
             spriteX = 0;
-            cWidth = 32;
-            cHeight = 5;
-            cOffsetX = 0;
-            cOffsetY = 27;
             break;
         case 'left':
             spriteX = 16;
-            cWidth = 5;
-            cHeight = 32;
-            cOffsetX = 0;
-            cOffsetY = 0;
             break;
         case 'right':
             spriteX = 32;
-            cWidth = 5;
-            cHeight = 32;
-            cOffsetX = 27;
-            cOffsetY = 0;
             break;
         case 'down': 
             spriteX = 48;
-            cWidth = 32;
-            cHeight = 5;
-            cOffsetX = 0;
-            cOffsetY = 0;
             break;
+        default:
+            direction = 'up'
+            spriteX = 0;
+            console.log("spike direction undefined, defaulted to up.")
+            break;
+
     }
 
     const entity = {

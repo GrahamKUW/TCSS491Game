@@ -330,6 +330,12 @@
                  "id":57,
                  "name":"Spike",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"Direction",
+                         "type":"string",
+                         "value":"up"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -342,6 +348,12 @@
                  "id":58,
                  "name":"Spike",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"Direction",
+                         "type":"string",
+                         "value":"up"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -372,7 +384,7 @@
                         {
                          "name":"Target Level",
                          "type":"string",
-                         "value":"level_2"
+                         "value":"level_3"
                         }],
                  "rotation":0,
                  "type":"",
@@ -404,6 +416,12 @@
                  "id":61,
                  "name":"Spike",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"Direction",
+                         "type":"string",
+                         "value":"up"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -416,6 +434,12 @@
                  "id":63,
                  "name":"Spike",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"Direction",
+                         "type":"string",
+                         "value":"up"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -428,6 +452,12 @@
                  "id":64,
                  "name":"Spike",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"Direction",
+                         "type":"string",
+                         "value":"up"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -440,6 +470,12 @@
                  "id":65,
                  "name":"Spike",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"Direction",
+                         "type":"string",
+                         "value":"up"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -452,6 +488,12 @@
                  "id":66,
                  "name":"Spike",
                  "point":true,
+                 "properties":[
+                        {
+                         "name":"Direction",
+                         "type":"string",
+                         "value":"up"
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -496,7 +538,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":69,
+ "nextobjectid":70,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

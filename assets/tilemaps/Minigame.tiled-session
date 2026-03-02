@@ -14,28 +14,36 @@
         },
         "level_1.js": {
             "expandedObjectLayers": [
-                2,
+                5,
                 3,
-                5
+                2
             ],
             "scale": 3,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 525.6666666666666,
-                "y": 223.66666666666663
+                "x": 511.99999999999994,
+                "y": 256.16666666666663
             }
         },
         "level_2.js": {
             "expandedObjectLayers": [
-                2,
+                5,
                 3,
-                5
+                2
             ],
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 530.5,
-                "y": 241
+                "x": 512,
+                "y": 256.25
+            }
+        },
+        "level_3.js": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 512,
+                "y": 255.5
             }
         },
         "prototype_level.js": {
@@ -45,8 +53,8 @@
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 535.5,
-                "y": 258.5
+                "x": 512,
+                "y": 256.25
             }
         },
         "prototype_level.tmx": {
@@ -71,10 +79,11 @@
         "StatueCatsTileset.tsx",
         "prototype_level.js",
         "level_2.js",
-        "level_1.js"
+        "level_1.js",
+        "level_3.js"
     ],
     "project": "Minigame.tiled-project",
-    "property.type": "int",
+    "property.type": "string",
     "recentFiles": [
         "StatueCatsTileset.tsx",
         "prototype_level.js",
