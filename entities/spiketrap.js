@@ -1,5 +1,5 @@
 // Another version of spikes that have a trigger to lunge in the direction they are facing
-function createSpikeTrap(x, y, direction) {
+function createSpikeTrap(x, y, direction, game) {
 
     let spriteX = 0;
     let cWidth = 0;
@@ -29,8 +29,9 @@ function createSpikeTrap(x, y, direction) {
             cOffsetX = 0;
             cOffsetY = 27;
 
-            hWidth = cWidth;
-            hHeight = 27;
+            hWidth = 22;
+            hHeight = 20;
+            hOffsetX = 5;
 
             tWidth = TRAP_TRIGGER_WIDTH;
             tHeight = TRAP_TRIGGER_HEIGHT;
@@ -44,8 +45,9 @@ function createSpikeTrap(x, y, direction) {
             cOffsetX = 27;
             cOffsetY = 0;
 
-            hWidth = 27;
-            hHeight = cHeight;
+            hWidth = 20;
+            hHeight = 22;
+            hOffsetY = 5;
 
             tWidth = TRAP_TRIGGER_HEIGHT; // width == height when facing left or right
             tHeight = TRAP_TRIGGER_WIDTH;
@@ -59,9 +61,10 @@ function createSpikeTrap(x, y, direction) {
             cOffsetX = 0;
             cOffsetY = 0;
 
-            hWidth = 27;
-            hHeight = cHeight;
+            hWidth = 20;
+            hHeight = 22;
             hOffsetX = 5;
+            hOffsetY = 5;
 
             tWidth = TRAP_TRIGGER_HEIGHT;
             tHeight = TRAP_TRIGGER_WIDTH;
@@ -75,8 +78,9 @@ function createSpikeTrap(x, y, direction) {
             cOffsetX = 0;
             cOffsetY = 0;
 
-            hWidth = 27;
-            hHeight = cHeight;
+            hWidth = 22;
+            hHeight = 20;
+            hOffsetX = 5;
             hOffsetY = 5;
 
             tWidth = TRAP_TRIGGER_WIDTH;
@@ -87,14 +91,6 @@ function createSpikeTrap(x, y, direction) {
     }
 
     const triggerWhiteList =  ["playercontrolled"];
-
-    const childHazard = {
-        removeFromWorld: false,
-        position: new Position(x, y),
-        hazard: new Hazard(),
-        collider: new Collider(hWidth, hHeight, hOffsetX, hOffsetY),
-
-    }
 
     const entity = {
         removeFromWorld: false,
@@ -107,8 +103,19 @@ function createSpikeTrap(x, y, direction) {
         static: new Static(),
         returnDelayTimer: 0,
         waitingToReturn: false,
-        Hazard: childHazard
+        child: null
     }
+
+    const childHazard = {
+        removeFromWorld: false,
+        position: entity.position,
+        hazard: new Hazard(),
+        collider: new Collider(hWidth, hHeight, hOffsetX, hOffsetY),
+        parent: entity
+    }
+
+    entity.childs = childHazard;
+    game.addEntity(childHazard);
 
     return entity;
 }
