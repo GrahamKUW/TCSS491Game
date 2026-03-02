@@ -33,7 +33,7 @@ class CollisionSystem {
                     const e1 = collidable[i];
                     const e2 = collidable[j];
 
-                    if (e1.static && e2.static) {
+                    if (e1.static && e2.static && !e1.velocity && !e2.velocity) {
                         continue; // static and static collisions shouldn't happen, they both aren't moving
                     }
                     if (this.aabbCollision(e1, e2)) {
@@ -266,9 +266,9 @@ class CollisionSystem {
                 }
             }
 
-            if (!e2.static) { // && bothDynamic) {
+            if (!e2.static) {
                 e2.position.y += yPush;
-                if (e2.velocity.dy < 0) {
+                if (e2.velocity && e2.velocity.dy < 0) {
                     e2.velocity.dy = 0;
                 }
             }
@@ -279,7 +279,7 @@ class CollisionSystem {
                 e2.position.y -= yPush;
 
                 if (e2.velocity && e2.velocity.dy > 0) {
-                    //if e1 fell on top, reset its velocity
+                    //if e2 fell on top, reset its velocity
                     e2.velocity.dy = 0;
                 }
 
@@ -292,7 +292,7 @@ class CollisionSystem {
             if (!e1.static) {
                 e1.position.y += yPush;
 
-                if (e1.velocity.dy < 0) {
+                if (e1.velocity && e1.velocity.dy < 0) {
                     e1.velocity.dy = 0;
                 }
             }

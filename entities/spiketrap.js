@@ -25,13 +25,14 @@ function createSpikeTrap(x, y, direction, game) {
         case 'up' :
             spriteX = 0;
             cWidth = 32;
-            cHeight = 5;
+            cHeight = 10;
             cOffsetX = 0;
             cOffsetY = 27;
 
             hWidth = 22;
-            hHeight = 20;
+            hHeight = 16;
             hOffsetX = 5;
+            hOffsetY = 6;
 
             tWidth = TRAP_TRIGGER_WIDTH;
             tHeight = TRAP_TRIGGER_HEIGHT;
@@ -40,13 +41,14 @@ function createSpikeTrap(x, y, direction, game) {
             break;
         case 'left':
             spriteX = 16;
-            cWidth = 5;
+            cWidth = 10;
             cHeight = 32;
-            cOffsetX = 27;
+            cOffsetX = 22;
             cOffsetY = 0;
 
-            hWidth = 20;
+            hWidth = 16;
             hHeight = 22;
+            hOffsetX = 6;
             hOffsetY = 5;
 
             tWidth = TRAP_TRIGGER_HEIGHT; // width == height when facing left or right
@@ -56,14 +58,14 @@ function createSpikeTrap(x, y, direction, game) {
             break;
         case 'right':
             spriteX = 32;
-            cWidth = 5;
+            cWidth = 10;
             cHeight = 32;
             cOffsetX = 0;
             cOffsetY = 0;
 
-            hWidth = 20;
+            hWidth = 16;
             hHeight = 22;
-            hOffsetX = 5;
+            hOffsetX = 10;
             hOffsetY = 5;
 
             tWidth = TRAP_TRIGGER_HEIGHT;
@@ -74,14 +76,14 @@ function createSpikeTrap(x, y, direction, game) {
         case 'down': 
             spriteX = 48;
             cWidth = 32;
-            cHeight = 5;
+            cHeight = 10;
             cOffsetX = 0;
             cOffsetY = 0;
 
             hWidth = 22;
-            hHeight = 20;
+            hHeight = 16;
             hOffsetX = 5;
-            hOffsetY = 5;
+            hOffsetY = 10;
 
             tWidth = TRAP_TRIGGER_WIDTH;
             tHeight = TRAP_TRIGGER_HEIGHT;
