@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "level_1.js",
+    "activeFile": "level_3.js",
     "expandedProjectPaths": [
         "."
     ],
@@ -15,27 +15,38 @@
         "level_1.js": {
             "expandedObjectLayers": [
                 2,
-                3,
-                5
+                5,
+                3
             ],
             "scale": 3,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 525.6666666666666,
-                "y": 223.66666666666663
+                "x": 621.6666666666666,
+                "y": 336.16666666666663
             }
         },
         "level_2.js": {
             "expandedObjectLayers": [
                 2,
-                3,
-                5
+                5,
+                3
             ],
             "scale": 4,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 622,
-                "y": 279.75
+                "x": 704.75,
+                "y": 279.875
+            }
+        },
+        "level_3.js": {
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 3,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 686,
+                "y": 309.5
             }
         },
         "prototype_level.js": {
@@ -45,8 +56,8 @@
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 535.5,
-                "y": 258.5
+                "x": 636.5,
+                "y": 258.75
             }
         },
         "prototype_level.tmx": {
@@ -71,15 +82,17 @@
         "StatueCatsTileset.tsx",
         "prototype_level.js",
         "level_2.js",
-        "level_1.js"
+        "level_1.js",
+        "level_3.js"
     ],
     "project": "Minigame.tiled-project",
-    "property.type": "int",
+    "property.type": "string",
     "recentFiles": [
         "StatueCatsTileset.tsx",
         "prototype_level.js",
         "level_2.js",
         "level_1.js",
+        "level_3.js",
         "prototype_level.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",

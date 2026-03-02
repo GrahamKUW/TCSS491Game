@@ -7,6 +7,11 @@ function createSpikeTrap(x, y, direction) {
     let cOffsetX = 0;
     let cOffsetY = 0;
 
+    let hWidth = 0;
+    let hHeight = 0;
+    let hOffsetX = 0;
+    let hOffsetY = 0;
+
     // trap's trigger dimentions relative to the spike direction
     const TRAP_TRIGGER_WIDTH = 96;
     const TRAP_TRIGGER_HEIGHT = 160;
@@ -24,6 +29,9 @@ function createSpikeTrap(x, y, direction) {
             cOffsetX = 0;
             cOffsetY = 27;
 
+            hWidth = cWidth;
+            hHeight = 27;
+
             tWidth = TRAP_TRIGGER_WIDTH;
             tHeight = TRAP_TRIGGER_HEIGHT;
             tOffsetX = -32;
@@ -35,6 +43,9 @@ function createSpikeTrap(x, y, direction) {
             cHeight = 32;
             cOffsetX = 27;
             cOffsetY = 0;
+
+            hWidth = 27;
+            hHeight = cHeight;
 
             tWidth = TRAP_TRIGGER_HEIGHT; // width == height when facing left or right
             tHeight = TRAP_TRIGGER_WIDTH;
@@ -48,6 +59,10 @@ function createSpikeTrap(x, y, direction) {
             cOffsetX = 0;
             cOffsetY = 0;
 
+            hWidth = 27;
+            hHeight = cHeight;
+            hOffsetX = 5;
+
             tWidth = TRAP_TRIGGER_HEIGHT;
             tHeight = TRAP_TRIGGER_WIDTH;
             tOffsetX =  5;
@@ -60,6 +75,10 @@ function createSpikeTrap(x, y, direction) {
             cOffsetX = 0;
             cOffsetY = 0;
 
+            hWidth = 27;
+            hHeight = cHeight;
+            hOffsetY = 5;
+
             tWidth = TRAP_TRIGGER_WIDTH;
             tHeight = TRAP_TRIGGER_HEIGHT;
             tOffsetX = -32;
@@ -68,6 +87,14 @@ function createSpikeTrap(x, y, direction) {
     }
 
     const triggerWhiteList =  ["playercontrolled"];
+
+    const childHazard = {
+        removeFromWorld: false,
+        position: new Position(x, y),
+        hazard: new Hazard(),
+        collider: new Collider(hWidth, hHeight, hOffsetX, hOffsetY),
+
+    }
 
     const entity = {
         removeFromWorld: false,
@@ -79,7 +106,8 @@ function createSpikeTrap(x, y, direction) {
         trigger: new Trigger(tWidth, tHeight, tOffsetX, tOffsetY, 11, triggerWhiteList), // arbitrary id for spike traps
         static: new Static(),
         returnDelayTimer: 0,
-        waitingToReturn: false
+        waitingToReturn: false,
+        Hazard: childHazard
     }
 
     return entity;
