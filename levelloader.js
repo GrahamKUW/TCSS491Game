@@ -60,6 +60,11 @@ function loadLevel2() {
     
 }
 
+function loadLevel3() {
+    console.log("Loading level 3!");
+    loadLevel("level_3");
+}
+
 function loadLevel9() {
     console.log("Loading level 9!");
     loadLevel("level_9");
