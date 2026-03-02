@@ -1,5 +1,5 @@
 // Animator component - stores animation data and tracks current animation state
-class Animator {
+class Animator { 
     constructor(animations, startAnimation = 'idle-down') {
         this.animations = animations;          // Map of animation name -> {frames, duration, loop?}
         this.currentAnimation = startAnimation; // Current animation name

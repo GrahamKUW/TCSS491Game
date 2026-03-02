@@ -74,6 +74,8 @@ class AnimationSystem {
             entity.animator.currentFrame = (entity.animator.currentFrame + 1);
         }
 
+        
+
         //update sprite to show current frame (sprite will be drawn by RenderSystem)
         const frame = anim.frames[entity.animator.currentFrame];
         entity.sprite.frameX = frame.x;

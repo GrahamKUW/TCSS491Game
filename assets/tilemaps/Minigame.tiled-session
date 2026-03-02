@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "level_3.js",
+    "activeFile": "level_2.js",
     "expandedProjectPaths": [
         "."
     ],
@@ -31,22 +31,11 @@
                 5,
                 3
             ],
-            "scale": 4,
+            "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 704.75,
-                "y": 279.875
-            }
-        },
-        "level_3.js": {
-            "expandedObjectLayers": [
-                3
-            ],
-            "scale": 3,
-            "selectedLayer": 4,
-            "viewCenter": {
-                "x": 686,
-                "y": 309.5
+                "x": 530.5,
+                "y": 241
             }
         },
         "prototype_level.js": {
@@ -90,9 +79,8 @@
     "recentFiles": [
         "StatueCatsTileset.tsx",
         "prototype_level.js",
-        "level_2.js",
         "level_1.js",
-        "level_3.js",
+        "level_2.js",
         "prototype_level.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
