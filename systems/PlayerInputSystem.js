@@ -3,6 +3,19 @@ let pressedAnotherButton = false;
 class PlayerInputSystem {
     update(deltaTime, game) {
 
+
+        // Restarting level
+        // jank and doesn't really follow ecs but its a quick add.
+        if (game.keys['r']) {
+
+            if (pressedAnotherButton) {
+                //console.log("RESET");
+                reloadCurrentLevel();
+                pressedAnotherButton = false;
+            }
+
+        }
+
         for (let entity of game.entities) {
             if (entity.position && entity.velocity && entity.playercontrolled) {
 
@@ -36,16 +49,6 @@ class PlayerInputSystem {
                     pressedAnotherButton = true;
                 }
 
-                // jank and doesn't really follow ecs but its a quick add.
-                if (game.keys['r']) {
-
-                    if (pressedAnotherButton) {
-                        //console.log("RESET");
-                        reloadCurrentLevel();
-                        pressedAnotherButton = false;
-                    }
-
-                }
 
             }
         }
