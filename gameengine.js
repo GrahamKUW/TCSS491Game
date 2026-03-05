@@ -26,6 +26,9 @@ class GameEngine {
         this.tilemapScaleX = 1;
         this.tilemapScaleY = 1;
 
+        // Information on the level
+        this.currentLevel = CURRENT_LEVEL;
+
         //how many yarn balls have been obtained
         this.yarnCollected = 0;
 

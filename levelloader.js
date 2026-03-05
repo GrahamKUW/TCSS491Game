@@ -30,6 +30,7 @@ function loadLevel(levelReference = "prototype_level") {
     constructGameObjects(gameEngine, levelReference, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
 
     CURRENT_LEVEL = levelReference;
+    gameEngine.currentLevel = CURRENT_LEVEL;
 
     startingYarn = gameEngine.yarnCollected;
     //extra entities that arent in the tiled data currently

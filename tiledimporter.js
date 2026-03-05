@@ -177,9 +177,10 @@ function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, ti
                   gameEngine.addEntity(createYarn(posX, posY, gameObjectProperties[0].value,tilemapScaleX, tilemapScaleY));
                   break;
             case "exit":  
-                  gameEngine.addEntity(createExitDoor(posX, posY,gameObjectProperties[0].value, width, height,gameObjectProperties[1].value, gameObjectProperties[2].value, tilemapScaleX, tilemapScaleY,gameObjectProperties[3].value ));
-            //TODO: add spike trap case
-            //TODO: add chalice case
+                  gameEngine.addEntity(createExitDoor(posX, posY, gameObjectProperties[0].value, width, height,gameObjectProperties[1].value, gameObjectProperties[2].value, tilemapScaleX, tilemapScaleY,gameObjectProperties[3].value ));
+                  break;
+            case "chalice":
+                  gameEngine.addEntity(createChalice(posX, posY));
                   break;
             default:
                   console.warn("Unknown object type: " + gameObjectName);

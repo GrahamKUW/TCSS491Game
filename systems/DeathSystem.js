@@ -4,12 +4,12 @@ class DeathSystem {
             if (entity.destructible) {
                 for (const other of entity.collisions) {
                     //kill when crushed by statue or spike trap
-                    if (!other.playercontrolled && other.position.y + other.collider.height <= entity.position.y + 1) {
+                    if (!other.playercontrolled && !other.hazard && other.position.y + other.collider.height <= entity.position.y + 1) {
                         entity.removeFromWorld = true;
                         console.log("Entity crushed!");
                         break;
                     }
-                    if(other.hazard) {
+                    if(!entity.destructible && other.hazard) {
                         entity.removeFromWorld = true;
                         console.log("Entity killed by hazard!");
                         break;

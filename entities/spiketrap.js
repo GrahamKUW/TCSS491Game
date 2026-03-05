@@ -104,7 +104,7 @@ function createSpikeTrap(x, y, direction, game) {
         trigger: new Trigger(tWidth, tHeight, tOffsetX, tOffsetY, 11, triggerWhiteList), // arbitrary id for spike traps
         static: new Static(),
         returnDelayTimer: 0,
-        waitingToReturn: false,
+        canFire: true,
         child: null
     }
 
