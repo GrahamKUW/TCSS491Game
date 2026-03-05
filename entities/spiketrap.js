@@ -1,11 +1,16 @@
 // Another version of spikes that have a trigger to lunge in the direction they are facing
-function createSpikeTrap(x, y, direction) {
+function createSpikeTrap(x, y, direction, game) {
 
     let spriteX = 0;
     let cWidth = 0;
     let cHeight = 0;
     let cOffsetX = 0;
     let cOffsetY = 0;
+
+    let hWidth = 0;
+    let hHeight = 0;
+    let hOffsetX = 0;
+    let hOffsetY = 0;
 
     // trap's trigger dimentions relative to the spike direction
     const TRAP_TRIGGER_WIDTH = 96;
@@ -20,9 +25,14 @@ function createSpikeTrap(x, y, direction) {
         case 'up' :
             spriteX = 0;
             cWidth = 32;
-            cHeight = 5;
+            cHeight = 10;
             cOffsetX = 0;
             cOffsetY = 27;
+
+            hWidth = 22;
+            hHeight = 16;
+            hOffsetX = 5;
+            hOffsetY = 6;
 
             tWidth = TRAP_TRIGGER_WIDTH;
             tHeight = TRAP_TRIGGER_HEIGHT;
@@ -31,10 +41,15 @@ function createSpikeTrap(x, y, direction) {
             break;
         case 'left':
             spriteX = 16;
-            cWidth = 5;
+            cWidth = 10;
             cHeight = 32;
-            cOffsetX = 27;
+            cOffsetX = 22;
             cOffsetY = 0;
+
+            hWidth = 16;
+            hHeight = 22;
+            hOffsetX = 6;
+            hOffsetY = 5;
 
             tWidth = TRAP_TRIGGER_HEIGHT; // width == height when facing left or right
             tHeight = TRAP_TRIGGER_WIDTH;
@@ -43,10 +58,15 @@ function createSpikeTrap(x, y, direction) {
             break;
         case 'right':
             spriteX = 32;
-            cWidth = 5;
+            cWidth = 10;
             cHeight = 32;
             cOffsetX = 0;
             cOffsetY = 0;
+
+            hWidth = 16;
+            hHeight = 22;
+            hOffsetX = 10;
+            hOffsetY = 5;
 
             tWidth = TRAP_TRIGGER_HEIGHT;
             tHeight = TRAP_TRIGGER_WIDTH;
@@ -56,9 +76,14 @@ function createSpikeTrap(x, y, direction) {
         case 'down': 
             spriteX = 48;
             cWidth = 32;
-            cHeight = 5;
+            cHeight = 10;
             cOffsetX = 0;
             cOffsetY = 0;
+
+            hWidth = 22;
+            hHeight = 16;
+            hOffsetX = 5;
+            hOffsetY = 10;
 
             tWidth = TRAP_TRIGGER_WIDTH;
             tHeight = TRAP_TRIGGER_HEIGHT;
@@ -79,8 +104,20 @@ function createSpikeTrap(x, y, direction) {
         trigger: new Trigger(tWidth, tHeight, tOffsetX, tOffsetY, 11, triggerWhiteList), // arbitrary id for spike traps
         static: new Static(),
         returnDelayTimer: 0,
-        waitingToReturn: false
+        waitingToReturn: false,
+        child: null
     }
+
+    const childHazard = {
+        removeFromWorld: false,
+        position: entity.position,
+        hazard: new Hazard(),
+        collider: new Collider(hWidth, hHeight, hOffsetX, hOffsetY),
+        parent: entity
+    }
+
+    entity.childs = childHazard;
+    game.addEntity(childHazard);
 
     return entity;
 }

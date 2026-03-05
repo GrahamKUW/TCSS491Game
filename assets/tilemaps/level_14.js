@@ -7,7 +7,7 @@
  }
  if(typeof module === 'object' && module && module.exports) {
   module.exports = data;
- }})("prototype_level",
+ }})("level_14",
 { "compressionlevel":-1,
  "height":32,
  "infinite":false,
@@ -330,12 +330,6 @@
                  "id":30,
                  "name":"Spike",
                  "point":true,
-                 "properties":[
-                        {
-                         "name":"Direction",
-                         "type":"string",
-                         "value":"up"
-                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -348,12 +342,6 @@
                  "id":31,
                  "name":"Spike",
                  "point":true,
-                 "properties":[
-                        {
-                         "name":"Direction",
-                         "type":"string",
-                         "value":"up"
-                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -366,12 +354,6 @@
                  "id":32,
                  "name":"Spike",
                  "point":true,
-                 "properties":[
-                        {
-                         "name":"Direction",
-                         "type":"string",
-                         "value":"up"
-                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,

@@ -78,7 +78,7 @@ class RenderSystem {
 
                     game.ctx.save();
                     
-                    if(entity.hazard){
+                    if(entity.hazard && !entity.child){
                         game.ctx.strokeStyle = '#bf1d00'
                     }
                     else{

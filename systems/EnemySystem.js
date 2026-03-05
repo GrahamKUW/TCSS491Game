@@ -1,7 +1,7 @@
 class EnemySystem {
     update(deltaTime, game) {
         for (let entity of game.entities) {
-            if (!entity.destructible || !entity.hazard) continue; 
+            if (!entity.destructible || !entity.hazard || entity.child) continue; 
 
             //want to check if the rat collider is facing the ground. If not, turn around.
             const collider = entity.collider;
