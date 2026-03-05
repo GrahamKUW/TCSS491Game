@@ -842,24 +842,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":87,
-                 "name":"Rat",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"Speed",
-                         "type":"float",
-                         "value":50
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":496,
-                 "y":336
-                }, 
-                {
-                 "height":0,
                  "id":89,
                  "name":"Button",
                  "point":true,
@@ -1270,6 +1252,132 @@
                  "width":0,
                  "x":640,
                  "y":352
+                }, 
+                {
+                 "height":0,
+                 "id":121,
+                 "name":"Spike",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Facing",
+                         "type":"string",
+                         "value":"down"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":592,
+                 "y":208
+                }, 
+                {
+                 "height":0,
+                 "id":122,
+                 "name":"Spike",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Facing",
+                         "type":"string",
+                         "value":"down"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":624,
+                 "y":208
+                }, 
+                {
+                 "height":0,
+                 "id":123,
+                 "name":"Spike",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Facing",
+                         "type":"string",
+                         "value":"down"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":608,
+                 "y":208
+                }, 
+                {
+                 "height":0,
+                 "id":124,
+                 "name":"Spike",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Facing",
+                         "type":"string",
+                         "value":"down"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":656,
+                 "y":208
+                }, 
+                {
+                 "height":0,
+                 "id":125,
+                 "name":"Spike",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Facing",
+                         "type":"string",
+                         "value":"down"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":640,
+                 "y":208
+                }, 
+                {
+                 "height":0,
+                 "id":126,
+                 "name":"Spike",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Facing",
+                         "type":"string",
+                         "value":"down"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":672,
+                 "y":208
+                }, 
+                {
+                 "height":0,
+                 "id":127,
+                 "name":"Spike",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Facing",
+                         "type":"string",
+                         "value":"down"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":688,
+                 "y":208
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1278,7 +1386,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":114,
+ "nextobjectid":128,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
