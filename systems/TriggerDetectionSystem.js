@@ -16,6 +16,7 @@ class TriggerDetectionSystem {
 
         for (const t of triggers) {
             //reset all triggers
+            const wasActive = t.trigger.active;
             t.trigger.active = false;
 
             const triggerBounds = t.trigger.getBounds(t.position);
@@ -42,6 +43,10 @@ class TriggerDetectionSystem {
                     }
                 }
             }
+
+            //Checking if the trigger just became active or unactive
+            t.trigger.wasJustActivated = !wasActive && t.trigger.active;
+            t.trigger.wasJustDeactivated = wasActive && !t.trigger.active;
         }
     }
 
