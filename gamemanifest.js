@@ -22,5 +22,7 @@ const GameManifest = {
     "./assets/sprites/CircleExpand.png",
     "./assets/audio/Victory.wav",
     "./assets/sprites/chalice.png",
+    "./assets/sprites/MenuButton.png",
+    "./assets/sprites/MainMenuTemp.png",
   ],
 };

@@ -74,6 +74,17 @@ class GameEngine {
                 console.log("CLICK", getXandY(e));
             }
             this.click = getXandY(e);
+            //Narrow the entity list down to only those that can be clicked.
+            for (let entity of this.entities){
+                if (this.click.x >= entity.position.x &&
+                this.click.x <= entity.position.x + entity.width &&
+                this.click.y >= entity.position.y &&
+                this.click.y <= entity.position.y + entity.height &&
+                entity.clickable) {
+                    //Activate the onClick method for any clickable entity that was clicked.
+                    entity.onClick();
+                }
+            }
         });
 
         this.ctx.canvas.addEventListener("wheel", e => {
