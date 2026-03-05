@@ -384,7 +384,7 @@
                         {
                          "name":"Target Level",
                          "type":"string",
-                         "value":"prototype_level"
+                         "value":"level_15"
                         }],
                  "rotation":0,
                  "type":"",

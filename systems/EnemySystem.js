@@ -6,17 +6,18 @@ class EnemySystem {
             //want to check if the rat collider is facing the ground. If not, turn around.
             const collider = entity.collider;
 
-            const feetY = entity.position.y + collider.height + 10;
+            const feetY = entity.position.y + collider.height + collider.offsetY + 1;
 
             let probeX;
 
             if (entity.facing.direction === "left") {
                 probeX = entity.position.x - 1;
             } else {
-                probeX = entity.position.x + collider.width + 1;
+                probeX = entity.position.x + collider.width + collider.offsetX + 1;
             }
 
             const groundAhead = game.getSystem(CollisionSystem).isSolidAt(probeX, feetY, game);
+            const wallAhead = game.getSystem(CollisionSystem).isSolidAt(probeX, feetY - 20, game);
 
             //Turn around if no ground ahead
             if (!groundAhead) {
@@ -24,7 +25,7 @@ class EnemySystem {
             }
 
             //turn when hitting wall
-            if(entity.velocity.dx == 0) {
+            if(wallAhead) {
                 this.flip(entity)
             }
         }

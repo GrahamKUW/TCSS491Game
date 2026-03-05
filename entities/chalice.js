@@ -1,4 +1,4 @@
-function createChalice(x, y,) {
+function createChalice(x, y) {
     const chaliceAnimation = {
         'sparkle': { 
             frames: [

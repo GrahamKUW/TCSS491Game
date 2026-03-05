@@ -253,7 +253,7 @@ class CollisionSystem {
         }
 
         if (b1.top < b2.top) { //e1 is on top of e2 
-            if (!e1.static) {
+            if (!e1.static && !e1.parent) {   // prevent spikes from being pushed
                 e1.position.y -= yPush;
                 if (e1.velocity && e1.velocity.dy > 0) {
                     //if e1 fell on top, reset its velocity
@@ -266,7 +266,7 @@ class CollisionSystem {
                 }
             }
 
-            if (!e2.static) {
+            if (!e2.static && !e2.parent) {   // prevent spikes from being pushed
                 e2.position.y += yPush;
                 if (e2.velocity && e2.velocity.dy < 0) {
                     e2.velocity.dy = 0;
@@ -275,7 +275,7 @@ class CollisionSystem {
 
         } else {
             //e2 on top of e1
-            if (!e2.static) {
+            if (!e2.static && !e2.parent) {   // prevent spikes from being pushed
                 e2.position.y -= yPush;
 
                 if (e2.velocity && e2.velocity.dy > 0) {
@@ -289,7 +289,7 @@ class CollisionSystem {
                 }
             }
 
-            if (!e1.static) {
+            if (!e1.static && !e1.parent) {   // prevent spikes from being pushed
                 e1.position.y += yPush;
 
                 if (e1.velocity && e1.velocity.dy < 0) {
