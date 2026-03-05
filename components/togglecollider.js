@@ -4,10 +4,11 @@
  */
 class ToggleCollider {
 
-    constructor(triggerID, colliderWidth, colliderHeight, colliderOffsetX, colliderOffsetY) {
+    constructor(triggerID, colliderWidth, colliderHeight, colliderOffsetX, colliderOffsetY, isSolid = false) {
         this.triggerID = triggerID;
 
-        this.isSolid = false;
+        //this.isSolid = false;
+        this.isSolid = isSolid;
 
         this.colliderWidth = colliderWidth;
         this.colliderHeight = colliderHeight;

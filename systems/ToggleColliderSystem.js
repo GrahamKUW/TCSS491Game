@@ -6,7 +6,13 @@
 class ToggleColliderSystem {
 
     update(deltaTime, game) {
-        const activeTriggerIDS = game.entities.filter(e => e.trigger && e.trigger.active).map(e => e.trigger.id);
+
+
+        const edgeTriggerIDS = game.entities
+            .filter(e => e.trigger && (e.trigger.wasJustActivated || e.trigger.wasJustDeactivated))
+            .map(e => e.trigger.id);
+
+
         // Could add another marker component to distinguish this from other entities that may have toggle colliders (doors?)
         const toggleables = game.entities.filter(e => e.togglecollider);
 
@@ -14,9 +20,13 @@ class ToggleColliderSystem {
          * Loop over everything triggerable, if its triggerID matches an active Trigger ID, update the entitiy.
          */
         for (const g of toggleables) {
-            if (!activeTriggerIDS.includes(g.togglecollider.triggerID)) { // not active
-                //Give it a collider and sprite component
-                if (!g.togglecollider.isSolid) { 
+
+            if (edgeTriggerIDS.includes(g.togglecollider.triggerID)) {
+
+                if (g.togglecollider.isSolid) {
+                    g.collider = null;
+                    g.togglecollider.isSolid = false;
+                } else {
                     g.collider = new Collider(
                         g.togglecollider.colliderWidth,
                         g.togglecollider.colliderHeight,
@@ -28,16 +38,8 @@ class ToggleColliderSystem {
                     //mark it is a solid now since it has a collider
                     g.togglecollider.isSolid = true;
                 }
-
-            } else {   //for gates: OPEN gate if active (button is pressed)
-                /** TriggerID is active, deactivate the collider */
-                if (g.collider) {
-                    g.collider = null;
-                    g.togglecollider.isSolid = false;
-
-                }
-
             }
+
         }
     }
 }
