@@ -186,6 +186,7 @@
         },
         "level_5.js": {
             "expandedObjectLayers": [
+                2,
                 5,
                 3
             ],
@@ -200,11 +201,11 @@
             "expandedObjectLayers": [
                 3
             ],
-            "scale": 0.973193359375,
+            "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 511.7174251166524,
-                "y": 256.3724850735035
+                "x": 527.5,
+                "y": 252.75
             }
         },
         "level_7.js": {

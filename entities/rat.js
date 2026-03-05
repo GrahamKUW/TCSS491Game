@@ -36,7 +36,9 @@ function createRat(x, y, speed) {
         cantrigger: new CanTrigger(),
         effect: new Effect('poof', 0.45),   //might change if we get more effects
         destructible: new Destructible(),
-        hazard: new Hazard()
+        hazard: new Hazard(),
+        leftBlocked: false,
+        rightBlocked: false,
     }
 
     return entity;
