@@ -7,13 +7,23 @@ class ToggleAnimationSystem {
         const Toggleables = game.entities.filter(
             e => e.toggleanimator
         );
-        const activeTriggerIDs = game.entities.filter(e => e.trigger && e.trigger.active).map(e => e.trigger.id);
+
+        const edgeTriggerIDS = game.entities
+            .filter(e => e.trigger && (e.trigger.wasJustActivated || e.trigger.wasJustDeactivated))
+            .map(e => e.trigger.id);
+
 
         for (const t of Toggleables) {
-            if (activeTriggerIDs.includes(t.toggleanimator.triggerID)) {
-                t.toggleanimator.active = true;
-            } else {
-                t.toggleanimator.active = false;
+
+
+            if (edgeTriggerIDS.includes(t.toggleanimator.triggerID)) {
+
+                t.toggleanimator.hasBeenToggled = true;
+                if (t.toggleanimator.active) {
+                    t.toggleanimator.active = false;
+                } else {
+                    t.toggleanimator.active = true;
+                }
             }
         }
     }

@@ -44,18 +44,19 @@ class AnimationSystem {
         }
 
         if (entity.toggleanimator) {
+            //Only do this if the entity has been toggled at least once so we can have base animations.
+            //e.g door starts closed but does not immediately play the closing animation.
+            if (entity.toggleanimator.hasBeenToggled) {
+                let newAnim;
 
-            let newAnim;
-            console.log("entity has toggle animator");
-
-            if (entity.toggleanimator.active) {
-                console.log("active");
-                newAnim = 'active';
-            } else {
-                console.log("inactive");
-                newAnim = 'inactive';
+                if (entity.toggleanimator.active) {
+                    newAnim = 'active';
+                } else {
+                    newAnim = 'inactive';
+                }
+                this.resetIfNew(entity, newAnim);
             }
-            this.resetIfNew(entity, newAnim);
+
         }
 
     }

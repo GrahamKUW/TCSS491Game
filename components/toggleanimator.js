@@ -3,8 +3,9 @@
  */
 class ToggleAnimator {
 
-    constructor(triggerID) {
-        this.active = false;
+    constructor(triggerID, active = false) {
+        this.active = active;
         this.triggerID = triggerID;
+        this.hasBeenToggled = false;
     }
 }
