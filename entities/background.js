@@ -15,3 +15,4 @@ function createTilemapBackground(spritePath, posX, posY, scaleX, scaleY){
     }
     return entity;
 }
+

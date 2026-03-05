@@ -20,6 +20,10 @@ let startingYarn = 0;
  * @param {*} levelReference the name of the level to load
  */
 function loadLevel(levelReference = "prototype_level") {
+
+    // DISALE CONTROLS
+    // SCREEN WIPE OUT
+
     gameEngine.entities = []; // clear out all entities
     constructTilemap(gameEngine, levelReference, "./assets/sprites/StatueCatsTileset.png", TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y)
     // Create level collider
@@ -29,10 +33,16 @@ function loadLevel(levelReference = "prototype_level") {
     //console.log(getTileMapObjects("prototype_level", GAMEOBJECT_LAYER));
     constructGameObjects(gameEngine, levelReference, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
 
+    
+    
     CURRENT_LEVEL = levelReference;
     gameEngine.currentLevel = CURRENT_LEVEL;
 
     startingYarn = gameEngine.yarnCollected;
+
+    // SCREEN WIPE IN
+    // ENABLE CONTROLS
+    
     //extra entities that arent in the tiled data currently
     
 }
