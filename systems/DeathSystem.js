@@ -9,7 +9,7 @@ class DeathSystem {
                         console.log("Entity crushed!");
                         break;
                     }
-                    if(!entity.destructible && other.hazard) {
+                    if(entity.hazard && other.hazard) {
                         entity.removeFromWorld = true;
                         console.log("Entity killed by hazard!");
                         break;
