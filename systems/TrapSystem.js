@@ -49,7 +49,6 @@ class TrapSystem{
                 if(entity.facing.direction == 'up') {
 
                     if (entity.position.y >= entity.position.startY) {
-                        console.log("no");
 
                         entity.velocity.dx = 0;
                         entity.velocity.dy = 0;

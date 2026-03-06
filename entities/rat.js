@@ -5,9 +5,10 @@ function createRat(x, y, speed) {
                 { x: 0, y: 0, width: 42, height: 16 },
                 { x: 42, y: 0, width: 42, height: 16 },
                 { x: 84, y: 0, width: 42, height: 16 },
-                { x: 126, y: 0, width: 42, height: 16 }
+                { x: 126, y: 0, width: 42, height: 16 },
+                { x: 168, y: 0, width: 42, height: 16 }
             ],
-            duration: 0.15,
+            duration: 0.003 * speed,
             loops: true
         },
         'walk-left': {
@@ -15,9 +16,10 @@ function createRat(x, y, speed) {
                 { x: 0, y: 16, width: 42, height: 16 },
                 { x: 42, y: 16, width: 42, height: 16 },
                 { x: 84, y: 16, width: 42, height: 16 },
-                { x: 126, y: 16, width: 42, height: 16 }
+                { x: 126, y: 16, width: 42, height: 16 },
+                { x: 168, y: 16, width: 42, height: 16 }
             ],
-            duration: 0.15,
+            duration: 0.003 * speed,
             loops: true
         }
     }
@@ -34,9 +36,11 @@ function createRat(x, y, speed) {
         animator: new Animator(ratAnimations, 'walk-right'),
         facing: new Facing('right'),
         cantrigger: new CanTrigger(),
-        effect: new Effect('poof', 0.45),   //might change if we get more effects
+        effect: new Effect('poof', 0.45),
         destructible: new Destructible(),
-        hazard: new Hazard()
+        hazard: new Hazard(),
+        leftBlocked: false,
+        rightBlocked: false,
     }
 
     return entity;

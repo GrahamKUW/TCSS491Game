@@ -186,11 +186,12 @@
         },
         "level_5.js": {
             "expandedObjectLayers": [
+                2,
                 5,
                 3
             ],
             "scale": 2,
-            "selectedLayer": 4,
+            "selectedLayer": 0,
             "viewCenter": {
                 "x": 527.5,
                 "y": 230.75
@@ -198,35 +199,41 @@
         },
         "level_6.js": {
             "expandedObjectLayers": [
+                2,
+                5,
                 3
             ],
-            "scale": 0.973193359375,
+            "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 511.7174251166524,
-                "y": 256.3724850735035
+                "x": 491.5,
+                "y": 281.75
             }
         },
         "level_7.js": {
             "expandedObjectLayers": [
+                2,
+                5,
                 3
             ],
-            "scale": 0.973193359375,
+            "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 511.7174251166524,
-                "y": 256.3724850735035
+                "x": 505.5,
+                "y": 290.75
             }
         },
         "level_8.js": {
             "expandedObjectLayers": [
+                2,
+                5,
                 3
             ],
-            "scale": 0.973193359375,
-            "selectedLayer": 4,
+            "scale": 2,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 648.3809141538306,
-                "y": 231.71140434499023
+                "x": 511,
+                "y": 268.75
             }
         },
         "level_9.js": {
@@ -235,11 +242,11 @@
                 5,
                 3
             ],
-            "scale": 1,
-            "selectedLayer": 4,
+            "scale": 2,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 456,
-                "y": 398.5
+                "x": 495.5,
+                "y": 257.75
             }
         },
         "prototype_level.js": {
