@@ -9,16 +9,15 @@ class DeathSystem {
                         let feetY = entity.position.y + entity.collider.height + entity.collider.offsetY -20;
                         entity.leftBlocked = game.getSystem(CollisionSystem).isSolidAt(leftX, feetY, game);
                         entity.rightBlocked = game.getSystem(CollisionSystem).isSolidAt(rightX, feetY, game);
-                        console.log("left: " + entity.leftBlocked + ", " + leftX + " right: " + entity.rightBlocked + ", " + rightX);
                     }
                     
                     //kill when crushed by statue or spike trap
-                    if (!other.playercontrolled && !other.hazard && other.position.y + other.collider.height <= entity.position.y + 1 || (entity.leftBlocked && entity.rightBlocked)) {
+                    if (!other.playercontrolled && !other.hazard && other.position.y + other.collider.height <= entity.position.y + 1 || (entity.leftBlocked && entity.rightBlocked && !other.hazard)) {
                         entity.removeFromWorld = true;
                         console.log("Entity crushed!");
                         break;
                     }
-                    if(other.hazard) {
+                    if(other.hazard && !other.destructible) {
                         entity.removeFromWorld = true;
                         console.log("Entity killed by hazard!");
                         break;
