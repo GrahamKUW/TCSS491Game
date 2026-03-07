@@ -17,40 +17,42 @@ class UISystem{
 
             // Show current level name
             let levelString = game.currentLevel.replace('_', ' ');
+            ctx.fillText(levelString, 160, 40);
 
-        let isAlive = false;
-        for (let entity of game.entities) {
-            //filter down to only players for getting life counter
+            let isAlive = false;
+            for (let entity of game.entities) {
+                //filter down to only players for getting life counter
 
-            if(entity.isUserInterface && entity.sprite !== null && entity.sprite !== undefined){
+                if(entity.isUserInterface && entity.sprite !== null && entity.sprite !== undefined){
 
-                game.ctx.drawImage(
-                        entity.sprite.image,
-                        entity.sprite.frameX,
-                        entity.sprite.frameY,
-                        entity.sprite.frameWidth,
-                        entity.sprite.frameHeight,
-                        entity.position.x,
-                        entity.position.y,
-                        entity.sprite.frameWidth * entity.sprite.scaleWidth, 
-                        entity.sprite.frameHeight * entity.sprite.scaleHeight
-                        )
+                    game.ctx.drawImage(
+                            entity.sprite.image,
+                            entity.sprite.frameX,
+                            entity.sprite.frameY,
+                            entity.sprite.frameWidth,
+                            entity.sprite.frameHeight,
+                            entity.position.x,
+                            entity.position.y,
+                            entity.sprite.frameWidth * entity.sprite.scaleWidth, 
+                            entity.sprite.frameHeight * entity.sprite.scaleHeight
+                            )
+                }
+
+                if (!entity.playercontrolled || !entity.statueable) continue;
+                isAlive = true;
+                ctx.drawImage(
+                    ASSET_MANAGER.getAsset("./assets/sprites/Lives.png"), 0, entity.playercontrolled.lives * 32, 114, 32,
+                    524, 24, 228, 64
+                );
             }
-
-            if (!entity.playercontrolled || !entity.statueable) continue;
-            isAlive = true;
-            ctx.drawImage(
-                ASSET_MANAGER.getAsset("./assets/sprites/Lives.png"), 0, entity.playercontrolled.lives * 32, 114, 32,
-                524, 24, 228, 64
-            );
-        }
-        if (!isAlive) {
-            const ctx = game.ctx;
-            ctx.drawImage(
-                ASSET_MANAGER.getAsset("./assets/sprites/Lives.png"), 0, 0, 114, 32,
-                524, 24, 228, 64
-            );
-        }
+            if (!isAlive) {
+                const ctx = game.ctx;
+                ctx.drawImage(
+                    ASSET_MANAGER.getAsset("./assets/sprites/Lives.png"), 0, 0, 114, 32,
+                    524, 24, 228, 64
+                );
+            }
         
     }
+}
 }

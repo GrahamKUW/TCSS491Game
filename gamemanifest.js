@@ -35,9 +35,10 @@ const GameManifest = {
     "./assets/audio/synth_misc_01.ogg",
     "./assets/audio/synth_misc_05.ogg",
     "./assets/audio/retro_explosion_02.ogg",
-    
-
-
-
+    "./assets/sprites/menubackground.png",
+    "./assets/sprites/title.png",
+    "./assets/sprites/navbutton.png",
+    "./assets/sprites/LevelSelectButton.png",
+    "./assets/sprites/levelicons.png",
   ],
 };
