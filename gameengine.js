@@ -18,6 +18,7 @@ class GameEngine {
         this.mouse = null;
         this.wheel = null;
         this.keys = {};
+        this.inputBlockDuration = 0;
 
         // Information on tilemap
         this.currentTilemap = null;

@@ -24,10 +24,13 @@ let currentlyLoadingLevel = false;
  */
 function loadLevel(levelReference = "prototype_level", firstLoad = false) {
 
-    // DISALE CONTROLS
+  
     // SCREEN WIPE OUT
 
     if(currentlyLoadingLevel){return;}
+
+    // DISABLE CONTROLS
+    gameEngine.inputBlockDuration = 0.7;
     console.log("Loading " + levelReference);
     currentlyLoadingLevel = true;
 
@@ -77,6 +80,8 @@ function loadLevel(levelReference = "prototype_level", firstLoad = false) {
 
 
         }, true);
+
+       
     }
     
 
@@ -85,8 +90,6 @@ function loadLevel(levelReference = "prototype_level", firstLoad = false) {
 
 
     // SCREEN WIPE IN
-    // ENABLE CONTROLS
-    
     //extra entities that arent in the tiled data currently
     
 }
