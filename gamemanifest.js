@@ -7,6 +7,7 @@ const GameManifest = {
     "./assets/sprites/spikes.png",
     "./assets/sprites/prototype_background.png",
     "./assets/sprites/StatueCatsMainCharacterWReversed.png",
+    "./assets/sprites/Alt_StatueCatsMainCharacterWReversed.png",
     "./assets/sprites/StatueCatsTileset.png",
     "./assets/sprites/platform.png",
     "./assets/sprites/button.png",

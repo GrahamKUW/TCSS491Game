@@ -306,7 +306,7 @@ class CollisionSystem {
 
         let solid = false;
         for (let entity of game.entities) {
-            if (entity.collider) {
+            if (!entity.playercontrolled && entity.collider) {
                 if (x >= entity.collider.getBounds(entity.position).left && x <= entity.collider.getBounds(entity.position).right
                     && y >= entity.collider.getBounds(entity.position).top && y <= entity.collider.getBounds(entity.position).bottom) {
                     solid = true;
