@@ -1,7 +1,7 @@
 /**
  * System for toggling the sprites of all components that have a toggleable sprite, buttons.
  */
-class ToggleSpriteSystem {
+class ButtonSpriteSystem {
     update(deltaTime, game) {
         //filter down to entities with togglesprites, position and trigger component, update sprite accordingly. 
         const Toggleables = game.entities.filter(
