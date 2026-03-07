@@ -43,7 +43,10 @@ ASSET_MANAGER.downloadAll(() => {
 
 	// NOTE: In the final game this should only ever start on the main menu.
 
-	loadLevel("level_1", true);
+	//loadLevel("level_6");
+
+	loadMainMenu();
+	//loadLevel("level_1", true);
 	
 	gameEngine.start();
 });

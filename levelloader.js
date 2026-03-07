@@ -124,6 +124,31 @@ function loadLevel3() {
     loadLevel("level_3");
 }
 
+function loadLevel4() {
+    console.log("Loading level 4!");
+    loadLevel("level_4");
+}
+
+function loadLevel5() {
+    console.log("Loading level 5!");
+    loadLevel("level_5");
+}
+
+function loadLevel6() {
+    console.log("Loading level 6!");
+    loadLevel("level_6");
+}
+
+function loadLevel7() {
+    console.log("Loading level 7!");
+    loadLevel("level_7");
+}
+
+function loadLevel8() {
+    console.log("Loading level 8!");
+    loadLevel("level_8");
+}
+
 function loadLevel9() {
     console.log("Loading level 9!");
     loadLevel("level_9");
@@ -151,5 +176,46 @@ function loadLevel12() {
 function loadLevel13() {
     console.log("Loading level 13!");
     loadLevel("level_13");
+    
+}
+
+function loadLevel14() {
+    console.log("Loading level 14!");
+    loadLevel("level_14");
+    
+}
+
+function loadLevel15() {
+    console.log("Loading level 15!");
+    loadLevel("level_15");
+    
+}
+function loadLevel16() {
+    console.log("Loading level 16!");
+    loadLevel("level_16");
+    
+}
+
+function loadLevel17() {
+    console.log("Loading level 17!");
+    loadLevel("level_17");
+    
+}
+
+function loadLevel18() {
+    console.log("Loading level 18!");
+    loadLevel("level_18");
+    
+}
+
+function loadLevel19() {
+    console.log("Loading level 19!");
+    loadLevel("level_19");
+    
+}
+
+function loadLevel20() {
+    console.log("Loading level 20!");
+    loadLevel("level_20");
     
 }
