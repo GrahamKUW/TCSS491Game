@@ -15,9 +15,9 @@ class AnimationSystem {
     //checks to see if the new anim is the same as the current
     resetIfNew(entity, newAnim) {
         if (entity.animator.currentAnimation !== newAnim) {
-           entity.animator.currentAnimation = newAnim;
-           entity.animator.currentFrame = 0;
-           entity.animator.frameTimer = 0; 
+            entity.animator.currentAnimation = newAnim;
+            entity.animator.currentFrame = 0;
+            entity.animator.frameTimer = 0;
         }
     }
 
@@ -25,7 +25,7 @@ class AnimationSystem {
     updateAnimation(entity) {
         if (entity.facing && entity.velocity) {
 
-            const isMoving =  entity.position.oldX != entity.position.x;
+            const isMoving = entity.position.oldX != entity.position.x;
             const direction = entity.facing.direction;
 
 
@@ -42,6 +42,23 @@ class AnimationSystem {
 
             this.resetIfNew(entity, newAnim);
         }
+
+        if (entity.toggleanimator) {
+            //Only do this if the entity has been toggled at least once so we can have base animations.
+            //e.g door starts closed but does not immediately play the closing animation.
+            if (entity.toggleanimator.hasBeenToggled) {
+                let newAnim;
+
+                if (entity.toggleanimator.active) {
+                    newAnim = 'active';
+                } else {
+                    newAnim = 'inactive';
+                }
+                this.resetIfNew(entity, newAnim);
+            }
+
+        }
+
     }
 
 
@@ -75,7 +92,7 @@ class AnimationSystem {
             entity.animator.currentFrame = (entity.animator.currentFrame + 1) % anim.frames.length;
         }
         //if animation does not loop
-        else if (entity.animator.frameTimer >= anim.duration && !anim.loops && entity.animator.currentFrame < anim.frames.length-1) {
+        else if (entity.animator.frameTimer >= anim.duration && !anim.loops && entity.animator.currentFrame < anim.frames.length - 1) {
             entity.animator.frameTimer = 0;
             // if animation event is not null and current frame is event frame fire event
             if(entity.animator.animationEvent !== null && entity.animator.currentFrame === entity.animator.animationEvent.frame){
@@ -84,7 +101,7 @@ class AnimationSystem {
             entity.animator.currentFrame = (entity.animator.currentFrame + 1);
         }
 
-        
+
 
         //update sprite to show current frame (sprite will be drawn by RenderSystem)
         const frame = anim.frames[entity.animator.currentFrame];

@@ -9,6 +9,8 @@ class Trigger {
         this.offsetX = offsetX;
         this.offsetY = offsetY;
         this.active = false;
+        this.wasJustActivated = false;
+        this.wasJustDeactivated = false;
         this.id = id;
         this.whitelist = whitelist; //used when a subset of entities with the cantrigger component are allowed to trigger this trigger
 
