@@ -1,5 +1,5 @@
 /**
- * System for toggling the sprites of all components that have a toggleable sprite, e.g. doors and buttons.
+ * System for toggling the sprites of all components that have a toggleable sprite, buttons.
  */
 class ToggleSpriteSystem {
     update(deltaTime, game) {
@@ -9,8 +9,16 @@ class ToggleSpriteSystem {
         );
         const activeTriggerIDs = game.entities.filter(e => e.trigger && e.trigger.active).map(e => e.trigger.id);
 
+
+
+        //Changes sprite of entities that have a togglesprite and trigger while their trigger is currently active. 
         for (const t of Toggleables) {
-            if (activeTriggerIDs.includes(t.togglesprite.triggerID)) {
+
+            if (t.trigger.wasJustActivated) {
+                console.log("Button Pressed!");
+            }
+
+            if (t.trigger.active) {
                 t.sprite = t.togglesprite.activeSprite;
             } else {
                 t.sprite = t.togglesprite.inactiveSprite;
