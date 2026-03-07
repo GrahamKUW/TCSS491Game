@@ -7,6 +7,7 @@ function createWall(x, y, colliderWidth, colliderHeight) {
         position: new Position(x, y),
         collider: new Collider(colliderWidth, colliderHeight),
         static: new Static(),
+        wall: true
     }
     return entity;
 }

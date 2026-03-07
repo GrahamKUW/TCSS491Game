@@ -7,7 +7,7 @@
  }
  if(typeof module === 'object' && module && module.exports) {
   module.exports = data;
- }})("prototype_level",
+ }})("level_18",
 { "compressionlevel":-1,
  "height":32,
  "infinite":false,
@@ -384,7 +384,7 @@
                         {
                          "name":"Target Level",
                          "type":"string",
-                         "value":"prototype_level"
+                         "value":"final_level"
                         }],
                  "rotation":0,
                  "type":"",

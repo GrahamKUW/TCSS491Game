@@ -18,6 +18,8 @@ class StatueSystem {
                     
                     EFFECT_FACTORY.create(game, entity, 'poof'); 
                     console.log("Player turned into a statue!");
+                    AUDIO_MANAGER.playOnce("Turn_Statue");
+
                     respawnPlayer(entity);
                 }
             }

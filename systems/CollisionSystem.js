@@ -12,6 +12,7 @@
 */
 class CollisionSystem {
     update(deltaTime, game) {
+        
         const collidable = game.entities.filter(e => e.position && e.collider);
         const COLLISION_ITERATIONS = 5; //running multiple times helps stutter
 
@@ -229,10 +230,12 @@ class CollisionSystem {
         }
 
         //reset horizontal velocities of colliding entities if they have them
-        if (e1.velocity) {
+        if (e1.velocity && !(e1.destructible && e1.hazard)) {
+            console.log("e1");
             e1.velocity.dx = 0;
         }
-        if (e2.velocity) {
+        if (e2.velocity && !(e2.destructible && e2.hazard)) {
+            console.log("e2");
             e2.velocity.dx = 0;
         }
     }
@@ -253,7 +256,7 @@ class CollisionSystem {
         }
 
         if (b1.top < b2.top) { //e1 is on top of e2 
-            if (!e1.static) {
+            if (!e1.static && !e1.parent) {   // prevent spikes from being pushed
                 e1.position.y -= yPush;
                 if (e1.velocity && e1.velocity.dy > 0) {
                     //if e1 fell on top, reset its velocity
@@ -266,7 +269,7 @@ class CollisionSystem {
                 }
             }
 
-            if (!e2.static) {
+            if (!e2.static && !e2.parent) {   // prevent spikes from being pushed
                 e2.position.y += yPush;
                 if (e2.velocity && e2.velocity.dy < 0) {
                     e2.velocity.dy = 0;
@@ -275,7 +278,7 @@ class CollisionSystem {
 
         } else {
             //e2 on top of e1
-            if (!e2.static) {
+            if (!e2.static && !e2.parent) {   // prevent spikes from being pushed
                 e2.position.y -= yPush;
 
                 if (e2.velocity && e2.velocity.dy > 0) {
@@ -289,7 +292,7 @@ class CollisionSystem {
                 }
             }
 
-            if (!e1.static) {
+            if (!e1.static && !e1.parent) {   // prevent spikes from being pushed
                 e1.position.y += yPush;
 
                 if (e1.velocity && e1.velocity.dy < 0) {
@@ -303,7 +306,7 @@ class CollisionSystem {
 
         let solid = false;
         for (let entity of game.entities) {
-            if (entity.collider) {
+            if (!entity.playercontrolled && entity.collider) {
                 if (x >= entity.collider.getBounds(entity.position).left && x <= entity.collider.getBounds(entity.position).right
                     && y >= entity.collider.getBounds(entity.position).top && y <= entity.collider.getBounds(entity.position).bottom) {
                     solid = true;

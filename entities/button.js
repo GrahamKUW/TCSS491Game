@@ -16,6 +16,7 @@ function createButton(x, y, id, width = 32, height = 20, offsetX = 0, offsetY = 
     const activeSprite = new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/button.png"), 16, 0, 16, 16, 2, 2);
 
     const entity = {
+        removeFromWorld: false,
         position: new Position(x,y),
         sprite: inactiveSprite,
         trigger: new Trigger(width, height, offsetX, offsetY, id),

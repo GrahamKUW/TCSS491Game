@@ -12,6 +12,8 @@ class YarnSystem{
                 game.yarnCollected++;
 
                 console.log("You got a yarn ball! You've collected " + game.yarnCollected + " yarn balls total."); // will add to UI eventually
+                AUDIO_MANAGER.playOnce("Yarn_Collect");
+
             }
         }
         

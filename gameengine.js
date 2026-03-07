@@ -26,6 +26,9 @@ class GameEngine {
         this.tilemapScaleX = 1;
         this.tilemapScaleY = 1;
 
+        // Information on the level
+        this.currentLevel = CURRENT_LEVEL;
+
         //how many yarn balls have been obtained
         this.yarnCollected = 0;
 
@@ -126,4 +129,17 @@ class GameEngine {
         // Remove entities marked for removal
         this.entities = this.entities.filter(e => !e.removeFromWorld);
     };
+
+    /** Clears by using remove from world */
+    softClear(){
+
+        for(let entity of this.entities){
+
+            if(entity.persists){
+                continue;
+            }
+
+            entity.removeFromWorld = true;
+        }
+    }
 };

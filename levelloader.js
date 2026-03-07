@@ -14,26 +14,85 @@ const LEVEL_REFERENCE = "level_2";
 let CURRENT_LEVEL = "prototype_level";
 
 let startingYarn = 0;
+let currentlyLoadingLevel = false;
 
 /**
  * Attempts to load the level with the passed reference name.
  * @param {*} levelReference the name of the level to load
+ * @param {*} firstLoad first time loading any level?
+ * 
  */
-function loadLevel(levelReference = "prototype_level") {
-    gameEngine.entities = []; // clear out all entities
-    constructTilemap(gameEngine, levelReference, "./assets/sprites/StatueCatsTileset.png", TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y)
-    // Create level collider
-    constructColliders(gameEngine, levelReference, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
+function loadLevel(levelReference = "prototype_level", firstLoad = false) {
 
-    constructHazards(gameEngine, levelReference, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
-    //console.log(getTileMapObjects("prototype_level", GAMEOBJECT_LAYER));
-    constructGameObjects(gameEngine, levelReference, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
+    // DISALE CONTROLS
+    // SCREEN WIPE OUT
 
-    CURRENT_LEVEL = levelReference;
+    if(currentlyLoadingLevel){return;}
+    console.log("Loading " + levelReference);
+    currentlyLoadingLevel = true;
 
-    startingYarn = gameEngine.yarnCollected;
+    if(firstLoad){
+        const blocker = screenBlocker(gameEngine);
+
+        gameEngine.softClear();
+        constructTilemap(gameEngine, levelReference, "./assets/sprites/StatueCatsTileset.png", TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y)
+        // Create level collider
+        constructColliders(gameEngine, levelReference, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
+
+        constructHazards(gameEngine, levelReference, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
+        //console.log(getTileMapObjects("prototype_level", GAMEOBJECT_LAYER));
+        constructGameObjects(gameEngine, levelReference, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
+
+        CURRENT_LEVEL = levelReference;
+        gameEngine.currentLevel = CURRENT_LEVEL;
+
+        startingYarn = gameEngine.yarnCollected;
+        blocker.removeFromWorld = true;
+        
+        screenWipeIn(gameEngine, () => { currentlyLoadingLevel = false}, true);
+        
+    }else{
+
+        screenWipeOut(gameEngine, () => {
+
+            const blocker = screenBlocker(gameEngine);
+            
+            gameEngine.softClear();
+
+            constructTilemap(gameEngine, levelReference, "./assets/sprites/StatueCatsTileset.png", TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y)
+            // Create level collider
+            constructColliders(gameEngine, levelReference, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
+
+            constructHazards(gameEngine, levelReference, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
+            //console.log(getTileMapObjects("prototype_level", GAMEOBJECT_LAYER));
+            constructGameObjects(gameEngine, levelReference, TILEMAP_POSITION_X, TILEMAP_POSITION_Y, TILEMAP_SCALE_X, TILEMAP_SCALE_Y);
+
+            CURRENT_LEVEL = levelReference;
+            gameEngine.currentLevel = CURRENT_LEVEL;
+
+            startingYarn = gameEngine.yarnCollected;
+            blocker.removeFromWorld = true;
+            
+            screenWipeIn(gameEngine, () => {currentlyLoadingLevel = false}, true);
+
+
+        }, true);
+    }
+    
+
+    
+    
+
+
+    // SCREEN WIPE IN
+    // ENABLE CONTROLS
+    
     //extra entities that arent in the tiled data currently
     
+}
+
+function isLoadingLevel(){
+    return currentlyLoadingLevel;
 }
 
 function reloadCurrentLevel(){
