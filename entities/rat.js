@@ -8,7 +8,7 @@ function createRat(x, y, speed) {
                 { x: 126, y: 0, width: 42, height: 16 },
                 { x: 168, y: 0, width: 42, height: 16 }
             ],
-            duration: 0.003 * speed,
+            duration: 7.5 / speed,
             loops: true
         },
         'walk-left': {
@@ -19,7 +19,7 @@ function createRat(x, y, speed) {
                 { x: 126, y: 16, width: 42, height: 16 },
                 { x: 168, y: 16, width: 42, height: 16 }
             ],
-            duration: 0.003 * speed,
+            duration: 7.5 / speed,
             loops: true
         }
     }
