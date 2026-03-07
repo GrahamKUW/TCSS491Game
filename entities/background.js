@@ -10,6 +10,7 @@ function createBackground(spritePath) {
 
 function createTilemapBackground(spritePath, posX, posY, scaleX, scaleY){
     const entity =  {
+        removeFromWorld: false,
         position: new Position(posX, posY),
         sprite: new Sprite(ASSET_MANAGER.getAsset(spritePath), 0, 0, 16, 16, scaleX, scaleY),
     }

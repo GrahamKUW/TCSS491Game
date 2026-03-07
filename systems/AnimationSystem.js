@@ -66,11 +66,21 @@ class AnimationSystem {
         //update frame if timer passed duration
         if (entity.animator.frameTimer >= anim.duration && anim.loops) { //if animation loops
             entity.animator.frameTimer = 0;
+
+            // if animation event is not null and current frame is event frame fire event
+            if(entity.animator.animationEvent !== null && entity.animator.currentFrame === entity.animator.animationEvent.frame){
+                entity.animator.animationEvent?.callback();
+            }
+
             entity.animator.currentFrame = (entity.animator.currentFrame + 1) % anim.frames.length;
         }
         //if animation does not loop
         else if (entity.animator.frameTimer >= anim.duration && !anim.loops && entity.animator.currentFrame < anim.frames.length-1) {
             entity.animator.frameTimer = 0;
+            // if animation event is not null and current frame is event frame fire event
+            if(entity.animator.animationEvent !== null && entity.animator.currentFrame === entity.animator.animationEvent.frame){
+                entity.animator.animationEvent?.callback();
+            }
             entity.animator.currentFrame = (entity.animator.currentFrame + 1);
         }
 

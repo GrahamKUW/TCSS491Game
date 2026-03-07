@@ -13,8 +13,11 @@ class LevelChangeSystem {
 
         for (const l of levelExits) {
             if (activeTriggerIDs.includes(l.levelchange.triggerID)) {
-                console.log("Loading " + l.levelchange.targetLevel);
+                
                 loadLevel(l.levelchange.targetLevel);
+        
+                
+                
             }
         }
     }

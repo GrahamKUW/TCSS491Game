@@ -4,6 +4,7 @@ function createExitDoor(x, y, id, width = 32, height = 20, offsetX = 0, offsetY 
     const triggerWhiteList =  ["playercontrolled"]; //only the player can trigger the exit door's trigger, not every entity with cantrigger.
 
     const entity = {
+        removeFromWorld: false,
         position: new Position(x,y),
         trigger: new Trigger(width, height, offsetX, offsetY, id, triggerWhiteList),
         levelchange: new LevelChange(id, targetLevel),

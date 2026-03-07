@@ -13,6 +13,7 @@
 function createGhostTrigger(x, y, width = 16, height = 16, offsetX = 0, offsetY = 0, id) {
 
     const entity = {
+        removeFromWorld: false,
         position: new Position(x,y),
         trigger: new Trigger(width, height, offsetX, offsetY, id),
     }

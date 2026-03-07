@@ -22,5 +22,6 @@ const GameManifest = {
     "./assets/sprites/CircleExpand.png",
     "./assets/audio/Victory.wav",
     "./assets/sprites/chalice.png",
+    "./assets/sprites/Screen Wipe 640x360-Sheet.png"
   ],
 };
