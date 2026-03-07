@@ -11,7 +11,7 @@ function createGate(x, y, triggerID, colliderWidth = 16, colliderHeight = 64, co
                 {x: 32, y:0, width: 16, height: 32},
                 {x: 48, y:0, width: 16, height: 32},
             ],
-            duration: .15,
+            duration: .10,
             loops: false
         }, 'inactive': { //closed
             frames: [
@@ -20,7 +20,7 @@ function createGate(x, y, triggerID, colliderWidth = 16, colliderHeight = 64, co
                 {x: 16, y:0, width: 16, height: 32},
                 {x: 0, y:0, width: 16, height: 32},
             ],
-            duration: .15,
+            duration: .10,
             loops: false
         }, 'start-active': {
             frames: [
