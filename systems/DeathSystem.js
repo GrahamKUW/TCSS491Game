@@ -14,13 +14,29 @@ class DeathSystem {
                     
                     //kill when crushed by statue or spike trap
                     if (!other.playercontrolled && !other.hazard && other.position.y + other.collider.height <= entity.position.y + 1 || (entity.leftBlocked && entity.rightBlocked && !other.hazard)) {
-                        entity.removeFromWorld = true;
                         console.log("Entity crushed!");
+                        if(entity.isRat){
+                            AUDIO_MANAGER.playOnce("Rat_Kill");
+                        }
+                        else{
+                            AUDIO_MANAGER.playOnce("Crate_Destroy");
+                        }
+                        entity.removeFromWorld = true;
+
                         break;
                     }
                     if(other.hazard && !other.destructible) {
-                        entity.removeFromWorld = true;
                         console.log("Entity killed by hazard!");
+
+                        if(entity.isRat){
+                            AUDIO_MANAGER.playOnce("Rat_Kill");
+                        }
+                        else{
+                            AUDIO_MANAGER.playOnce("Crate_Destroy");
+                        }
+                        entity.removeFromWorld = true;
+
+                        
                         break;
                     }
                 } 

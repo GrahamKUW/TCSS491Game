@@ -14,6 +14,7 @@ class ButtonSpriteSystem {
             //Change to be stricter or move elsewhere if we add more entities with togglesprites and triggers.
             if (t.trigger.wasJustActivated) {
                 console.log("Button Pressed!");
+                AUDIO_MANAGER.playOnce("Button_Press");
             }
 
             if (t.trigger.active) {
