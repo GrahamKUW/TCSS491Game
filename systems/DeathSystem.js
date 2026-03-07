@@ -1,7 +1,8 @@
 class DeathSystem {
     update(deltaTime, game) {
         for (let entity of game.entities) {
-            if (entity.destructible) {
+
+            if (entity.destructible && entity.collisions) {
                 for (const other of entity.collisions) {
                     if(entity.hazard) {
                         let leftX = entity.position.x - 5;
@@ -24,7 +25,7 @@ class DeathSystem {
                     }
                 } 
             }
-            else if (entity.playercontrolled) {
+            else if (entity.playercontrolled && entity.collisions) {
                 for (const other of entity.collisions) {
                     if (other.hazard) { //kills player
                         console.log("Player died to hazard!");

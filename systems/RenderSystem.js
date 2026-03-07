@@ -7,6 +7,8 @@ class RenderSystem {
 
             if (entity.position) {
 
+                if(entity.isUserInterface === true){ continue; } // dont draw UI here
+
                 if (entity.sprite) {
                     
                     // draw as tilemap?
