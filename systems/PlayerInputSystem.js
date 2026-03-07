@@ -34,6 +34,7 @@ class PlayerInputSystem {
                         EFFECT_FACTORY.create(game, entity, 'jumpDust');
                         pressedAnotherButton = true;
                         console.log("Player jumped!");
+                        AUDIO_MANAGER.playOnce("Jump");
                     }
                 }
                 if (game.keys['ArrowLeft'] || game.keys['a']) {

@@ -29,6 +29,8 @@ class DeathSystem {
                 for (const other of entity.collisions) {
                     if (other.hazard) { //kills player
                         console.log("Player died to hazard!");
+                        AUDIO_MANAGER.playOnce("Death");
+
                         EFFECT_FACTORY.create(game, entity, 'poof');
                         respawnPlayer(entity);
                         break;

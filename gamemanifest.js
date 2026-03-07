@@ -22,6 +22,19 @@ const GameManifest = {
     "./assets/sprites/CircleExpand.png",
     "./assets/audio/Victory.wav",
     "./assets/sprites/chalice.png",
-    "./assets/sprites/Screen Wipe 640x360-Sheet.png"
+    "./assets/sprites/Screen Wipe 640x360-Sheet.png",
+    "./assets/audio/Puzzle Game 3.mp3",
+    "./assets/audio/synth_beep_02.ogg",
+    "./assets/audio/retro_misc_03.ogg",
+    "./assets/audio/shot_02.ogg",
+    "./assets/audio/synth_misc_08.ogg",
+    "./assets/audio/power_up_06.ogg",
+    "./assets/audio/synth_misc_01.ogg",
+    "./assets/audio/synth_misc_05.ogg",
+    "./assets/audio/retro_explosion_02.ogg",
+    
+
+
+
   ],
 };

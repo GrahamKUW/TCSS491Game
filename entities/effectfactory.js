@@ -3,11 +3,7 @@ const EFFECT_FACTORY = {
     create(game, sourceEntity, effect) {
         const type = effect;
         const duration = sourceEntity.effect.duration;
-        
-        console.log("Currently Loading Level: " +isLoadingLevel());
-
-        
-
+    
         if (type == 'poof') {
             return this.createPoof(game, sourceEntity, duration);
         }

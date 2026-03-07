@@ -14,6 +14,10 @@ class LevelChangeSystem {
         for (const l of levelExits) {
             if (activeTriggerIDs.includes(l.levelchange.triggerID)) {
                 
+                if(!isLoadingLevel()){
+                    AUDIO_MANAGER.playOnce("Level_Win");
+                }
+
                 loadLevel(l.levelchange.targetLevel);
         
                 
