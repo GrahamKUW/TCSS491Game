@@ -7,6 +7,7 @@ const GameManifest = {
     "./assets/sprites/spikes.png",
     "./assets/sprites/prototype_background.png",
     "./assets/sprites/StatueCatsMainCharacterWReversed.png",
+    "./assets/sprites/Alt_StatueCatsMainCharacterWReversed.png",
     "./assets/sprites/StatueCatsTileset.png",
     "./assets/sprites/platform.png",
     "./assets/sprites/button.png",
@@ -24,5 +25,19 @@ const GameManifest = {
     "./assets/sprites/chalice.png",
     "./assets/sprites/MenuButton.png",
     "./assets/sprites/MainMenuTemp.png",
+    "./assets/sprites/Screen Wipe 640x360-Sheet.png",
+    "./assets/audio/Puzzle Game 3.mp3",
+    "./assets/audio/synth_beep_02.ogg",
+    "./assets/audio/retro_misc_03.ogg",
+    "./assets/audio/shot_02.ogg",
+    "./assets/audio/synth_misc_08.ogg",
+    "./assets/audio/power_up_06.ogg",
+    "./assets/audio/synth_misc_01.ogg",
+    "./assets/audio/synth_misc_05.ogg",
+    "./assets/audio/retro_explosion_02.ogg",
+    
+
+
+
   ],
 };

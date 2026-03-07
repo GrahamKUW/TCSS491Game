@@ -140,4 +140,17 @@ class GameEngine {
         // Remove entities marked for removal
         this.entities = this.entities.filter(e => !e.removeFromWorld);
     };
+
+    /** Clears by using remove from world */
+    softClear(){
+
+        for(let entity of this.entities){
+
+            if(entity.persists){
+                continue;
+            }
+
+            entity.removeFromWorld = true;
+        }
+    }
 };

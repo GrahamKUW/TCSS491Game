@@ -18,37 +18,38 @@ class UISystem{
             // Show current level name
             let levelString = game.currentLevel.replace('_', ' ');
 
-            if (levelString != "final level") {
-                ctx.fillText(levelString, 150, 40);
-                ctx.strokeText(levelString, 150, 40);
-            }
-            
+        let isAlive = false;
+        for (let entity of game.entities) {
+            //filter down to only players for getting life counter
 
-            //Show current Yarn collected
-            ctx.drawImage(ASSET_MANAGER.getAsset("./assets/sprites/YarnBall.png"), 0, 0, 32, 32,
-            900, 24, 64, 64);
-            let yarnString = ": " + game.yarnCollected;
-            ctx.fillText(yarnString, 948, 40)
-            ctx.strokeText(yarnString, 948, 40);
-            
+            if(entity.isUserInterface && entity.sprite !== null && entity.sprite !== undefined){
 
-            let isAlive = false;
-            for (let entity of game.entities) {
-                //filter down to only players for getting life counter
-                if (!entity.playercontrolled || !entity.statueable) continue;
-                isAlive = true;
-                ctx.drawImage(
-                    ASSET_MANAGER.getAsset("./assets/sprites/Lives.png"), 0, entity.playercontrolled.lives * 32, 114, 32,
-                    524, 24, 228, 64
-                );
+                game.ctx.drawImage(
+                        entity.sprite.image,
+                        entity.sprite.frameX,
+                        entity.sprite.frameY,
+                        entity.sprite.frameWidth,
+                        entity.sprite.frameHeight,
+                        entity.position.x,
+                        entity.position.y,
+                        entity.sprite.frameWidth * entity.sprite.scaleWidth, 
+                        entity.sprite.frameHeight * entity.sprite.scaleHeight
+                        )
             }
-            if (!isAlive) {
-                const ctx = game.ctx;
-                ctx.drawImage(
-                    ASSET_MANAGER.getAsset("./assets/sprites/Lives.png"), 0, 0, 114, 32,
-                    524, 24, 228, 64
-                );
-            }
+
+            if (!entity.playercontrolled || !entity.statueable) continue;
+            isAlive = true;
+            ctx.drawImage(
+                ASSET_MANAGER.getAsset("./assets/sprites/Lives.png"), 0, entity.playercontrolled.lives * 32, 114, 32,
+                524, 24, 228, 64
+            );
+        }
+        if (!isAlive) {
+            const ctx = game.ctx;
+            ctx.drawImage(
+                ASSET_MANAGER.getAsset("./assets/sprites/Lives.png"), 0, 0, 114, 32,
+                524, 24, 228, 64
+            );
         }
         
     }

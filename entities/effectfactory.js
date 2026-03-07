@@ -3,7 +3,7 @@ const EFFECT_FACTORY = {
     create(game, sourceEntity, effect) {
         const type = effect;
         const duration = sourceEntity.effect.duration;
-        
+    
         if (type == 'poof') {
             return this.createPoof(game, sourceEntity, duration);
         }
@@ -38,6 +38,7 @@ const EFFECT_FACTORY = {
         };
         
         const poof = {
+            removeFromWorld: false,
             sprite: new Sprite(
                 ASSET_MANAGER.getAsset("./assets/sprites/SmokeExplosion.png"),
                 0, 0, 32, 32, 2, 2 // <- does not scale respective to tilemap size for autoscaling
@@ -71,6 +72,7 @@ const EFFECT_FACTORY = {
 
         let dustOffset = entity.position.x > entity.position.oldX ? entity.collider.width * 1.3 : entity.collider.width * 0.5;
         const dust = {
+            removeFromWorld: false,
             position: new Position(entity.position.x + dustOffset, entity.position.y + entity.collider.height + entity.collider.offsetY - 5),
             sprite: new Sprite(
                 ASSET_MANAGER.getAsset("./assets/sprites/SmokeExplosion.png"),
@@ -105,6 +107,7 @@ const EFFECT_FACTORY = {
 
         //let dustOffset = entity.position.x > entity.position.oldX ? entity.collider.width * 1.5 - 8 : entity.collider.width * 0.5 + 8;
         const jumpDust = {
+            removeFromWorld: false,
             position: new Position(entity.position.x + 8, entity.position.y + 16), // <- Not automatically positioning with respect to scale this is a temp fix
             sprite: new Sprite(
                 ASSET_MANAGER.getAsset("./assets/sprites/JumpDust.png"),
@@ -140,6 +143,7 @@ const EFFECT_FACTORY = {
         };
         
         const collect = {
+            removeFromWorld: false,
             sprite: new Sprite(
                 ASSET_MANAGER.getAsset("./assets/sprites/CircleExpand.png"),
                 0, 0, 32, 32, 2, 2 

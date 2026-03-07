@@ -1,6 +1,19 @@
 // tag : filepath
 const GAME_AUDIO = [
     {tag: "Test", filePath: "./assets/audio/Victory.wav"}, 
+    {tag: "Main_Music", filePath: "./assets/audio/Puzzle Game 3.mp3"}, 
+    {tag: "Death", filePath: "./assets/audio/retro_misc_03.ogg"}, 
+    {tag: "Yarn_Collect", filePath: "./assets/audio/synth_beep_02.ogg"}, 
+    {tag: "Jump", filePath: "./assets/audio/shot_02.ogg"}, 
+    {tag: "Turn_Statue", filePath: "./assets/audio/synth_misc_08.ogg"}, 
+    {tag: "Level_Win", filePath: "./assets/audio/power_up_06.ogg"}, 
+    {tag: "Rat_Kill", filePath: "./assets/audio/synth_misc_01.ogg"}, 
+    {tag: "Button_Press", filePath: "./assets/audio/synth_misc_05.ogg"}, 
+    {tag: "Crate_Destroy", filePath: "./assets/audio/retro_explosion_02.ogg"}, 
+
+
+
+
 ];
 
 /**

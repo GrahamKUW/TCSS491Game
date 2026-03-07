@@ -1,5 +1,9 @@
 class EffectSystem {
     update(deltaTime, game) {
+        if(isLoadingLevel()){
+            return;
+        }
+
         for (let entity of game.entities) {
             // Check if entity is marked for removal and has death effect
             if (entity.removeFromWorld && entity.effect) {

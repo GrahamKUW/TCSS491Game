@@ -17,7 +17,7 @@ ASSET_MANAGER.downloadAll(() => {
 
 		//AUDIO_MANAGER.addAudio("Test", "./assets/audio/Victory.wav");
 		addAllMusic(AUDIO_MANAGER);
-		//AUDIO_MANAGER.playOnce("Test");
+		AUDIO_MANAGER.playLooped("Main_Music");
 		console.log("Audio Manager Initialized!");
 	}); // test
 	
@@ -46,6 +46,7 @@ ASSET_MANAGER.downloadAll(() => {
 	//loadLevel("level_6");
 
 	loadMainMenu();
+	//loadLevel("level_1", true);
 	
 	gameEngine.start();
 });
