@@ -47,7 +47,7 @@ class PlayerInputSystem {
                             }
 
                             entity.velocity.dy = -(speed * 1.7);
-
+                            
 
 
                             EFFECT_FACTORY.create(game, entity, 'jumpDust');

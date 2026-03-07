@@ -1,5 +1,9 @@
 class MovementSystem {
     update(deltaTime, game) {
+        if(isLoadingLevel()){
+            return;
+        }
+
         for (let entity of game.entities) {
             if (entity.position && entity.velocity) {
                 const newX = entity.position.x + entity.velocity.dx * deltaTime;
