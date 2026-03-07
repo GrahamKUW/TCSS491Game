@@ -1,6 +1,13 @@
 //Factory for a player
 function createPlayer(x, y, respawnX = 336, respawnY = 304) {
 
+    //if(alt == true) {
+        //let playerSheet = ASSET_MANAGER.getAsset("./assets/sprites/Alt_StatueCatsMainCharacterWReversed.png");
+    //}
+    //else {
+        let playerSheet = ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png");
+    //}
+
     const playerAnimations = {
         'idle-right': {
             frames: [
@@ -76,7 +83,7 @@ function createPlayer(x, y, respawnX = 336, respawnY = 304) {
         playercontrolled: new PlayerControlled(250, respawnX, respawnY),
         collider: new Collider(32, 48, 14, 16),
         velocity: new Velocity(0, 0),
-        sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png"), 0, 0, 32, 32, 2, 2),
+        sprite: new Sprite(playerSheet, 0, 0, 32, 32, 2, 2),
         gravity: new Gravity(1200),
         statueable: new Statueable(true),
         effect: new Effect('poof', 0.45),
@@ -85,7 +92,5 @@ function createPlayer(x, y, respawnX = 336, respawnY = 304) {
         cantrigger: new CanTrigger(),
     }
 
-    const img = ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png");
-    //console.log(img.width, img.height);
     return entity;
 }
