@@ -26,16 +26,16 @@ class UISystem{
                 if(entity.isUserInterface && entity.sprite !== null && entity.sprite !== undefined){
 
                     game.ctx.drawImage(
-                            entity.sprite.image,
-                            entity.sprite.frameX,
-                            entity.sprite.frameY,
-                            entity.sprite.frameWidth,
-                            entity.sprite.frameHeight,
-                            entity.position.x,
-                            entity.position.y,
-                            entity.sprite.frameWidth * entity.sprite.scaleWidth, 
-                            entity.sprite.frameHeight * entity.sprite.scaleHeight
-                            )
+                        entity.sprite.image,
+                        entity.sprite.frameX,
+                        entity.sprite.frameY,
+                        entity.sprite.frameWidth,
+                        entity.sprite.frameHeight,
+                        entity.position.x,
+                        entity.position.y,
+                        entity.sprite.frameWidth * entity.sprite.scaleWidth, 
+                        entity.sprite.frameHeight * entity.sprite.scaleHeight
+                        )
                 }
 
                 if (!entity.playercontrolled || !entity.statueable) continue;
