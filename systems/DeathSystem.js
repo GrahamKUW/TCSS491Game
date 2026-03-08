@@ -1,3 +1,5 @@
+let alreadyDying = false;
+
 class DeathSystem {
     update(deltaTime, game) {
         for (let entity of game.entities) {
@@ -41,14 +43,25 @@ class DeathSystem {
                     }
                 } 
             }
-            else if (entity.playercontrolled && entity.collisions) {
+            else if (entity.playercontrolled && entity.collisions && !alreadyDying) {
                 for (const other of entity.collisions) {
                     if (other.hazard) { //kills player
                         console.log("Player died to hazard!");
                         AUDIO_MANAGER.playOnce("Death");
 
                         EFFECT_FACTORY.create(game, entity, 'poof');
-                        respawnPlayer(entity);
+                        game.inputBlockDuration = 0.6125;
+
+                        entity.position = new Position(entity.position.x, 50000); // just teleport it out of sight
+
+                        alreadyDying = true;
+                        screenWipeOut(game, () => {
+                            respawnPlayer(entity);
+                            screenWipeIn(game, () => {
+                                alreadyDying = false;
+                            }, true, 0.0125/2);
+                        }, true, 0.0125/2);
+                        
                         break;
                     }
                 }
