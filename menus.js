@@ -17,7 +17,7 @@ function loadMainMenu(){
     * clicked, do x effect. 
     */
     gameEngine.addEntity(createMenuButton(352, 385, "start"));
-    gameEngine.addEntity(createMenuButton(352, 535, "settings"));
+    gameEngine.addEntity(createMenuButton(352, 535, "levels"));
     //Main menu music eventually, probably. 
 }
 
@@ -42,10 +42,10 @@ function loadLevelsMenu1(){
 
     //load level buttons and screenshots
     for (let i = 1; i <= 5; i++) {
-        gameEngine.addEntity(createLevelButton(50 + (i-1) * 192 + 30 * i, 120, i));
-        gameEngine.addEntity(createWindow(80 + (i-1) * 192 + 30 * i, 158, i));
-        gameEngine.addEntity(createLevelButton(50 + (i-1) * 192 + 30 * i, 320, i + 5));
-        gameEngine.addEntity(createWindow(80 + (i-1) * 192 + 30 * i, 358, i + 5));
+        gameEngine.addEntity(createLevelButton(70 + (i-1) * 192 + 30 * i, 120, i));
+        gameEngine.addEntity(createWindow(100 + (i-1) * 192 + 30 * i, 158, i));
+        gameEngine.addEntity(createLevelButton(70 + (i-1) * 192 + 30 * i, 320, i + 5));
+        gameEngine.addEntity(createWindow(100 + (i-1) * 192 + 30 * i, 358, i + 5));
     }
 
 }
@@ -57,16 +57,16 @@ function loadLevelsMenu2(){
     gameEngine.addEntity(createMenuBackground(0, 0));
 
     //load navigation buttons
-    gameEngine.addEntity(createMenuButton(1100, 600, "next2"))
+    //NOTE: Next line is purposefully commented out for now. Once special levels are made, uncomment.
+    // gameEngine.addEntity(createMenuButton(1100, 600, "next2"))
     gameEngine.addEntity(createMenuButton(116, 600, "prev1"))
     gameEngine.addEntity(createMenuButton(608, 600, "home"))
 
     for (let j = 1; j <= 5; j++) {
-        gameEngine.addEntity(createLevelButton(50 + (j-1) * 192 + 30 * j, 120, j + 10));
-        gameEngine.addEntity(createWindow(80 + (j-1) * 192 + 30 * j, 158, j + 10));
-        gameEngine.addEntity(createLevelButton(50 + (j-1) * 192 + 30 * j, 320, j + 15));
-        gameEngine.addEntity(createWindow(80 + (j-1) * 192 + 30 * j, 358, j + 15));
-        console.log("Is this running?");
+        gameEngine.addEntity(createLevelButton(70 + (j-1) * 192 + 30 * j, 120, j + 10));
+        gameEngine.addEntity(createWindow(100 + (j-1) * 192 + 30 * j, 158, j + 10));
+        gameEngine.addEntity(createLevelButton(70 + (j-1) * 192 + 30 * j, 320, j + 15));
+        gameEngine.addEntity(createWindow(100 + (j-1) * 192 + 30 * j, 358, j + 15));
     }
 }
 
@@ -82,11 +82,15 @@ function loadLevelsMenu3(){
 
     //load level buttons and screenshots
     for (let i = 1; i <= 5; i++) {
-        gameEngine.addEntity(createLevelButton(50 + (i-1) * 192 + 30 * i, 220, i + 20));
+        gameEngine.addEntity(createLevelButton(70 + (i-1) * 192 + 30 * i, 220, i + 20));
     }
 }
 
 function loadSettingsMenu(){
+    gameEngine.entities = []; // clear out all entities
+    
+    //Load background
+    gameEngine.addEntity(createMenuBackground(0, 0));
 
 }
 
