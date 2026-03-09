@@ -96,17 +96,6 @@
                 }, 
                 {
                  "height":16,
-                 "id":45,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":390,
-                 "x":282,
-                 "y":376
-                }, 
-                {
-                 "height":16,
                  "id":46,
                  "name":"",
                  "rotation":0,

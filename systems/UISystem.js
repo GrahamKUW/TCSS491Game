@@ -118,11 +118,14 @@ class UISystem{
                 ctx.fillText(yarnString, 248, 555);
                 ctx.strokeText(yarnString, 248, 555);
 
-            if(game.yarnCollected >= 20) {
+            if(game.yarnCollected >= 20) { //unlocked secret levels
                 ctx.fillText("All Yarn Collected: NEW LEVELS UNLOCKED!", 160, 590);
                 ctx.strokeText("All Yarn Collected: NEW LEVELS UNLOCKED!", 160, 590);
-                AUDIO_MANAGER.playOnce("Win");
-                //game.unlockedSecretLevels = true;
+                if(!game.unlockedSecretLevels) {
+                    AUDIO_MANAGER.playOnce("Win");
+                }
+                game.addEntity(createWall(160, 590, 770, 20));
+                game.unlockedSecretLevels = true;
             }
 
             //create home button
