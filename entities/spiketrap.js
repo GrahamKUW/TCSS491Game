@@ -98,13 +98,13 @@ function createSpikeTrap(x, y, direction, game, offset = 0) {
         removeFromWorld: false,
         position: new Position(x, y),
         facing: new Facing(direction), // indicates the direction the spikes will be facing
-        sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/spikes.png"), spriteX, 0, 16, 16, 2 , 2),
+        sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/spiketraps.png"), spriteX, 0, 16, 16, 2 , 2),
         collider: new Collider(cWidth, cHeight, cOffsetX, cOffsetY), //x2 from sprite since scale is x2
         velocity: new Velocity(0, 0),
         trigger: new Trigger(tWidth, tHeight, tOffsetX, tOffsetY, 11, triggerWhiteList), // arbitrary id for spike traps
         static: new Static(),
-        returnDelayTimer: 0,
-        canFire: true,
+        returnTimer: 0,
+        isFiring: false,
         child: null
     }
 

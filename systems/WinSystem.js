@@ -10,6 +10,7 @@ class WinSystem{
             if(entity.position.y > entity.position.startY + 10 && entity.velocity.dy == 0) {
                 entity.removeFromWorld = true;
                 EFFECT_FACTORY.create(game, entity, 'poof');
+                AUDIO_MANAGER.playOnce("Crate_Destroy");
 
                 setTimeout(() => {
                     console.log("You win! loading credits..."); // replace with transition to credits scene.
