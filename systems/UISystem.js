@@ -17,7 +17,18 @@ class UISystem{
 
             // Show current level name
             let levelString = game.currentLevel.replace('_', ' ');
-            ctx.fillText(levelString, 160, 40);
+
+            if (levelString != "final level") {
+                ctx.fillText(levelString, 150, 40);
+                ctx.strokeText(levelString, 150, 40);
+            }
+
+            //Show current Yarn collected
+            ctx.drawImage(ASSET_MANAGER.getAsset("./assets/sprites/YarnBall.png"), 0, 0, 32, 32,
+            900, 24, 64, 64);
+            let yarnString = ": " + game.yarnCollected;
+            ctx.fillText(yarnString, 948, 40)
+            ctx.strokeText(yarnString, 948, 40);
 
             let isAlive = false;
             for (let entity of game.entities) {

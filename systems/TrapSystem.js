@@ -5,16 +5,22 @@ class TrapSystem{
 
     update (deltaTime, game) {
         const speed = 350;
-        const returnDelay = 1.0; // 1 second
+        const LAUNCH_TIME = 0.45; // time that the spike trap takes once triggered to stop moving
+        const RETURN_DELAY = 1.0; // 1 second of delay once the trap reaches the end before going back 
 
         for (let entity of game.entities) {
             
             //filter down to only spike traps
             if (!entity.facing || !entity.trigger) continue;
+            if(entity.trigger.active) {
+                console.log(entity.returnTimer);
+                console.log(entity.returnTimer < LAUNCH_TIME);
+            }
 
-            if (entity.trigger.active && entity.canFire) {
+            if ((entity.trigger.active && entity.position.x == entity.position.startX && entity.position.y == entity.position.startY) ||
+                 (entity.isFiring == true && entity.returnTimer < LAUNCH_TIME)) {
 
-                entity.returnDelayTimer = 0;
+                entity.isFiring = true;
 
                 if(entity.facing.direction == 'up') {
                     entity.velocity.dy = -speed;
@@ -25,19 +31,20 @@ class TrapSystem{
                 } else if (entity.facing.direction == 'right') {
                     entity.velocity.dx = speed;
                 }
+                entity.returnTimer += deltaTime;
             }
             // inactive
             else {
+                entity.isFiring = false;
 
                 // if trap is not at start position, count delay
                 if (entity.position.x !== entity.position.startX ||
                     entity.position.y !== entity.position.startY) {
 
-                    entity.canFire = false;
-                    entity.returnDelayTimer += deltaTime;
+                    entity.returnTimer += deltaTime;
 
                     // WAIT during delay
-                    if (entity.returnDelayTimer < returnDelay) {
+                    if (entity.returnTimer < LAUNCH_TIME + RETURN_DELAY) {
 
                         entity.velocity.dx = 0;
                         entity.velocity.dy = 0;
@@ -54,8 +61,7 @@ class TrapSystem{
                         entity.velocity.dy = 0;
                         entity.position.x = entity.position.startX;
                         entity.position.y = entity.position.startY;
-                        entity.returnDelayTimer = 0;
-                        entity.canFire = true;
+                        entity.returnTimer = 0;
 
                     } else {
                         entity.velocity.dy = speed/2;
@@ -71,8 +77,7 @@ class TrapSystem{
                         entity.velocity.dy = 0;
                         entity.position.x = entity.position.startX;
                         entity.position.y = entity.position.startY;
-                        entity.returnDelayTimer = 0;
-                        entity.canFire = true;
+                        entity.returnTimer = 0;
 
                     } else {
                         entity.velocity.dy = -speed/2;
@@ -88,8 +93,7 @@ class TrapSystem{
                         entity.velocity.dy = 0;
                         entity.position.x = entity.position.startX;
                         entity.position.y = entity.position.startY;
-                        entity.returnDelayTimer = 0;
-                        entity.canFire = true;
+                        entity.returnTimer = 0;
 
                     } else {
                         entity.velocity.dx = speed/2;
@@ -105,8 +109,7 @@ class TrapSystem{
                         entity.velocity.dy = 0;
                         entity.position.x = entity.position.startX;
                         entity.position.y = entity.position.startY;
-                        entity.returnDelayTimer = 0;
-                        entity.canFire = true;
+                        entity.returnTimer = 0;
 
                     } else {
                         entity.velocity.dx = -speed/2;

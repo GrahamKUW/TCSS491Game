@@ -5,6 +5,7 @@ const GameManifest = {
   data: [
     "./assets/sprites/rat.png",
     "./assets/sprites/spikes.png",
+    "./assets/sprites/spiketraps.png",
     "./assets/sprites/prototype_background.png",
     "./assets/sprites/StatueCatsMainCharacterWReversed.png",
     "./assets/sprites/Alt_StatueCatsMainCharacterWReversed.png",
@@ -24,7 +25,7 @@ const GameManifest = {
     "./assets/audio/Victory.wav",
     "./assets/sprites/chalice.png",
     "./assets/sprites/MenuButton.png",
-    "./assets/sprites/MainMenuTemp.png",
+    //"./assets/sprites/MainMenuTemp.png",
     "./assets/sprites/Screen Wipe 640x360-Sheet.png",
     "./assets/audio/Puzzle Game 3.mp3",
     "./assets/audio/synth_beep_02.ogg",
