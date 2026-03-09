@@ -177,6 +177,7 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
             clickable: new Clickable(true), 
             onClick: function() {
                 loadMainMenu();
+                CURRENT_LEVEL = "prototype_level";
             }
         }
         return entity;

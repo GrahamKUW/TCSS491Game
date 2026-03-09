@@ -7,6 +7,8 @@ function loadMainMenu(){
     gameEngine.entities = []; // clear out all entities
     gameEngine.addEntity(createMenuBackground(0, 0));
     gameEngine.addEntity(createTitle(0, 0));
+
+    gameEngine.yarnCollected = 0; // reset yarn collection
    
     
 

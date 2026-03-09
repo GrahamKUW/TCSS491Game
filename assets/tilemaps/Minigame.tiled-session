@@ -12,24 +12,36 @@
             "scaleInDock": 4,
             "scaleInEditor": 1
         },
+        "endscreen_level.js": {
+            "expandedObjectLayers": [
+                2,
+                3
+            ],
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 519.3333333333334,
+                "y": 290.33333333333337
+            }
+        },
         "final_level.js": {
             "expandedObjectLayers": [
                 2,
-                5,
-                3
+                3,
+                5
             ],
             "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 471.3333333333333,
-                "y": 304.3333333333333
+                "x": 471.33333333333337,
+                "y": 304.33333333333337
             }
         },
         "level_1.js": {
             "expandedObjectLayers": [
-                5,
+                2,
                 3,
-                2
+                5
             ],
             "scale": 2,
             "selectedLayer": 4,
@@ -40,35 +52,35 @@
         },
         "level_10.js": {
             "expandedObjectLayers": [
-                5,
+                2,
                 3,
-                2
+                5
             ],
             "scale": 2,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 515,
-                "y": 290.25
+                "x": 512.25,
+                "y": 256.25
             }
         },
         "level_11.js": {
             "expandedObjectLayers": [
-                5,
+                2,
                 3,
-                2
+                5
             ],
-            "scale": 2,
+            "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 609.5,
-                "y": 353.25
+                "x": 469.99999999999994,
+                "y": 318.33333333333337
             }
         },
         "level_12.js": {
             "expandedObjectLayers": [
-                5,
+                2,
                 3,
-                2
+                5
             ],
             "scale": 2,
             "selectedLayer": 4,
@@ -147,9 +159,9 @@
         },
         "level_2.js": {
             "expandedObjectLayers": [
-                5,
+                2,
                 3,
-                2
+                5
             ],
             "scale": 1.5,
             "selectedLayer": 4,
@@ -160,9 +172,9 @@
         },
         "level_3.js": {
             "expandedObjectLayers": [
-                5,
+                2,
                 3,
-                2
+                5
             ],
             "scale": 2,
             "selectedLayer": 4,
