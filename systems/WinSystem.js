@@ -14,6 +14,8 @@ class WinSystem{
 
                 setTimeout(() => {
                     console.log("You win! loading credits..."); // replace with transition to credits scene.
+                    CURRENT_LEVEL = "prototype_level";
+                    loadMainMenu();
                 }, 2000);
             }
         }

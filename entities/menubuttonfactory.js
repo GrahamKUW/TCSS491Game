@@ -12,6 +12,9 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
     *    return this.createRestartButton(x, y);
     * } 
     */
+    else if (text == "levels") {
+        return this.createLevelsButton(x, y, scalingFactor);
+    }
     else if (text == "settings") {
         //Open settings menu; pause menu and regular menu
         return this.createSettingsButton(x, y, scalingFactor);
@@ -53,7 +56,26 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
 
     }
 
-    function createSettingsButton(x, y, scalingFactor) {
+    function createLevelsButton(x, y, scalingFactor) {
+        const entity = {
+            sprite: new Sprite(
+                ASSET_MANAGER.getAsset("./assets/sprites/MenuButton.png"),
+                0, 96, 192, 48, scalingFactor, scalingFactor
+            ),
+            position: new Position(x,y),
+            width: 192 * scalingFactor,
+            height: 48 * scalingFactor,
+            clickable: new Clickable(true), 
+            onClick: function() {
+                //Debug command // placeholder for when settings was unused. 
+                //console.log("Settings currently under construction");
+                loadLevelsMenu1();
+            }
+        }
+        return entity;
+    }
+
+    function createSettingsButton(x, y, scalingFactor){ 
         const entity = {
             sprite: new Sprite(
                 ASSET_MANAGER.getAsset("./assets/sprites/MenuButton.png"),
@@ -66,7 +88,7 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
             onClick: function() {
                 //Debug command // placeholder for when settings was unused. 
                 //console.log("Settings currently under construction");
-                loadLevelsMenu1();
+                loadSettingsMenu();
             }
         }
         return entity;
@@ -230,32 +252,38 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
                     break;
                 case 14: 
                     clickfun = function() {
-                        loadLevel14();
+                        //loadLevel14();
+                        console.log("Level under construction");
                     }
                     break;
                 case 15: 
                     clickfun = function() {
-                        loadLevel15();
+                        //loadLevel15();
+                        console.log("Level under construction");
                     }
                     break;
                 case 16: 
                     clickfun = function() {
-                        loadLevel16();
+                        //loadLevel16();
+                        console.log("Level under construction");
                     }
                     break;
                 case 17: 
                     clickfun = function() {
-                        loadLevel17();
+                        //loadLevel17();
+                        console.log("Level under construction");
                     }
                     break;
                 case 18: 
                     clickfun = function() {
-                        loadLevel18();
+                        //loadLevel18();
+                        console.log("Level under construction");
                     }
                     break;
                 case 19: 
                     clickfun = function() {
-                        loadLevel19();
+                        //loadLevel19();
+                        console.log("Level under construction");
                     }
                     break;
                 case 20: 
