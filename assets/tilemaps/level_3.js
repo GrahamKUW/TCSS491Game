@@ -297,24 +297,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":104,
-                 "name":"Button",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"Link",
-                         "type":"int",
-                         "value":0
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":616,
-                 "y":272
-                }, 
-                {
-                 "height":0,
                  "id":40,
                  "name":"Spike",
                  "point":true,
@@ -1085,6 +1067,24 @@
                  "width":0,
                  "x":488,
                  "y":128
+                }, 
+                {
+                 "height":0,
+                 "id":104,
+                 "name":"Button",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Link",
+                         "type":"int",
+                         "value":0
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":616,
+                 "y":272
                 }],
          "opacity":1,
          "type":"objectgroup",
