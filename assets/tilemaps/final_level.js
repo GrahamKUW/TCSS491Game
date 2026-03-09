@@ -207,6 +207,24 @@
                  "width":0,
                  "x":496,
                  "y":192
+                }, 
+                {
+                 "height":0,
+                 "id":40,
+                 "name":"Yarn",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Link",
+                         "type":"int",
+                         "value":9
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":496,
+                 "y":144
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -215,7 +233,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":40,
+ "nextobjectid":41,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

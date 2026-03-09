@@ -12,11 +12,7 @@ class TrapSystem{
             
             //filter down to only spike traps
             if (!entity.facing || !entity.trigger) continue;
-            if(entity.trigger.active) {
-                console.log(entity.returnTimer);
-                console.log(entity.returnTimer < LAUNCH_TIME);
-            }
-
+            
             if ((entity.trigger.active && entity.position.x == entity.position.startX && entity.position.y == entity.position.startY) ||
                  (entity.isFiring == true && entity.returnTimer < LAUNCH_TIME)) {
 

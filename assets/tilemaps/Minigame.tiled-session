@@ -12,69 +12,81 @@
             "scaleInDock": 4,
             "scaleInEditor": 1
         },
+        "endscreen_level.js": {
+            "expandedObjectLayers": [
+                2,
+                3
+            ],
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 519.3333333333334,
+                "y": 290.33333333333337
+            }
+        },
         "final_level.js": {
             "expandedObjectLayers": [
                 2,
-                5,
-                3
+                3,
+                5
             ],
             "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 471.3333333333333,
-                "y": 304.3333333333333
+                "x": 471.33333333333337,
+                "y": 304.33333333333337
             }
         },
         "level_1.js": {
             "expandedObjectLayers": [
+                3,
                 2,
-                5,
-                3
+                5
             ],
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 512.5,
+                "x": 512.25,
                 "y": 256.25
             }
         },
         "level_10.js": {
             "expandedObjectLayers": [
+                3,
                 2,
-                5,
-                3
+                5
             ],
             "scale": 2,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 515,
-                "y": 290.25
+                "x": 512.25,
+                "y": 256.25
             }
         },
         "level_11.js": {
             "expandedObjectLayers": [
+                3,
                 2,
-                5,
-                3
+                5
             ],
-            "scale": 2,
+            "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 494.5,
-                "y": 324.25
+                "x": 622.6666666666666,
+                "y": 356.99999999999994
             }
         },
         "level_12.js": {
             "expandedObjectLayers": [
+                3,
                 2,
-                5,
-                3
+                5
             ],
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 508,
-                "y": 265.25
+                "x": 512.25,
+                "y": 256.25
             }
         },
         "level_13.js": {
@@ -147,27 +159,27 @@
         },
         "level_2.js": {
             "expandedObjectLayers": [
+                3,
                 2,
-                5,
-                3
+                5
             ],
             "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 592,
-                "y": 302.33333333333337
+                "x": 512.3333333333333,
+                "y": 256.3333333333333
             }
         },
         "level_3.js": {
             "expandedObjectLayers": [
+                3,
                 2,
-                5,
-                3
+                5
             ],
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 512,
+                "x": 512.25,
                 "y": 256.25
             }
         },
@@ -255,7 +267,7 @@
             "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 535.3333333333333,
+                "x": 533.6666666666666,
                 "y": 256.3333333333333
             }
         },

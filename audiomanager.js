@@ -1,6 +1,6 @@
 // tag : filepath
 const GAME_AUDIO = [
-    {tag: "Test", filePath: "./assets/audio/Victory.wav"}, 
+    {tag: "Win", filePath: "./assets/audio/Victory.wav"}, 
     {tag: "Main_Music", filePath: "./assets/audio/Puzzle Game 3.mp3"}, 
     {tag: "Death", filePath: "./assets/audio/retro_misc_03.ogg"}, 
     {tag: "Yarn_Collect", filePath: "./assets/audio/synth_beep_02.ogg"}, 

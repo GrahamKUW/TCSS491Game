@@ -381,7 +381,7 @@
                         {
                          "name":"Speed",
                          "type":"float",
-                         "value":200
+                         "value":180
                         }],
                  "rotation":0,
                  "type":"",
@@ -399,7 +399,7 @@
                         {
                          "name":"Speed",
                          "type":"float",
-                         "value":200
+                         "value":180
                         }],
                  "rotation":0,
                  "type":"",
