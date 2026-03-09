@@ -79,15 +79,15 @@
         },
         "level_13.js": {
             "expandedObjectLayers": [
-                3,
+                5,
                 2,
-                5
+                3
             ],
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
                 "x": 490.5,
-                "y": 273.25
+                "y": 273
             }
         },
         "level_14.js": {
@@ -97,8 +97,8 @@
             "scale": 0.973193359375,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 1034.737845567207,
-                "y": 599.058752696804
+                "x": 1557.7582660177613,
+                "y": 943.2863378656364
             }
         },
         "level_15.js": {
@@ -144,7 +144,7 @@
             "selectedLayer": 4,
             "viewCenter": {
                 "x": 511.7174251166524,
-                "y": 256.3724850735035
+                "y": 255.85871255832615
             }
         },
         "level_2.js": {
@@ -170,7 +170,7 @@
             "selectedLayer": 4,
             "viewCenter": {
                 "x": 512,
-                "y": 256
+                "y": 256.25
             }
         },
         "level_4.js": {
@@ -235,7 +235,7 @@
             "selectedLayer": 4,
             "viewCenter": {
                 "x": 512,
-                "y": 256
+                "y": 256.25
             }
         },
         "level_9.js": {
@@ -259,7 +259,7 @@
             "selectedLayer": 4,
             "viewCenter": {
                 "x": 535.3333333333333,
-                "y": 256
+                "y": 256.3333333333333
             }
         },
         "prototype_level.tmx": {
