@@ -36,6 +36,9 @@ class GameEngine {
         //Are the secret levels unlocked?
         this.unlockedSecretLevels = false;
 
+        //is the alternate character being used? 
+        //NOTE: If this is being done elsewhere, remove this.
+        this.altCharacter = false;
         
 
 

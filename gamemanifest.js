@@ -42,5 +42,9 @@ const GameManifest = {
     "./assets/sprites/navbutton.png",
     "./assets/sprites/LevelSelectButton.png",
     "./assets/sprites/levelicons.png",
+    "./assets/sprites/settingsbuttons.png",
+    "./assets/sprites/audio.png",
+    "./assets/sprites/audiobuttons.png",
+
   ],
 };
