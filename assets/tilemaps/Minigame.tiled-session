@@ -3,13 +3,13 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "level_11.js",
+    "activeFile": "level_8.js",
     "expandedProjectPaths": [
         "."
     ],
     "fileStates": {
         "StatueCatsTileset.tsx": {
-            "scaleInDock": 4,
+            "scaleInDock": 3,
             "scaleInEditor": 1
         },
         "endscreen_level.js": {
@@ -39,9 +39,9 @@
         },
         "level_1.js": {
             "expandedObjectLayers": [
-                3,
+                5,
                 2,
-                5
+                3
             ],
             "scale": 2,
             "selectedLayer": 4,
@@ -52,9 +52,9 @@
         },
         "level_10.js": {
             "expandedObjectLayers": [
-                3,
+                5,
                 2,
-                5
+                3
             ],
             "scale": 2,
             "selectedLayer": 1,
@@ -65,22 +65,22 @@
         },
         "level_11.js": {
             "expandedObjectLayers": [
-                3,
+                5,
                 2,
-                5
+                3
             ],
             "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 622.6666666666666,
-                "y": 356.99999999999994
+                "x": 521.3333333333334,
+                "y": 302.99999999999994
             }
         },
         "level_12.js": {
             "expandedObjectLayers": [
-                3,
+                5,
                 2,
-                5
+                3
             ],
             "scale": 2,
             "selectedLayer": 4,
@@ -159,9 +159,9 @@
         },
         "level_2.js": {
             "expandedObjectLayers": [
-                3,
+                5,
                 2,
-                5
+                3
             ],
             "scale": 1.5,
             "selectedLayer": 4,
@@ -172,9 +172,9 @@
         },
         "level_3.js": {
             "expandedObjectLayers": [
-                3,
+                5,
                 2,
-                5
+                3
             ],
             "scale": 2,
             "selectedLayer": 4,
@@ -297,23 +297,24 @@
         "level_3.js",
         "level_12.js",
         "level_10.js",
-        "level_11.js"
+        "level_11.js",
+        "level_8.js"
     ],
     "project": "Minigame.tiled-project",
     "property.type": "int",
     "recentFiles": [
+        "StatueCatsTileset.tsx",
+        "prototype_level.js",
+        "level_2.js",
+        "level_1.js",
+        "level_3.js",
+        "level_12.js",
+        "level_10.js",
+        "level_11.js",
+        "level_8.js",
         "level_9.js",
         "level_7.js",
-        "level_6.js",
-        "level_8.js",
-        "level_2.js",
-        "level_3.js",
-        "level_13.js",
-        "level_14.js",
-        "level_15.js",
-        "level_16.js",
-        "level_17.js",
-        "level_18.js"
+        "level_6.js"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

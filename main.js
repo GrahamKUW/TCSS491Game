@@ -4,6 +4,8 @@ const ASSET_MANAGER = new AssetManager();
 
 const AUDIO_MANAGER = new AudioManager(ASSET_MANAGER);
 
+let altCharacter = false; //for main menu character selection
+
 // QUEUE THE GAME MANIFEST
 ASSET_MANAGER.queueManifest(GameManifest.data);
 
@@ -19,7 +21,7 @@ ASSET_MANAGER.downloadAll(() => {
 		addAllMusic(AUDIO_MANAGER);
 		AUDIO_MANAGER.playLooped("Main_Music");
 		console.log("Audio Manager Initialized!");
-	}); // test
+	});
 	
 	// Add systems (order matters!)
 	gameEngine.addSystem(new PlayerInputSystem());

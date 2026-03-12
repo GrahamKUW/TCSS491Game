@@ -13,6 +13,9 @@ class UISystem{
         ctx.lineWidth = 2; 
         ctx.font = '32px "Press Start 2P"';
         ctx.textBaseline = 'top';
+
+        //mute if muted
+        AUDIO_MANAGER.setMuted(document.getElementById('muteToggle').checked)
         
         if (CURRENT_LEVEL != "prototype_level" && CURRENT_LEVEL != "endscreen_level"){
 

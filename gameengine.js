@@ -38,7 +38,7 @@ class GameEngine {
 
         //is the alternate character being used? 
         //NOTE: If this is being done elsewhere, remove this.
-        this.altCharacter = false;
+        //this.altCharacter = false;
         
 
 

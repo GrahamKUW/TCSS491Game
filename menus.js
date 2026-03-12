@@ -26,10 +26,6 @@ function loadMainMenu(){
 
     gameEngine.yarnCollected = 0; // reset yarn collection
 
-    
-    
-
-
     /**  Create the buttons that the user interracts with; should be Settings and Start for sure. 
     * Maybe add a level select one too? 
     * Button code is to be implemented here; keep track of the buttons, and when x button is 
@@ -38,6 +34,10 @@ function loadMainMenu(){
     gameEngine.addEntity(createMenuButton(448, 385, "start", scalingFactor = 2));
     gameEngine.addEntity(createMenuButton(448, 485, "levels", scalingFactor = 2));
     gameEngine.addEntity(createMenuButton(448, 585, "settings", scalingFactor = 2));
+
+    gameEngine.addEntity(createManekiObject(70, 300, 10));
+    gameEngine.addEntity(createStatueObject(900, 300, 10));
+    gameEngine.addEntity(createYarnObject(950, 0, 10));
     //Main menu music eventually, probably. 
 }
 
@@ -128,7 +128,9 @@ function loadSettingsMenu(){
     //draw the character select buttons. 
     //For future reference, these are in menubuttonfactory at the bottom. 
     gameEngine.addEntity(createManekiButton(540, 300, 2, this));
+    gameEngine.addEntity(createManekiObject(620, 390, 5))
     gameEngine.addEntity(createRakkiButton(900, 300, 2, this));
+    gameEngine.addEntity(createRakkiObject(980, 390, 5))
 
     //draw the audio navigation buttons
     gameEngine.addEntity(createLowVolumeButton(540, 112, 3, this));

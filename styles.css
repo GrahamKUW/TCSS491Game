@@ -33,6 +33,19 @@ body {
   
 }
 
+#muteToggle {
+  margin-top: 1.2rem;
+}
+
+.mute-text {
+  font-size: 1.6rem;
+  text-align: center;
+  justify-content: left;
+  color: aliceblue;
+  font-weight: 700;
+  
+}
+
 .info-panel {
   background-color: #e5e7f7;
   color: #16171e;

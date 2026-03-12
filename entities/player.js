@@ -1,12 +1,13 @@
 //Factory for a player
 function createPlayer(x, y, respawnX = 336, respawnY = 304) {
 
-    //if(alt == true) {
-        //let playerSheet = ASSET_MANAGER.getAsset("./assets/sprites/Alt_StatueCatsMainCharacterWReversed.png");
-    //}
-    //else {
-        let playerSheet = ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png");
-    //}
+    let playerSheet = null;
+    if(altCharacter == true) {
+        playerSheet = ASSET_MANAGER.getAsset("./assets/sprites/Alt_StatueCatsMainCharacterWReversed.png");
+    }
+    else {
+        playerSheet = ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png");
+    }
 
     const playerAnimations = {
         'idle-right': {
