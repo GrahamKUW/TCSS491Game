@@ -3,7 +3,7 @@
 
 
 
-function screenWipeIn(gameEngine, screenCallback = null, removeFromWorld = true){
+function screenWipeIn(gameEngine, screenCallback = null, removeFromWorld = true, inDuration = 0.0125){
 
     // add finite animation for screen wipe in 
     // add to game engine
@@ -36,7 +36,7 @@ function screenWipeIn(gameEngine, screenCallback = null, removeFromWorld = true)
                 { x: 20*640, y: 360, width: 640, height: 360},
 
             ],
-            duration: 0.0125,
+            duration: inDuration,
             loops: false
         }
     }
@@ -52,7 +52,7 @@ function screenWipeIn(gameEngine, screenCallback = null, removeFromWorld = true)
     gameEngine.addEntity(entity);
 }
 
-function screenWipeOut(gameEngine, screenCallback = null, removeFromWorld = true){
+function screenWipeOut(gameEngine, screenCallback = null, removeFromWorld = true, outDuration = 0.0125){
     // add finite animation for screen wipe out 
     // add to game engine
     // when the animation finishes remove from world = true
@@ -83,7 +83,7 @@ function screenWipeOut(gameEngine, screenCallback = null, removeFromWorld = true
                 { x: 19*640, y: 0, width: 640, height: 360},
                 { x: 20*640, y: 0, width: 640, height: 360},
             ],
-            duration: 0.0125,
+            duration: outDuration,
             loops: false
         }
     }

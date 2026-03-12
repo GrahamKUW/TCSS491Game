@@ -219,6 +219,6 @@ function loadLevel19() {
 
 function loadLevel20() {
     console.log("Loading level 20!");
-    loadLevel("level_20");
+    loadLevel("final_level");
     
 }

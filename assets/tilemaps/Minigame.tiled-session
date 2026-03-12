@@ -12,17 +12,29 @@
             "scaleInDock": 4,
             "scaleInEditor": 1
         },
+        "endscreen_level.js": {
+            "expandedObjectLayers": [
+                2,
+                3
+            ],
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 519.3333333333334,
+                "y": 290.33333333333337
+            }
+        },
         "final_level.js": {
             "expandedObjectLayers": [
                 2,
-                5,
-                3
+                3,
+                5
             ],
             "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 471.3333333333333,
-                "y": 304.3333333333333
+                "x": 471.33333333333337,
+                "y": 304.33333333333337
             }
         },
         "level_1.js": {
@@ -45,10 +57,10 @@
                 5
             ],
             "scale": 2,
-            "selectedLayer": 4,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 515,
-                "y": 290.25
+                "x": 512.25,
+                "y": 256.25
             }
         },
         "level_11.js": {
@@ -57,11 +69,11 @@
                 2,
                 5
             ],
-            "scale": 2,
+            "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 507,
-                "y": 295.25
+                "x": 622.6666666666666,
+                "y": 356.99999999999994
             }
         },
         "level_12.js": {
@@ -73,24 +85,46 @@
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 508,
-                "y": 265.25
+                "x": 512.25,
+                "y": 256.25
             }
         },
         "level_13.js": {
             "expandedObjectLayers": [
-                3,
+                5,
                 2,
-                5
+                3
             ],
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
                 "x": 490.5,
-                "y": 273.25
+                "y": 273
             }
         },
         "level_14.js": {
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 1.5,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 1557.7582660177613,
+                "y": 943.2863378656364
+            }
+        },
+        "level_15.js": {
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 1.5,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 485.99999999999994,
+                "y": 260.99999999999994
+            }
+        },
+        "level_16.js": {
             "expandedObjectLayers": [
                 3
             ],
@@ -101,28 +135,6 @@
                 "y": 256.37248507350364
             }
         },
-        "level_15.js": {
-            "expandedObjectLayers": [
-                3
-            ],
-            "scale": 0.973193359375,
-            "selectedLayer": 4,
-            "viewCenter": {
-                "x": 511.7174251166524,
-                "y": 256.3724850735035
-            }
-        },
-        "level_16.js": {
-            "expandedObjectLayers": [
-                3
-            ],
-            "scale": 0.973193359375,
-            "selectedLayer": 4,
-            "viewCenter": {
-                "x": 511.7174251166524,
-                "y": 256.3724850735035
-            }
-        },
         "level_17.js": {
             "expandedObjectLayers": [
                 3
@@ -130,8 +142,8 @@
             "scale": 0.973193359375,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 511.7174251166524,
-                "y": 256.3724850735035
+                "x": 511.71742511665246,
+                "y": 256.37248507350364
             }
         },
         "level_18.js": {
@@ -142,7 +154,7 @@
             "selectedLayer": 4,
             "viewCenter": {
                 "x": 511.7174251166524,
-                "y": 256.3724850735035
+                "y": 255.85871255832615
             }
         },
         "level_2.js": {
@@ -152,10 +164,10 @@
                 5
             ],
             "scale": 1.5,
-            "selectedLayer": 3,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 592,
-                "y": 302.33333333333337
+                "x": 512.3333333333333,
+                "y": 256.3333333333333
             }
         },
         "level_3.js": {
@@ -167,7 +179,7 @@
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 512,
+                "x": 512.25,
                 "y": 256.25
             }
         },
@@ -206,8 +218,8 @@
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 491.5,
-                "y": 281.75
+                "x": 484.5,
+                "y": 251.25
             }
         },
         "level_7.js": {
@@ -225,25 +237,24 @@
         },
         "level_8.js": {
             "expandedObjectLayers": [
-                3,
                 2,
-                5
+                3
             ],
             "scale": 2,
-            "selectedLayer": 1,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 511,
-                "y": 268.75
+                "x": 512,
+                "y": 256.25
             }
         },
         "level_9.js": {
             "expandedObjectLayers": [
-                3,
                 2,
-                5
+                5,
+                3
             ],
             "scale": 2,
-            "selectedLayer": 4,
+            "selectedLayer": 1,
             "viewCenter": {
                 "x": 495.5,
                 "y": 257.75
@@ -289,19 +300,19 @@
         "level_11.js"
     ],
     "project": "Minigame.tiled-project",
-    "property.type": "string",
+    "property.type": "int",
     "recentFiles": [
-        "level_14.js",
-        "level_11.js",
-        "level_10.js",
-        "level_12.js",
+        "level_9.js",
+        "level_7.js",
+        "level_6.js",
         "level_8.js",
-        "StatueCatsTileset.tsx",
-        "prototype_level.js",
         "level_2.js",
-        "level_1.js",
         "level_3.js",
         "level_13.js",
+        "level_14.js",
+        "level_15.js",
+        "level_16.js",
+        "level_17.js",
         "level_18.js"
     ],
     "tileset.lastUsedFormat": "tsx",

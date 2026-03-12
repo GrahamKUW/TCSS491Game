@@ -134,8 +134,8 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":256,
-                 "x":448,
+                 "width":224,
+                 "x":480,
                  "y":176
                 }, 
                 {
@@ -150,7 +150,7 @@
                  "y":208
                 }, 
                 {
-                 "height":32,
+                 "height":64,
                  "id":48,
                  "name":"",
                  "rotation":0,
@@ -158,7 +158,7 @@
                  "visible":true,
                  "width":32,
                  "x":448,
-                 "y":208
+                 "y":176
                 }, 
                 {
                  "height":32,

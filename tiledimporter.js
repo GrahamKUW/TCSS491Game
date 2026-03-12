@@ -163,7 +163,8 @@ function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, ti
 
                   }
                   else{
-                      gameEngine.addEntity(createSpikeTrap(posX, posY, gameObjectProperties[0].value, gameEngine)); // FOR TESTING: should be seperate gameObject case
+                      let offset = gameObjectProperties[1]?.value;
+                      gameEngine.addEntity(createSpikeTrap(posX, posY, gameObjectProperties[0].value, gameEngine, offset ? offset : 0)); // FOR TESTING: should be seperate gameObject case
                   }
                   
                   break;

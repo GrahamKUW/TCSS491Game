@@ -1,5 +1,5 @@
 // Another version of spikes that have a trigger to lunge in the direction they are facing
-function createSpikeTrap(x, y, direction, game) {
+function createSpikeTrap(x, y, direction, game, offset = 0) {
 
     let spriteX = 0;
     let cWidth = 0;
@@ -35,9 +35,9 @@ function createSpikeTrap(x, y, direction, game) {
             hOffsetY = 6;
 
             tWidth = TRAP_TRIGGER_WIDTH;
-            tHeight = TRAP_TRIGGER_HEIGHT;
+            tHeight = TRAP_TRIGGER_HEIGHT + offset;
             tOffsetX = -32;
-            tOffsetY = -TRAP_TRIGGER_HEIGHT + 27;
+            tOffsetY = -TRAP_TRIGGER_HEIGHT + 27 - offset;
             break;
         case 'left':
             spriteX = 16;
@@ -51,9 +51,9 @@ function createSpikeTrap(x, y, direction, game) {
             hOffsetX = 6;
             hOffsetY = 5;
 
-            tWidth = TRAP_TRIGGER_HEIGHT; // width == height when facing left or right
+            tWidth = TRAP_TRIGGER_HEIGHT + offset; // width == height when facing left or right
             tHeight = TRAP_TRIGGER_WIDTH;
-            tOffsetX =  -TRAP_TRIGGER_HEIGHT + 27;
+            tOffsetX =  -TRAP_TRIGGER_HEIGHT + 27 - offset;
             tOffsetY = -32;
             break;
         case 'right':
@@ -68,7 +68,7 @@ function createSpikeTrap(x, y, direction, game) {
             hOffsetX = 10;
             hOffsetY = 5;
 
-            tWidth = TRAP_TRIGGER_HEIGHT;
+            tWidth = TRAP_TRIGGER_HEIGHT + offset;
             tHeight = TRAP_TRIGGER_WIDTH;
             tOffsetX =  5;
             tOffsetY = -32;
@@ -86,7 +86,7 @@ function createSpikeTrap(x, y, direction, game) {
             hOffsetY = 10;
 
             tWidth = TRAP_TRIGGER_WIDTH;
-            tHeight = TRAP_TRIGGER_HEIGHT;
+            tHeight = TRAP_TRIGGER_HEIGHT + offset;
             tOffsetX = -32;
             tOffsetY = 5;
             break;
@@ -98,13 +98,13 @@ function createSpikeTrap(x, y, direction, game) {
         removeFromWorld: false,
         position: new Position(x, y),
         facing: new Facing(direction), // indicates the direction the spikes will be facing
-        sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/spikes.png"), spriteX, 0, 16, 16, 2 , 2),
+        sprite: new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/spiketraps.png"), spriteX, 0, 16, 16, 2 , 2),
         collider: new Collider(cWidth, cHeight, cOffsetX, cOffsetY), //x2 from sprite since scale is x2
         velocity: new Velocity(0, 0),
         trigger: new Trigger(tWidth, tHeight, tOffsetX, tOffsetY, 11, triggerWhiteList), // arbitrary id for spike traps
         static: new Static(),
-        returnDelayTimer: 0,
-        canFire: true,
+        returnTimer: 0,
+        isFiring: false,
         child: null
     }
 

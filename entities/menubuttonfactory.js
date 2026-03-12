@@ -12,6 +12,9 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
     *    return this.createRestartButton(x, y);
     * } 
     */
+    else if (text == "levels") {
+        return this.createLevelsButton(x, y, scalingFactor);
+    }
     else if (text == "settings") {
         //Open settings menu; pause menu and regular menu
         return this.createSettingsButton(x, y, scalingFactor);
@@ -27,11 +30,9 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
         return this.createHomeButton(x, y);
     } else if (text == "level") {
         return this.createLevelButton(x, y, level);
-    }
-
-    else {
-        // default to credits i guess; Show credits; main menu button
-        return this.createCreditsbutton(x, y); 
+    } else {
+        // default to home button because why not. Realistically, this part should be deleted. 
+        return this.createHomeButton(x, y); 
     }
 }
 
@@ -39,7 +40,7 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
         const entity = {
             sprite: new Sprite(
                 ASSET_MANAGER.getAsset("./assets/sprites/MenuButton.png"),
-                0, 0, 192, 48, 3, 3
+                0, 0, 192, 48, scalingFactor, scalingFactor
             ),
             width: 192 * scalingFactor,
             height: 48 * scalingFactor,
@@ -53,7 +54,26 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
 
     }
 
-    function createSettingsButton(x, y, scalingFactor) {
+    function createLevelsButton(x, y, scalingFactor) {
+        const entity = {
+            sprite: new Sprite(
+                ASSET_MANAGER.getAsset("./assets/sprites/MenuButton.png"),
+                0, 96, 192, 48, scalingFactor, scalingFactor
+            ),
+            position: new Position(x,y),
+            width: 192 * scalingFactor,
+            height: 48 * scalingFactor,
+            clickable: new Clickable(true), 
+            onClick: function() {
+                //Debug command // placeholder for when settings was unused. 
+                //console.log("Settings currently under construction");
+                loadLevelsMenu1();
+            }
+        }
+        return entity;
+    }
+
+    function createSettingsButton(x, y, scalingFactor){ 
         const entity = {
             sprite: new Sprite(
                 ASSET_MANAGER.getAsset("./assets/sprites/MenuButton.png"),
@@ -64,9 +84,7 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
             height: 48 * scalingFactor,
             clickable: new Clickable(true), 
             onClick: function() {
-                //Debug command // placeholder for when settings was unused. 
-                //console.log("Settings currently under construction");
-                loadLevelsMenu1();
+                loadSettingsMenu();
             }
         }
         return entity;
@@ -155,6 +173,24 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
             clickable: new Clickable(true), 
             onClick: function() {
                 loadMainMenu();
+                CURRENT_LEVEL = "prototype_level";
+            }
+        }
+        return entity;
+    }
+
+    function createInactiveNextButton(x, y, scalingFactor = 1){
+        const entity = {
+            sprite: new Sprite(
+                ASSET_MANAGER.getAsset("./assets/sprites/navbutton.png"),
+                0, 96, 32, 32, 2, 2
+            ),
+            position: new Position(x,y),
+            width: 32 * scalingFactor,
+            height: 32 * scalingFactor,
+            clickable: new Clickable(true), 
+            onClick: function() {
+                console.log("You cannot press this button right now, but maybe if you do something impressive first... :3");
             }
         }
         return entity;
@@ -230,32 +266,38 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
                     break;
                 case 14: 
                     clickfun = function() {
-                        loadLevel14();
+                        //loadLevel14();
+                        console.log("Level under construction");
                     }
                     break;
                 case 15: 
                     clickfun = function() {
-                        loadLevel15();
+                        //loadLevel15();
+                        console.log("Level under construction");
                     }
                     break;
                 case 16: 
                     clickfun = function() {
-                        loadLevel16();
+                        //loadLevel16();
+                        console.log("Level under construction");
                     }
                     break;
                 case 17: 
                     clickfun = function() {
-                        loadLevel17();
+                        //loadLevel17();
+                        console.log("Level under construction");
                     }
                     break;
                 case 18: 
                     clickfun = function() {
-                        loadLevel18();
+                        //loadLevel18();
+                        console.log("Level under construction");
                     }
                     break;
                 case 19: 
                     clickfun = function() {
-                        loadLevel19();
+                        //loadLevel19();
+                        console.log("Level under construction");
                     }
                     break;
                 case 20: 
@@ -283,4 +325,113 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
         }
         return entity;
     }
+
+    function createManekiButton(x, y, scalingFactor = 1, menu) {
+    let offset = 1;
+    //TODO: Use use clicked sprite (depending on which character is selected)
+    //Currently, this if statement is checking which version of the button to display between
+    // the clicked one, and the un-clicked one. 
+    if (menu.state){
+        offset = 0;
+    }
+    const entity = {
+        sprite: new Sprite(
+            ASSET_MANAGER.getAsset("./assets/sprites/settingsbuttons.png"),
+            0, 48 * (2 + offset), 160, 48, scalingFactor, scalingFactor
+        ),
+        position: new Position(x,y),
+        width: 160 * scalingFactor,
+        height: 48 * scalingFactor,
+        clickable: new Clickable(true), 
+
+        onClick: function() {
+            //TODO: Get the character select buttons to work. 
+            console.log("Selecting Maneki");
+            //NOTE: state is an "implementation" of the character select thing located in menus. 
+            //menu.setState is at the top of menus.
+            menu.setState(false);
+            //Reload menu to show change. 
+            menu.loadSettingsMenu();
+        }
+    }
+    return entity;
+}
+
+function createRakkiButton(x, y, scalingFactor = 1, menu){
+    let offset = 0;
+    if (menu.state){
+        offset = 1;
+    }
+    const entity = {
+        sprite: new Sprite(
+            ASSET_MANAGER.getAsset("./assets/sprites/settingsbuttons.png"),
+            0, 48 * (4 + offset), 160, 48, scalingFactor, scalingFactor
+        ),
+        position: new Position(x,y),
+        width: 160 * scalingFactor,
+        height: 48 * scalingFactor,
+        clickable: new Clickable(true), 
+        onClick: function() {
+            //TODO: Get the character select buttons to work. 
+            console.log("Selecting Rakki");
+            menu.setState(true);
+            menu.loadSettingsMenu();
+        }
+    }
+    return entity;
+}
+
+function createLowVolumeButton(x, y, scalingFactor = 1, menu) {
+    let offset = 0;
+    let clickFun = function () {
+        menu.setVolume(menu.vol - 0.1);
+        console.log("Lowering volume!");
+        menu.loadSettingsMenu();
+    }
+    if (menu.vol <= 0.0){
+        offset = 2;
+        clickFun = function() {
+            console.log("Audio already at min");
+        }
+    }
+    const entity = {
+        sprite: new Sprite(
+            ASSET_MANAGER.getAsset("./assets/sprites/audiobuttons.png"),
+            0, 24 * (1 + offset), 24, 24, scalingFactor, scalingFactor
+        ),
+        position: new Position(x,y),
+        width: 24 * scalingFactor,
+        height: 24 * scalingFactor,
+        clickable: new Clickable(true), 
+        onClick: clickFun
+    }
+    return entity;
+}
+
+function createHighVolumeButton(x, y, scalingFactor = 1, menu) {
+    let offset = 0;
+    let clickFun = function () {
+        menu.setVolume(menu.vol + 0.1);
+        console.log("Increasing volume!");
+        menu.loadSettingsMenu();
+    }
+    if (menu.vol == 1.0){
+        offset = 2;
+        clickFun = function() {
+            console.log("Audio already at max");
+        }
+    }
+    const entity = {
+        sprite: new Sprite(
+            ASSET_MANAGER.getAsset("./assets/sprites/audiobuttons.png"),
+            0, 24 * (0 + offset), 24, 24, scalingFactor, scalingFactor
+        ),
+        position: new Position(x,y),
+        width: 24 * scalingFactor,
+        height: 24 * scalingFactor,
+        clickable: new Clickable(true), 
+        onClick: clickFun
+    }
+    return entity;
+}
     

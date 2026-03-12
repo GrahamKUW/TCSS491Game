@@ -5,6 +5,7 @@ const GameManifest = {
   data: [
     "./assets/sprites/rat.png",
     "./assets/sprites/spikes.png",
+    "./assets/sprites/spiketraps.png",
     "./assets/sprites/prototype_background.png",
     "./assets/sprites/StatueCatsMainCharacterWReversed.png",
     "./assets/sprites/Alt_StatueCatsMainCharacterWReversed.png",
@@ -24,7 +25,7 @@ const GameManifest = {
     "./assets/audio/Victory.wav",
     "./assets/sprites/chalice.png",
     "./assets/sprites/MenuButton.png",
-    "./assets/sprites/MainMenuTemp.png",
+    //"./assets/sprites/MainMenuTemp.png",
     "./assets/sprites/Screen Wipe 640x360-Sheet.png",
     "./assets/audio/Puzzle Game 3.mp3",
     "./assets/audio/synth_beep_02.ogg",
@@ -34,11 +35,16 @@ const GameManifest = {
     "./assets/audio/power_up_06.ogg",
     "./assets/audio/synth_misc_01.ogg",
     "./assets/audio/synth_misc_05.ogg",
+    "./assets/audio/synth_misc_11.ogg",
     "./assets/audio/retro_explosion_02.ogg",
     "./assets/sprites/menubackground.png",
     "./assets/sprites/title.png",
     "./assets/sprites/navbutton.png",
     "./assets/sprites/LevelSelectButton.png",
     "./assets/sprites/levelicons.png",
+    "./assets/sprites/settingsbuttons.png",
+    "./assets/sprites/audio.png",
+    "./assets/sprites/audiobuttons.png",
+
   ],
 };

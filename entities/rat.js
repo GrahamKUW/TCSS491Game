@@ -27,6 +27,7 @@ function createRat(x, y, speed) {
 
     const entity = {
         removeFromWorld: false,
+        isRat: true,
         position: new Position(x, y),
         speed: speed,
         velocity: new Velocity(speed, 0),
