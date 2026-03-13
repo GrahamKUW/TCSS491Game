@@ -135,7 +135,14 @@ function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, ti
                   gameEngine.addEntity(createButton(posX, posY, gameObjectProperties[0].value));
                   break;
             case "gate":
-                  gameEngine.addEntity(createGate(posX, posY, gameObjectProperties[0].value));
+                  if (gameObjectProperties.length == 1 || gameObjectProperties[1].value == true) {
+                    gameEngine.addEntity(createGate(posX, posY, gameObjectProperties[0].value, gameObjectProperties[1].value));
+                    console.log("closed on default");
+                  }
+                  else  {
+                    gameEngine.addEntity(createGate(posX, posY, gameObjectProperties[0].value, gameObjectProperties[1].value));
+                    console.log("Open on default");
+                  }
                   break;
             case "rat":
                   gameEngine.addEntity(createRat(posX, posY, gameObjectProperties[0].value));

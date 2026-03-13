@@ -31,7 +31,7 @@ class UISystem{
             gameEngine.addEntity(createMenuButton(1175, 600, "home"))
 
             //Show current Yarn collected
-            if (levelString != "final level") {
+            if (levelString != "final level" && CURRENT_LEVEL != "level_s1" && CURRENT_LEVEL != "level_s5" && CURRENT_LEVEL != "level_s2" && CURRENT_LEVEL != "level_s3" && CURRENT_LEVEL != "level_s4") {
                 ctx.drawImage(ASSET_MANAGER.getAsset("./assets/sprites/YarnBall.png"), 0, 0, 32, 32,
                 900, 24, 64, 64);
                 let yarnString = ": " + game.yarnCollected;

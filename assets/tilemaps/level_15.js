@@ -360,7 +360,7 @@
                         {
                          "name":"isOpen",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }],
                  "rotation":0,
                  "type":"",
@@ -383,7 +383,7 @@
                         {
                          "name":"isOpen",
                          "type":"bool",
-                         "value":false
+                         "value":true
                         }],
                  "rotation":0,
                  "type":"",
