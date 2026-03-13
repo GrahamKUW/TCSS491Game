@@ -1,5 +1,5 @@
-function createGate(x, y, triggerID, colliderWidth = 16, colliderHeight = 64, colliderOffsetX = 8, colliderOffsetY, startClosed = true) {
-
+function createGate(x, y, triggerID, startClosed, colliderWidth = 16, colliderHeight = 64, colliderOffsetX = 8, colliderOffsetY = 0) {
+    console.log("Initial state: " + startClosed);
     const activeSprite = new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/gate.png"), 48, 0, 16, 32, 2, 2);    //open
     const inactiveSprite = new Sprite(ASSET_MANAGER.getAsset("./assets/sprites/gate.png"), 0, 0, 16, 32, 2, 2);   //closed
 

@@ -281,6 +281,11 @@
                          "name":"Link",
                          "type":"int",
                          "value":0
+                        }, 
+                        {
+                         "name":"startClosed",
+                         "type":"bool",
+                         "value":true
                         }],
                  "rotation":0,
                  "type":"",
@@ -299,6 +304,11 @@
                          "name":"Link",
                          "type":"int",
                          "value":1
+                        }, 
+                        {
+                         "name":"startClosed",
+                         "type":"bool",
+                         "value":true
                         }],
                  "rotation":0,
                  "type":"",

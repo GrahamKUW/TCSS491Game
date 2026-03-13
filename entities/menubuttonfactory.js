@@ -305,6 +305,16 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
                         loadLevel20();
                     }
                     break;
+                case 21: 
+                    clickfun = function() {
+                        loadLevelS1();
+                    }
+                    break;
+                case 22: 
+                    clickfun = function() {
+                        loadLevelS2();
+                    }
+                    break;
                 default: 
                     clickfun = function() {
                         loadLevel1();

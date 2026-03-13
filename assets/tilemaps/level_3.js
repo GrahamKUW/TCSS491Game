@@ -1060,6 +1060,11 @@
                          "name":"Link",
                          "type":"int",
                          "value":0
+                        }, 
+                        {
+                         "name":"startClosed",
+                         "type":"bool",
+                         "value":true
                         }],
                  "rotation":0,
                  "type":"",

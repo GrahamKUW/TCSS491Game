@@ -81,7 +81,9 @@ function loadLevelsMenu2(){
         //NOTE: uncomment once special levels are done. 
         //gameEngine.addEntity(createMenuButton(1100, 600, "next2")) 
     } else {
-        gameEngine.addEntity(createInactiveNextButton(1100, 600, 2))
+        gameEngine.addEntity(createInactiveNextButton(1100, 600, 2));
+        //debug; remove later
+        gameEngine.addEntity(createMenuButton(1100, 500, "next2"));
     }
     
     gameEngine.addEntity(createMenuButton(116, 600, "prev1"))

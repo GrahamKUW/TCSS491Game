@@ -222,3 +222,13 @@ function loadLevel20() {
     loadLevel("final_level");
     
 }
+
+function loadLevelS1() {
+    console.log("Loading special level 1!");
+    loadLevel("level_s1");
+}
+
+function loadLevelS2() {
+    console.log("Loading special level 1!");
+    loadLevel("level_s2");
+}
