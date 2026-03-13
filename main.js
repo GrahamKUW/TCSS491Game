@@ -44,12 +44,8 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addSystem(new TrapSystem());
 	gameEngine.addSystem(new WinSystem());
 
-	// NOTE: In the final game this should only ever start on the main menu.
-
-	//loadLevel("level_6");
-
-	loadMainMenu();
-	//loadLevel("level_1", true);
+	//loadMainMenu();
+	loadLevel("level_19", true);
 	
 	gameEngine.start();
 });

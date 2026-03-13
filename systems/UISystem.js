@@ -27,6 +27,9 @@ class UISystem{
                 ctx.strokeText(levelString, 150, 40);
             }
 
+            //create home button
+            gameEngine.addEntity(createMenuButton(1175, 600, "home"))
+
             //Show current Yarn collected
             if (levelString != "final level") {
                 ctx.drawImage(ASSET_MANAGER.getAsset("./assets/sprites/YarnBall.png"), 0, 0, 32, 32,
@@ -127,9 +130,13 @@ class UISystem{
                 if(!game.unlockedSecretLevels) {
                     AUDIO_MANAGER.playOnce("Win");
                 }
-                game.addEntity(createWall(160, 590, 770, 20));
                 game.unlockedSecretLevels = true;
             }
+            else {
+                ctx.fillText("Try to get all yarn balls for a surprise!", 160, 590);
+                ctx.strokeText("Try to get all yarn balls for a surprise!", 160, 590);
+            }
+            game.addEntity(createWall(160, 590, 800, 20));
 
             //create home button
             gameEngine.addEntity(createMenuButton(1050, 550, "home"))

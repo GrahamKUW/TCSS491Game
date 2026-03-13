@@ -35,7 +35,11 @@ function loadMainMenu(){
     gameEngine.addEntity(createMenuButton(448, 485, "levels", scalingFactor = 2));
     gameEngine.addEntity(createMenuButton(448, 585, "settings", scalingFactor = 2));
 
-    gameEngine.addEntity(createManekiObject(70, 300, 10));
+    if(!altCharacter) {
+        gameEngine.addEntity(createManekiObject(70, 300, 10));
+    }
+    else 
+        gameEngine.addEntity(createRakkiObject(70, 300, 10));
     gameEngine.addEntity(createStatueObject(900, 300, 10));
     gameEngine.addEntity(createYarnObject(950, 0, 10));
     //Main menu music eventually, probably. 

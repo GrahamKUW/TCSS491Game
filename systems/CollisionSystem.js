@@ -14,7 +14,7 @@ class CollisionSystem {
     update(deltaTime, game) {
         
         const collidable = game.entities.filter(e => e.position && e.collider);
-        const COLLISION_ITERATIONS = 5; //running multiple times helps stutter
+        const COLLISION_ITERATIONS = 1; //running multiple times helps stutter
 
         // list of entities collided with
         for (const e of collidable) {
