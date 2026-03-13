@@ -227,8 +227,8 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":535,
-                 "y":272.5
+                 "x":448,
+                 "y":240
                 }, 
                 {
                  "height":0,
@@ -291,42 +291,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":23,
-                 "name":"Crate",
-                 "point":true,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":672,
-                 "y":272
-                }, 
-                {
-                 "height":0,
-                 "id":24,
-                 "name":"Crate",
-                 "point":true,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":688,
-                 "y":272
-                }, 
-                {
-                 "height":0,
-                 "id":25,
-                 "name":"Crate",
-                 "point":true,
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":688,
-                 "y":256
-                }, 
-                {
-                 "height":0,
                  "id":30,
                  "name":"Spike",
                  "point":true,
@@ -384,7 +348,7 @@
                         {
                          "name":"Target Level",
                          "type":"string",
-                         "value":"final_level"
+                         "value":"level_19"
                         }],
                  "rotation":0,
                  "type":"",
@@ -392,6 +356,48 @@
                  "width":24.25,
                  "x":640,
                  "y":256
+                }, 
+                {
+                 "height":0,
+                 "id":37,
+                 "name":"Platform",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":512,
+                 "y":240
+                }, 
+                {
+                 "height":0,
+                 "id":38,
+                 "name":"Platform",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":576,
+                 "y":240
+                }, 
+                {
+                 "height":0,
+                 "id":39,
+                 "name":"Rat",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Speed",
+                         "type":"float",
+                         "value":50
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":448,
+                 "y":240
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -400,7 +406,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":37,
+ "nextobjectid":40,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

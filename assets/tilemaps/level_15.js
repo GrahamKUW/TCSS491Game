@@ -391,6 +391,18 @@
                  "width":0,
                  "x":624,
                  "y":144
+                }, 
+                {
+                 "height":0,
+                 "id":75,
+                 "name":"Torch",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":568,
+                 "y":127
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -399,7 +411,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":75,
+ "nextobjectid":76,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

@@ -1,11 +1,12 @@
 function createStatue(x, y) {
 
-    //if(alt == true) {
-        //let playerSheet = ASSET_MANAGER.getAsset("./assets/sprites/Alt_StatueCatsMainCharacterWReversed.png");
-    //}
-    //else {
-        let playerSheet = ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png");
-    //}
+    let playerSheet = null;
+    if(altCharacter == true) {
+        playerSheet = ASSET_MANAGER.getAsset("./assets/sprites/Alt_StatueCatsMainCharacterWReversed.png");
+    }
+    else {
+        playerSheet = ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png");
+    }
 
     const entity = {
         removeFromWorld: false,

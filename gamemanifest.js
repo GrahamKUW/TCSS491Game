@@ -45,6 +45,7 @@ const GameManifest = {
     "./assets/sprites/settingsbuttons.png",
     "./assets/sprites/audio.png",
     "./assets/sprites/audiobuttons.png",
+    "./assets/audio/JumpFX.wav"
 
   ],
 };

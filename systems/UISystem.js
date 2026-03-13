@@ -13,6 +13,9 @@ class UISystem{
         ctx.lineWidth = 2; 
         ctx.font = '32px "Press Start 2P"';
         ctx.textBaseline = 'top';
+
+        //mute if muted
+        AUDIO_MANAGER.setMuted(document.getElementById('muteToggle').checked)
         
         if (CURRENT_LEVEL != "prototype_level" && CURRENT_LEVEL != "endscreen_level"){
 
@@ -23,6 +26,9 @@ class UISystem{
                 ctx.fillText(levelString, 150, 40);
                 ctx.strokeText(levelString, 150, 40);
             }
+
+            //create home button
+            gameEngine.addEntity(createMenuButton(1175, 600, "home"))
 
             //Show current Yarn collected
             if (levelString != "final level") {
@@ -124,9 +130,13 @@ class UISystem{
                 if(!game.unlockedSecretLevels) {
                     AUDIO_MANAGER.playOnce("Win");
                 }
-                game.addEntity(createWall(160, 590, 770, 20));
                 game.unlockedSecretLevels = true;
             }
+            else {
+                ctx.fillText("Try to get all yarn balls for a surprise!", 160, 590);
+                ctx.strokeText("Try to get all yarn balls for a surprise!", 160, 590);
+            }
+            game.addEntity(createWall(160, 590, 800, 20));
 
             //create home button
             gameEngine.addEntity(createMenuButton(1050, 550, "home"))

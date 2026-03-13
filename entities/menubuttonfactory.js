@@ -347,6 +347,7 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
         onClick: function() {
             //TODO: Get the character select buttons to work. 
             console.log("Selecting Maneki");
+            altCharacter = false;
             //NOTE: state is an "implementation" of the character select thing located in menus. 
             //menu.setState is at the top of menus.
             menu.setState(false);
@@ -372,8 +373,8 @@ function createRakkiButton(x, y, scalingFactor = 1, menu){
         height: 48 * scalingFactor,
         clickable: new Clickable(true), 
         onClick: function() {
-            //TODO: Get the character select buttons to work. 
             console.log("Selecting Rakki");
+            altCharacter = true;
             menu.setState(true);
             menu.loadSettingsMenu();
         }
