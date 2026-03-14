@@ -40,8 +40,8 @@
         "level_1.js": {
             "expandedObjectLayers": [
                 2,
-                3,
-                5
+                5,
+                3
             ],
             "scale": 2,
             "selectedLayer": 4,
@@ -53,39 +53,39 @@
         "level_10.js": {
             "expandedObjectLayers": [
                 2,
-                3,
-                5
+                5,
+                3
             ],
             "scale": 2,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 512.5,
+                "x": 512.25,
                 "y": 256.25
             }
         },
         "level_11.js": {
             "expandedObjectLayers": [
                 2,
-                3,
-                5
+                5,
+                3
             ],
             "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 521.3333333333334,
-                "y": 302.99999999999994
+                "x": 512.3333333333333,
+                "y": 256.3333333333333
             }
         },
         "level_12.js": {
             "expandedObjectLayers": [
                 2,
-                3,
-                5
+                5,
+                3
             ],
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 512.5,
+                "x": 512.25,
                 "y": 256.25
             }
         },
@@ -149,8 +149,8 @@
         "level_18.js": {
             "expandedObjectLayers": [
                 2,
-                3,
-                5
+                5,
+                3
             ],
             "scale": 2,
             "selectedLayer": 4,
@@ -175,26 +175,26 @@
         "level_2.js": {
             "expandedObjectLayers": [
                 2,
-                3,
-                5
+                5,
+                3
             ],
             "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 511.99999999999994,
-                "y": 256.33333333333337
+                "x": 512.3333333333333,
+                "y": 256.3333333333333
             }
         },
         "level_3.js": {
             "expandedObjectLayers": [
                 2,
-                3,
-                5
+                5,
+                3
             ],
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 512.5,
+                "x": 512.25,
                 "y": 256.25
             }
         },
@@ -258,8 +258,8 @@
             "scale": 2,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 519,
-                "y": 265.25
+                "x": 513,
+                "y": 294.25
             }
         },
         "level_9.js": {
