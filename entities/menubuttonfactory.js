@@ -272,8 +272,7 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
                     break;
                 case 15: 
                     clickfun = function() {
-                        //loadLevel15();
-                        console.log("Level under construction");
+                        loadLevel15();
                     }
                     break;
                 case 16: 
@@ -290,14 +289,12 @@ function createMenuButton (x, y, text, scalingFactor = 3, level = 1) {
                     break;
                 case 18: 
                     clickfun = function() {
-                        //loadLevel18();
-                        console.log("Level under construction");
+                        loadLevel18();
                     }
                     break;
                 case 19: 
                     clickfun = function() {
-                        //loadLevel19();
-                        console.log("Level under construction");
+                        loadLevel19();
                     }
                     break;
                 case 20: 
