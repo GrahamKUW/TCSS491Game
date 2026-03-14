@@ -887,6 +887,52 @@
                  "width":0,
                  "x":544,
                  "y":240
+                }, 
+                {
+                 "height":0,
+                 "id":82,
+                 "name":"Yarn",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Link",
+                         "type":"int",
+                         "value":9
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":464,
+                 "y":128
+                }, 
+                {
+                 "height":0,
+                 "id":83,
+                 "name":"Spiketrap",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Direction",
+                         "type":"string",
+                         "value":"left"
+                        }, 
+                        {
+                         "name":"offset",
+                         "type":"int",
+                         "value":0
+                        }, 
+                        {
+                         "name":"zLaunchTime",
+                         "type":"float",
+                         "value":0.45
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":528,
+                 "y":144
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -895,7 +941,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":82,
+ "nextobjectid":84,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
