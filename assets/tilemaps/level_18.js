@@ -604,7 +604,7 @@
                  "visible":true,
                  "width":0,
                  "x":400,
-                 "y":129
+                 "y":128
                 }, 
                 {
                  "height":0,
@@ -846,7 +846,7 @@
                  "visible":true,
                  "width":0,
                  "x":480,
-                 "y":129
+                 "y":128
                 }, 
                 {
                  "height":0,
@@ -864,7 +864,7 @@
                  "visible":true,
                  "width":0,
                  "x":560,
-                 "y":129
+                 "y":128
                 }, 
                 {
                  "height":0,
