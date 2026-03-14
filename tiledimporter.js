@@ -171,7 +171,8 @@ function constructGameObjects(gameEngine, levelReference, tilemapX, tilemapY, ti
                   }
                   else{
                       let offset = gameObjectProperties[1]?.value;
-                      gameEngine.addEntity(createSpikeTrap(posX, posY, gameObjectProperties[0].value, gameEngine, offset ? offset : 0)); // FOR TESTING: should be seperate gameObject case
+                      let launchTime = gameObjectProperties[2]?.value;
+                      gameEngine.addEntity(createSpikeTrap(posX, posY, gameObjectProperties[0].value, gameEngine, offset ? offset : 0, launchTime ? launchTime : 0.45)); // FOR TESTING: should be seperate gameObject case
                   }
                   
                   break;

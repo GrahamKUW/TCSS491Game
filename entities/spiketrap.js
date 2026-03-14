@@ -1,5 +1,5 @@
 // Another version of spikes that have a trigger to lunge in the direction they are facing
-function createSpikeTrap(x, y, direction, game, offset = 0) {
+function createSpikeTrap(x, y, direction, game, offset = 0, launchTime = 0.45) {
 
     let spriteX = 0;
     let cWidth = 0;
@@ -104,6 +104,7 @@ function createSpikeTrap(x, y, direction, game, offset = 0) {
         trigger: new Trigger(tWidth, tHeight, tOffsetX, tOffsetY, 11, triggerWhiteList), // arbitrary id for spike traps
         static: new Static(),
         returnTimer: 0,
+        launchTime: launchTime,
         isFiring: false,
         child: null
     }

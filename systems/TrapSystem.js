@@ -5,7 +5,7 @@ class TrapSystem{
 
     update (deltaTime, game) {
         const speed = 350;
-        const LAUNCH_TIME = 0.45; // time that the spike trap takes once triggered to stop moving
+        //const LAUNCH_TIME = 0.45; // time that the spike trap takes once triggered to stop moving
         const RETURN_DELAY = 1.0; // 1 second of delay once the trap reaches the end before going back 
 
         for (let entity of game.entities) {
@@ -14,7 +14,7 @@ class TrapSystem{
             if (!entity.facing || !entity.trigger) continue;
             
             if ((entity.trigger.active && entity.position.x == entity.position.startX && entity.position.y == entity.position.startY) ||
-                 (entity.isFiring == true && entity.returnTimer < LAUNCH_TIME)) {
+                 (entity.isFiring == true && entity.returnTimer < entity.launchTime)) {
 
                 entity.isFiring = true;
 
@@ -40,7 +40,7 @@ class TrapSystem{
                     entity.returnTimer += deltaTime;
 
                     // WAIT during delay
-                    if (entity.returnTimer < LAUNCH_TIME + RETURN_DELAY) {
+                    if (entity.returnTimer < entity.launchTime + RETURN_DELAY) {
 
                         entity.velocity.dx = 0;
                         entity.velocity.dy = 0;
