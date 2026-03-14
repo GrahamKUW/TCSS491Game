@@ -44,6 +44,8 @@ class TrapSystem{
 
                         entity.velocity.dx = 0;
                         entity.velocity.dy = 0;
+                        entity.position.x = Math.round(entity.position.x / 16) * 16; // round to nearest 16 to snap to grid
+                        entity.position.y = Math.round(entity.position.y / 8) * 8; // round to nearest 8 to snap to grid
                         continue;
                     }
                 }
