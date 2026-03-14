@@ -109,9 +109,14 @@ function createRakkiObject(x, y, scalingFactor = 1) {
 }
 
 function createStatueObject(x, y, scalingFactor = 1) {
-const entity = {
+    let statueSprite = null;
+    if(!altCharacter) {
+        statueSprite = ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png");
+    }
+    else statueSprite = ASSET_MANAGER.getAsset("./assets/sprites/Alt_StatueCatsMainCharacterWReversed.png");
+    const entity = {
         sprite: new Sprite(
-            ASSET_MANAGER.getAsset("./assets/sprites/StatueCatsMainCharacterWReversed.png"),
+            statueSprite,
             0, 256, 32, 32, scalingFactor, scalingFactor
         ),
         position: new Position(x,y)
@@ -120,7 +125,7 @@ const entity = {
 }
 
 function createYarnObject(x, y, scalingFactor = 1) {
-const yarnAnimation = {
+    const yarnAnimation = {
         'float': { 
             frames: [
                 { x: 0, y: 0, width: 32, height: 32 },
@@ -132,7 +137,7 @@ const yarnAnimation = {
             loops: true
         }
     }
-const entity = {
+    const entity = {
         sprite: new Sprite(
             ASSET_MANAGER.getAsset("./assets/sprites/YarnBall.png"),
             0, 256, 32, 32, scalingFactor, scalingFactor

@@ -44,8 +44,8 @@ ASSET_MANAGER.downloadAll(() => {
 	gameEngine.addSystem(new TrapSystem());
 	gameEngine.addSystem(new WinSystem());
 
-	//loadMainMenu();
-	loadLevel("level_19", true);
+	loadMainMenu();
+	//loadLevel("level_18", true); //for testing levels
 	
 	gameEngine.start();
 });
