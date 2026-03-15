@@ -229,6 +229,11 @@ function loadLevelS1() {
 }
 
 function loadLevelS2() {
-    console.log("Loading special level 1!");
+    console.log("Loading special level 2!");
     loadLevel("level_s2");
+}
+
+function loadLevelS3() {
+    console.log("Loading special level 3!");
+    loadLevel("level_s3");
 }
