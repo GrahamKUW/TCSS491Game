@@ -24,6 +24,8 @@ class AudioManager{
         this.assetManager = assetManager;
         this.audioMap = new Map();
         this.globalVolume = 0.5;
+        this.originalVolume = 0.5;
+        
         this.initalized = false; // web browsers dont allow auto playing of sounds, need to wait for specific events
         this.assetManager.adjustVolume(this.globalVolume);
     }
@@ -95,13 +97,19 @@ class AudioManager{
         this.assetManager.playAsset(this.audioMap.get(tag)); // play
     }
 
-    /** Sets the muted status of all audio */
-    setMuted(isMuted = true){
+    // /** Sets the muted status of all audio */
+    setMuted(isMuted){
         if(!this.initalized){
             return;
         }
 
-        this.assetManager.muteAudio(isMuted); 
+        if(isMuted){
+            this.globalVolume = this.originalVolume;
+            this.adjustVolume(0);
+        }
+        else{
+            this.adjustVolume(this.originalVolume);
+        }
     }
 
     adjustVolume(volume){
@@ -109,7 +117,8 @@ class AudioManager{
             console.warn("Volume must be betwee 0 and 1! It was: " + volume);
             return;
         }
-
+        
+        
         this.globalVolume = volume;
         this.assetManager.adjustVolume(this.globalVolume);
     }

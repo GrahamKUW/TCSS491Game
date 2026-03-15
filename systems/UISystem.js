@@ -15,7 +15,10 @@ class UISystem{
         ctx.textBaseline = 'top';
 
         //mute if muted
-        AUDIO_MANAGER.setMuted(document.getElementById('muteToggle').checked)
+        let muted = document.getElementById('muteToggle').checked;
+
+
+        AUDIO_MANAGER.setMuted(muted);
         
         if (CURRENT_LEVEL != "prototype_level" && CURRENT_LEVEL != "endscreen_level"){
 
