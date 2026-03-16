@@ -419,7 +419,7 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":560,
+                 "x":392,
                  "y":224
                 }],
          "opacity":1,
