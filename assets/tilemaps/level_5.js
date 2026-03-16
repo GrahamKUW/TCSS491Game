@@ -379,24 +379,6 @@
                 }, 
                 {
                  "height":0,
-                 "id":38,
-                 "name":"Spiketrap",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"Direction",
-                         "type":"string",
-                         "value":"down"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":320,
-                 "y":288
-                }, 
-                {
-                 "height":0,
                  "id":39,
                  "name":"Spiketrap",
                  "point":true,
@@ -658,6 +640,34 @@
                  "width":0,
                  "x":688,
                  "y":176
+                }, 
+                {
+                 "height":0,
+                 "id":64,
+                 "name":"Spiketrap",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Direction",
+                         "type":"string",
+                         "value":"down"
+                        }, 
+                        {
+                         "name":"offset",
+                         "type":"int",
+                         "value":50
+                        }, 
+                        {
+                         "name":"zLaunchTime",
+                         "type":"float",
+                         "value":0.22
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":320,
+                 "y":288
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -666,7 +676,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":64,
+ "nextobjectid":65,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",
