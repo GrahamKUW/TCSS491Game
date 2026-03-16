@@ -831,7 +831,7 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":544,
+                 "x":528,
                  "y":208
                 }, 
                 {
@@ -849,7 +849,7 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":544,
+                 "x":528,
                  "y":224
                 }, 
                 {
@@ -867,7 +867,7 @@
                  "type":"",
                  "visible":true,
                  "width":0,
-                 "x":544,
+                 "x":528,
                  "y":240
                 }, 
                 {
@@ -933,6 +933,18 @@
                  "width":0,
                  "x":448,
                  "y":256
+                }, 
+                {
+                 "height":0,
+                 "id":89,
+                 "name":"Torch",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":584,
+                 "y":136
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -941,7 +953,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":89,
+ "nextobjectid":90,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

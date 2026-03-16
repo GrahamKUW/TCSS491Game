@@ -263,6 +263,34 @@
          "objects":[
                 {
                  "height":0,
+                 "id":88,
+                 "name":"Spiketrap",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Direction",
+                         "type":"string",
+                         "value":"right"
+                        }, 
+                        {
+                         "name":"offset",
+                         "type":"int",
+                         "value":60
+                        }, 
+                        {
+                         "name":"zLaunchTime",
+                         "type":"float",
+                         "value":0.7
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":416,
+                 "y":272
+                }, 
+                {
+                 "height":0,
                  "id":17,
                  "name":"Player",
                  "point":true,
@@ -488,42 +516,6 @@
                  "visible":true,
                  "width":0,
                  "x":320,
-                 "y":272
-                }, 
-                {
-                 "height":0,
-                 "id":54,
-                 "name":"Spiketrap",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"Direction",
-                         "type":"string",
-                         "value":"right"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":416,
-                 "y":224
-                }, 
-                {
-                 "height":0,
-                 "id":55,
-                 "name":"Spiketrap",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"Direction",
-                         "type":"string",
-                         "value":"right"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":416,
                  "y":272
                 }, 
                 {
@@ -841,6 +833,34 @@
                  "width":0,
                  "x":608,
                  "y":224
+                }, 
+                {
+                 "height":0,
+                 "id":87,
+                 "name":"Spiketrap",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Direction",
+                         "type":"string",
+                         "value":"right"
+                        }, 
+                        {
+                         "name":"offset",
+                         "type":"int",
+                         "value":60
+                        }, 
+                        {
+                         "name":"zLaunchTime",
+                         "type":"float",
+                         "value":0.7
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":416,
+                 "y":224
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -849,7 +869,7 @@
          "y":0
         }],
  "nextlayerid":6,
- "nextobjectid":87,
+ "nextobjectid":89,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.11.2",

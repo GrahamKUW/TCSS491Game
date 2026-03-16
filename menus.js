@@ -83,7 +83,7 @@ function loadLevelsMenu2(){
     //load navigation buttons
     if (gameEngine.unlockedSecretLevels){
         //NOTE: uncomment once special levels are done. 
-        //gameEngine.addEntity(createMenuButton(1100, 600, "next2")) 
+        gameEngine.addEntity(createMenuButton(1100, 600, "next2")) 
     } else {
         gameEngine.addEntity(createInactiveNextButton(1100, 600, 2));
         //debug; remove later
