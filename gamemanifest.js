@@ -27,7 +27,7 @@ const GameManifest = {
     "./assets/sprites/MenuButton.png",
     //"./assets/sprites/MainMenuTemp.png",
     "./assets/sprites/Screen Wipe 640x360-Sheet.png",
-    "./assets/audio/Puzzle Game 3.mp3",
+    "./assets/audio/gamesong.mp3",
     "./assets/audio/synth_beep_02.ogg",
     "./assets/audio/retro_misc_03.ogg",
     "./assets/audio/shot_02.ogg",
