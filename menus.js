@@ -81,13 +81,10 @@ function loadLevelsMenu2(){
     gameEngine.addEntity(createMenuBackground(0, 0));
 
     //load navigation buttons
-    if (gameEngine.unlockedSecretLevels){
-        //NOTE: uncomment once special levels are done. 
+    if (gameEngine.unlockedSecretLevels){ 
         gameEngine.addEntity(createMenuButton(1100, 600, "next2")) 
     } else {
         gameEngine.addEntity(createInactiveNextButton(1100, 600, 2));
-        //debug; remove later
-        gameEngine.addEntity(createMenuButton(1100, 500, "next2"));
     }
     
     gameEngine.addEntity(createMenuButton(116, 600, "prev1"))
@@ -111,10 +108,9 @@ function loadLevelsMenu3(){
     gameEngine.addEntity(createMenuButton(116, 600, "prev2"));
     gameEngine.addEntity(createMenuButton(608, 600, "home"));
 
-    //load level buttons and screenshots
-    for (let i = 1; i <= 5; i++) {
-        gameEngine.addEntity(createLevelButton(70 + (i-1) * 192 + 30 * i, 220, i + 20));
-    }
+    //load level button and screenshots
+    gameEngine.addEntity(createLevelButton(544, 300, 21));
+    gameEngine.addEntity(createWindow(574, 338, 23));
 }
 
 function loadSettingsMenu(){
